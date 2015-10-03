@@ -5,7 +5,7 @@
   <%= @product.name %>
 </p>
 
-  <%= @product.image %>
+  <%= image_tag @product.image.url(:small) %>
 
 <p>
   <strong>Price:</strong>
