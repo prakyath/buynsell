@@ -27,5 +27,49 @@
   <%= @product.user_id %>
 </p>
 
+
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+
+
+
+<h3>Listing Comments</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th> 
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @product.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.message %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ 
+<%= form_for [@product, @comment] do |f| %>
+   <%= f.text_area :message %>
+   <%= f.submit "Post Comment" %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
