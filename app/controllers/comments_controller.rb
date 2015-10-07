@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  
+  before_action :logged_in_user
   before_action :set_product, only: [:create,:destroy]
 
 
@@ -38,9 +38,5 @@ class CommentsController < ApplicationController
     def set_product
       @product = Product.find(params[:product_id]);
     end
-
-
-
-
 
 end

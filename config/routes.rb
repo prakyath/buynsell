@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
+
   # get 'products/new'=>'product#new'
 resources :products do
   resources :comments
 end
+
+get 'login' => 'sessions#new'
+post 'login' => 'sessions#create'
+delete 'logout' => 'sessions#destroy'
+
+root 'products#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

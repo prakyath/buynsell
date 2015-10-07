@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: 455870463
+  password: 1
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -52,3 +52,9 @@ production:
   database: buynsell_production
   username: buynsell
   password: <%= ENV['BUYNSELL_DATABASE_PASSWORD'] %>
+
+students_1415:
+  <<: *default
+  database: students_1415
+  username: root
+  password: 1

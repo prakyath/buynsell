@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-
+before_action :logged_in_user,only: [:new,:edit]
+before_action :correct_user,only: [:edit,:destroy]
 before_action :set_product, only: [:show, :edit, :update, :destroy]
 
 def index
@@ -17,7 +18,7 @@ def index
 
   # GET /products/new
   def new
-    @product = Product.new
+    @product = current_user.products.build
   end
 
   # GET /products/1/edit
@@ -27,8 +28,7 @@ def index
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
-
+    @product = current_user.products.build(product_params)
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -75,6 +75,8 @@ def index
       params.require(:product).permit(:name, :price, :description, :reason, :user_id,:image)
     end
 
-
-
+    def correct_user
+      @product = current_user.products.find_by(id:  params[:id])
+      redirect_to root_url if @product.nil?
+    end
 end
