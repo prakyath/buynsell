@@ -29,44 +29,8 @@
 <% end %>
 <%= link_to 'Back', products_path %>
 
+<h2><%= @product.comments.count %> comments </h2>
+<%= render 'comments/comment' %>
 
-
-<h3>Listing Comments</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Message</th> 
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @product.comments.each do |comment| %>
-      <tr>
-        <td><%= comment.message %></td>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
- 
-<%= form_for [@product, @comment] do |f| %>
-   <%= f.text_area :message %>
-   <%= f.submit "Post Comment" %>
-<% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<%= render 'comments/form' %>
 
