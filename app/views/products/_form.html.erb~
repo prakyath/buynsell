@@ -27,14 +27,21 @@
     <%= f.label :reason %><br>
     <%= f.text_area :reason %>
   </div>
+<<<<<<< HEAD
   <div>
     <%= f.label :status %>
     <%=  f.select :status, options_for_select([ "Not sold", "Sold","Booked" ], "Not sold") %>
   </div>
+=======
+>>>>>>> e083b14954227b174318efae6f90200bdc400a27
   <div class="field">
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
+<<<<<<< HEAD
+  
+=======
+>>>>>>> e083b14954227b174318efae6f90200bdc400a27
   <div class="actions">
     <%= f.submit %>
   </div>

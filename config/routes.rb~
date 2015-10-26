@@ -1,18 +1,29 @@
 Rails.application.routes.draw do
   
 
+<<<<<<< HEAD
   get 'my_products/index'
+
+=======
+>>>>>>> e083b14954227b174318efae6f90200bdc400a27
+  # get 'products/new'=>'product#new'
 resources :products do
   resources :comments
 end
 
-
+<<<<<<< HEAD
 resources :my_products
 
-
+=======
+>>>>>>> e083b14954227b174318efae6f90200bdc400a27
 get 'login' => 'sessions#new'
 post 'login' => 'sessions#create'
 delete 'logout' => 'sessions#destroy'
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> e083b14954227b174318efae6f90200bdc400a27
 root 'products#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

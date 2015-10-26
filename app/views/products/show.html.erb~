@@ -22,12 +22,19 @@
   <%= @product.reason %>
 </p>
 
+<<<<<<< HEAD
 <p>
   <strong>Status:</strong>
   <%= @product.status %>
 </p>
 
+=======
+>>>>>>> e083b14954227b174318efae6f90200bdc400a27
 
+
+<% if logged_in? %>
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+<% end %>
 <%= link_to 'Back', products_path %>
 
 <h2><%= @product.comments.count %> comments </h2>
