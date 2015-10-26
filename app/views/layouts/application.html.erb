@@ -8,6 +8,7 @@
 </head>
 <body>
 <% if logged_in? %>
+  <%= link_to 'Home',my_products_index_path %>
   <%= link_to 'logout',logout_path, method: "delete" %>
 <% else %>
 	<%= link_to 'login',login_path %>

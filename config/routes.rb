@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
   
 
+  get 'my_products/index'
+
   # get 'products/new'=>'product#new'
 resources :products do
   resources :comments
 end
 
+resources :my_products
+
 get 'login' => 'sessions#new'
 post 'login' => 'sessions#create'
 delete 'logout' => 'sessions#destroy'
+
 
 root 'products#index'
   # The priority is based upon order of creation: first created -> highest priority.

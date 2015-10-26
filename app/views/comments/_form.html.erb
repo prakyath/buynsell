@@ -1,0 +1,4 @@
+<%= form_for([@product, @product.comments.build]) do |f| %>
+   <%= f.text_area :message %>
+   <%= f.submit "Post Comment" %>
+<% end %>
