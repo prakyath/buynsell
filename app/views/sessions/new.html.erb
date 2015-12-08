@@ -1,9 +1,12 @@
-<%= form_for(:session, url: login_path) do |f| %>
-	<%= f.label :roll_no %>
-	<%= f.text_field :roll_no,:placeholder => "roll_no" %>
+<%= stylesheet_link_tag "login_form" , media:"all" %>
+<div id="login">
+  <%= form_for(:session, url: login_path) do |f| %>
+	  <%= f.label :roll_no %>
+	  <%= f.text_field :roll_no,:placeholder => "roll_no" %>
 
-	<%= f.label :password %>
-	<%= f.password_field :password,:placeholder => "password" %>
+	  <%= f.label :password %>
+	  <%= f.password_field :password,:placeholder => "password" %>
 
-	<%= f.submit "Login" %>
-<% end %>
+	  <%= f.submit "Login" %>
+  <% end %>
+</div>
