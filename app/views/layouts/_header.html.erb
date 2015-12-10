@@ -1,0 +1,12 @@
+<header class="navbar navbar-default navbar-static-top navbar-inverse">
+    <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
+              <li><%= link_to 'Home',my_products_index_path %></li>
+              <li><%= link_to 'logout',logout_path, method: "delete" %></li>
+            <% else %>
+    	       <li><%= link_to 'login',login_path %></li>
+            <% end %>
+        </ul>
+    </div>
+</header>
