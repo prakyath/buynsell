@@ -37,7 +37,12 @@ class SessionsController < ApplicationController
                   flash.now[:success] = "Welcome, #{@user[:fullname]}"
                   
                 else
+<<<<<<< HEAD
                  	flash[:error] = "Sorry, such a user does not exist in our database."
+=======
+                  
+                	flash.now[:error] = "Sorry, such a user does not exist in our database."
+>>>>>>> f992dbc3016d1a905d5ecadd3763ea11677426b1
                   render 'new'
                 end
               else
