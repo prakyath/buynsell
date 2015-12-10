@@ -35,11 +35,11 @@ class SessionsController < ApplicationController
                   log_in @user
 							#		render :html => @user.fullname
                   redirect_to root_url
-                  flash[:success] = "Welcome, #{@user[:fullname]}"
+                  flash.now[:success] = "Welcome, #{@user[:fullname]}"
                   
                 else
                   
-                	flash.now[:error] = "Sorry, such a user does not exist in our database."
+                	flash[:error] = "Sorry, such a user does not exist in our database."
                   render 'new'
                 end
               else
