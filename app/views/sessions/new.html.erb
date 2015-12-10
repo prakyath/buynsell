@@ -1,23 +1,17 @@
 <%= stylesheet_link_tag "login_form" , media:"all" %>
-<head>
-  <img src="/images/cart.ico" alt="logo" />
-</head>
+
+<span href="#" class="button" id="toggle-login">Log in</span>
+
 <div id="login">
   <%= form_for(:session, url: login_path) do |f| %>
+<!--			<h1>Login</h1><br />-->
+	    <%= f.label :roll_no %>:<br>
+	    <%= f.text_field :roll_no,:placeholder => "Roll Number" , :class => "input"%>
 
-    <div class="input">
-	    <%= f.label :roll_no %>:
-	    <%= f.text_field :roll_no,:placeholder => "roll_no" %>
-    </div>
+	    <%= f.label :password %>:<br>
+	    <%= f.password_field :password,:placeholder => "Password" , :class => "input" %>
 
-    <div class="input">
-	    <%= f.label :password %>:
-	    <%= f.password_field :password,:placeholder => "password" %>
-    </div>
-
-    <div class="sub">
-	    <%= f.submit "Login" %>
-    </div>
+	    <%= f.submit "Login" , :class => "sub"%>
 
   <% end %>
 </div>

@@ -19,7 +19,7 @@ body{
   -webkit-transition:opacity 1s;
 }
 
-login h1{
+#login h1{
     background:#3399cc;
     padding:20px 0;
     font-size:140%;
@@ -43,6 +43,7 @@ form{
   font-size:95%;
   color:#555;
 }
+
 .sub {
   width:100%;
   background:#3399cc;
