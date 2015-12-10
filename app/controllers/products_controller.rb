@@ -30,8 +30,14 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
   # POST /products.json
   def create
     @product = current_user.products.build(product_params)
+    
     respond_to do |format|
       if @product.save
+        if params[:images]
+        params[:images].each { |image|
+          @product.images.create(image: image)
+        }
+        end
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else

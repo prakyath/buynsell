@@ -2,7 +2,8 @@ class SessionsController < ApplicationController
   require 'rubygems'
   require 'net/ldap'
 
-
+  def new
+  end
  def create
 		roll_no = params[:session][:roll_no]
 		password = params[:session][:password]

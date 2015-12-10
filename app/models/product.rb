@@ -18,4 +18,6 @@ class Product < ActiveRecord::Base
 	validates_attachment_presence :image
 	validates_attachment_size :image , :less_than => 10.megabytes
 	validates_attachment_content_type :image , :content_type => ['image/jpeg','image/jpg','image/png']
+	validates :image, presence: true 
+#	accepts_nested_attributes_for :product , :reject_if => lambda { |t| t['image'].nil? }
 end

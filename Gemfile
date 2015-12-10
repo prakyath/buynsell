@@ -12,6 +12,8 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 gem 'paperclip'
+gem 'therubyracer'
+gem 'less-rails-bootstrap'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'oauth2'
@@ -25,6 +27,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 #auth
 gem 'net-ldap'
+gem 'json'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

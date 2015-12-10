@@ -1,9 +1,18 @@
-<%= form_for(:session, url: login_path) do |f| %>
-	<%= f.label :roll_no %>
-	<%= f.text_field :roll_no,:placeholder => "roll_no" %>
+<%= stylesheet_link_tag "login_form" , media:"all" %>
 
-	<%= f.label :password %>
-	<%= f.password_field :password,:placeholder => "password" %>
 
-	<%= f.submit "Login" %>
-<% end %>
+<span href="#" class="button" id="toggle-login">Log in</span>
+
+<div id="login">
+	<div id="triangle"></div>
+  <%= form_for(:session, url: login_path) do |f| %>
+	    <%= f.label :roll_no %>:<br>
+	    <%= f.text_field :roll_no,:placeholder => "Roll Number" , :class => "input"%>
+
+	    <%= f.label :password %>:<br>
+	    <%= f.password_field :password,:placeholder => "Password" , :class => "input" %>
+
+	    <%= f.submit "Login" , :class => "sub"%>
+
+  <% end %>
+</div>
