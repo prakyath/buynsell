@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
 	belongs_to :user
+  belongs_to :category
 	has_many :comments , dependent: :destroy
 	has_attached_file :image ,:styles => {
   :thumb    => ['100x100#',  :jpg, :quality => 70],

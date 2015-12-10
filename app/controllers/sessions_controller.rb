@@ -2,8 +2,6 @@ class SessionsController < ApplicationController
   require 'rubygems'
   require 'net/ldap'
 
-  def new
-  end
 
  def create
 		roll_no = params[:session][:roll_no]
@@ -40,11 +38,11 @@ class SessionsController < ApplicationController
                 else
                   
                 	flash.now[:error] = "Sorry, such a user does not exist in our database."
-                  render 'new'
+                  redirect_to root_url
                 end
               else
                 flash.now[:danger] =  "Invalid username or password" 
-                render 'new'
+                redirect_to root_url
               end
             end
   			end

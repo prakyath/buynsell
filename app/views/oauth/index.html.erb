@@ -1,0 +1,10 @@
+<h1><%= @s %></h1>
+
+<%= @tokenURL %>
+<%= link_to "sign in",  @auth_url %>
+<%if session[:access_token] %>
+
+<%= @signout %>
+
+
+<%end%>

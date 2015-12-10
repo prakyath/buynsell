@@ -6,13 +6,14 @@ resources :products do
   resources :comments
 end
 
-
 resources :my_products
 
 
-get 'login' => 'sessions#new'
-post 'login' => 'sessions#create'
-delete 'logout' => 'sessions#destroy'
+resources :oauth
+# match '/:id', :to => "tags#show", :as => :category, :via => :get 
+# one can use category name as param
+  get 'login'=> 'oauth#index'
+  delete 'logout'=>'oauth#signout'
 root 'products#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
