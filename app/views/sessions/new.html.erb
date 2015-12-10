@@ -1,8 +1,6 @@
-<%= stylesheet_link_tag "login_form" , media:"all" %>
 
 
 <span href="#" class="button" id="toggle-login">Log in</span>
-
 <div id="login">
 	<div id="triangle"></div>
   <%= form_for(:session, url: login_path) do |f| %>
@@ -12,7 +10,7 @@
 	    <%= f.label :password %>:<br>
 	    <%= f.password_field :password,:placeholder => "Password" , :class => "input" %>
 
-	    <%= f.submit "Login" , :class => "sub"%>
+	    <%= f.submit "Login" , :class => "btn btn-primary"%>
 
   <% end %>
 </div>
