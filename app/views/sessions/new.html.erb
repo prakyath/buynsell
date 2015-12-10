@@ -3,8 +3,8 @@
 <span href="#" class="button" id="toggle-login">Log in</span>
 
 <div id="login">
+	<div id="triangle"></div>
   <%= form_for(:session, url: login_path) do |f| %>
-<!--			<h1>Login</h1><br />-->
 	    <%= f.label :roll_no %>:<br>
 	    <%= f.text_field :roll_no,:placeholder => "Roll Number" , :class => "input"%>
 
