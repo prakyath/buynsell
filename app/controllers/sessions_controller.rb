@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
                   
                 else
                   
-                	flash[:error] = "Sorry, such a user does not exist in our database."
+                	flash.now[:error] = "Sorry, such a user does not exist in our database."
                   render 'new'
                 end
               else
