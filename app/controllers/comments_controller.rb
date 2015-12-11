@@ -11,6 +11,10 @@ class CommentsController < ApplicationController
    @comment.user_id = current_user.id #or whatever is you session name
   
   if @comment.save
+    @notification = Notification.new
+    @notification.notifier = current_user
+    @notification.notifiee = @product.user
+    @notification.save
     redirect_to @product
   else
     flash.now[:danger] = "error"
