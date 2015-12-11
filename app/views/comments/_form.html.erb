@@ -1,4 +1,8 @@
-<%= form_for([@product, @product.comments.build]) do |f| %>
-   <%= f.text_area :message %>
-   <%= f.submit "Post Comment" %>
-<% end %>
+<div class="input-group col-md-6 col-xs-4 col-sm-8 col-lg-9">
+   <%= form_for([@product, @product.comments.build]) do |f| %>
+      <%= f.text_area :message, :placeholder => 'Write Comment...' , :class => "form-control" %>
+      <span class="input-group-btn">
+         <%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-comment pull-right" %>%>
+      </span>
+   <% end %>
+</div>
