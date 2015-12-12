@@ -1,3 +1,22 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.categories{
+    width:100%;
+    margin-top:0px;
+    background-color:#002266;
+ }
+ .category{
+    float:left;
+    margin:10px 3% 10px 4%;
+    font-size: 100%;
+    text-align:center; 
+ }
+ .category a{
+ color:#9d9d9d;
+ }
+ .category a:hover{
+    text-decoration:none;
+    height:20px;
+    color:white;
+ }

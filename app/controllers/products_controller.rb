@@ -33,9 +33,14 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
     
     respond_to do |format|
       if @product.save
+<<<<<<< HEAD
           #@product=product.new(product_params)
           #@product.images.create(image: image)
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
+=======
+         # @product.images.create(image: image)
+        format.html { redirect_to @product, notice:'Product was successfully created.' }
+>>>>>>> 49e24328385acbce0a08a2354603a6bfeee5150b
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }

@@ -1,3 +1,7 @@
-<% @category.each do |category| %>
-  <%= category.name %>
-<% end %>
+<% if logged_in? %>
+    <div class="container categories">  
+      <% @category.each do |category| %>
+       <div class="category"><%= link_to (category.name),'#' %></div>
+      <% end %>
+    </div>
+ <% end %>

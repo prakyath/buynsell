@@ -1,6 +1,7 @@
 <%= form_for Category.new do |f| %>
 	<%= f.label :Category %>
 	<%= f.text_field :name %> 
+	<%= f.submit %>
 <% end %>
 <% @category.each do |category| %>
 	<%= category.name %><br/>

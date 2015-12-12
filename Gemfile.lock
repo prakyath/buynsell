@@ -126,6 +126,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    phony (2.15.10)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -214,6 +215,7 @@ DEPENDENCIES
   net-ldap
   oauth2
   paperclip
+  phony
   rails (= 4.2.3)
   sass-rails (~> 5.0.1)
   sdoc (~> 0.4.0)
