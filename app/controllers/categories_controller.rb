@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  layout :category_layout
 	def show
 		@category = Category.find(params[:id])
 	end
@@ -28,5 +29,9 @@ class CategoriesController < ApplicationController
   	def category_params
   		params.require(:category).permit(:name)
   	end
+
+    def category_layout
+      @category = Category.all
+    end
 
 end

@@ -1,5 +1,9 @@
 
 /*flash*/
+*{
+    margin:0px;
+    padding:0px;    
+}
 .alert-error {
     position:relative;
     margin:auto;
@@ -32,3 +36,10 @@
     color: #468847;
     text-align: left;
  }
+
+ .header{
+ margin-bottom:0px;
+ background-color: #2271b2;
+ }
+
+ 
