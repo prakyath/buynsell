@@ -4,8 +4,18 @@ before_action :correct_user,only: [:edit,:destroy]
 before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
-    @products = Product.all.order('created_at DESC')
+    @products = Product.all
+    if params[:search]
+      @products = Product.search(params[:search]).order("created_at DESC")
+    else
+      @products = Product.all.order('created_at DESC')
+    end
     @category = Category.all
+    
+    respond_to do |format|
+      format.html
+      format.json { @books = Book.search(params[:term]) }
+    end
   end
 
   # GET /products/1
@@ -40,7 +50,6 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
 
          # @product.images.create(image: image)
         format.html { redirect_to @product, notice:'Product was successfully created.' }
-#>>>>>>> 49e24328385acbce0a08a2354603a6bfeee5150b
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }

@@ -83,6 +83,8 @@ GEM
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
     json (1.8.3)
     jwt (1.5.2)
     less (2.6.0)
@@ -149,6 +151,8 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails4-autocomplete (1.1.1)
+      rails (>= 3.0)
     railties (4.2.3)
       actionpack (= 4.2.3)
       activesupport (= 4.2.3)
@@ -209,6 +213,7 @@ DEPENDENCIES
   imagemagick-identify (~> 0.0.1)
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-ui-rails
   json
   less-rails-bootstrap
   mysql2 (~> 0.3.18)
@@ -217,6 +222,7 @@ DEPENDENCIES
   paperclip
   phony
   rails (= 4.2.3)
+  rails4-autocomplete
   sass-rails (~> 5.0.1)
   sdoc (~> 0.4.0)
   spring

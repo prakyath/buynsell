@@ -12,8 +12,15 @@
     	       <li><%= link_to 'login',login_path %></li>
             <% end %>
         </ul>
-        
-    <div class="input-group col-md-6 col-xs-4 col-sm-8 col-lg-9" style="padding:10px;">
+     
+    <%= form_tag(products_path, :method => "get", id: "search-form", :class => "input-group col-md-6 col-xs-4 col-sm-8 col-lg-9") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Products" , class:"form-control" , :style => "padding:10px;"%>
+          <span class="input-group-btn">
+          <%= submit_tag "Search", :name => nil , :class => "btn btn-default"%>
+    <% end %>
+    
+    
+    <!--<div class="input-group col-md-6 col-xs-4 col-sm-8 col-lg-9" style="padding:10px;">
        <input  placeholder="Search..." type="text" class="form-control">
        <span class="input-group-btn">
         <button class="btn btn-default" type="button">
@@ -21,6 +28,6 @@
         </button>
        </span>
     </div>
-    </div> 
+    </div>--> 
 
 </header>
