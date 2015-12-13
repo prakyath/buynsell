@@ -13,7 +13,8 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
   def show
     @product = Product.find(params[:id])
     @comment = @product.comments.build
-
+    @category_id = @product.category_id
+    @category1 = Category.find_by(id: @category_id)
 
   end
 
@@ -40,7 +41,6 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
 
          # @product.images.create(image: image)
         format.html { redirect_to @product, notice:'Product was successfully created.' }
-#>>>>>>> 49e24328385acbce0a08a2354603a6bfeee5150b
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -81,7 +81,7 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :price, :description, :reason, :user_id,:image,:status)
+      params.require(:product).permit(:name, :price, :description, :reason, :user_id,:image,:status,:category_id)
     end
 
     def correct_user

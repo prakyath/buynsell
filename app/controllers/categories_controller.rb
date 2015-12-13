@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  layout :category_layout
 	def show
 		@category = Category.find(params[:id])
 	end

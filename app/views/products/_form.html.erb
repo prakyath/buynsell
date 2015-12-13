@@ -12,27 +12,25 @@
     <%= f.text_area :description,class:"form-control" %>
   </div>
   <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image , type: :file %>
-  </div>
     <%= f.label :reason,class:"control-label" %>
     <%= f.text_area :reason,class:"form-control" %>
   </div><br/>
   <div >
     <%= f.label :status,class:"control-label col-md-1" %>
     <div class="col-md-4">
-    <select class="form-control">
-  <option>Not sold</option>
-  <option>Sold</option>
-  <option>Booked</option>
-</select>
-</div>
+   <%= f.select :status, [["Buy"], ["Sold"], ["Booked"]], {}, {class: "form-control"} %>
+    </div>
+    <%= f.label :category_id,class:"control-label col-md-1" %>
+    <div class="col-md-4">
+       <%= f.collection_select :category_id, Category.all, :id, :name,{},{class: "form-control"} %>
+    </div>
     <%= f.label :image,class:"control-label col-md-1" %>
 
     <span class="btn btn-default btn-file">
       Browse<%= f.file_field :image %>
     </span>
-  </div><br/>
+  </div>
+  <br/>
   <div class="actions">
     <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
   </div><br/>

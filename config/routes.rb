@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 resources :products do
   resources :comments
 end
-
 resources :my_products
 
 resources :oauth

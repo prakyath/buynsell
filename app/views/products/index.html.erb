@@ -1,18 +1,22 @@
-  
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td col-md-><%= image_tag product.image.url(:thumb) %></td>
-        <td><%= product.price %></td>
-        <td><%= product.status %></td>
-        <td><%= product.category %></td>
-        <td><%= link_to 'Show', product %></td>
-        </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+ <br> 
 <%= link_to 'New Product',  new_product_path , :class => "btn btn-primary" %>
+<br><br>
+<div class="row">
+ <% @products.each do |product| %>
+      
+        <div class="col-sm-4 col-lg-4 col-md-4">
+             <div class="thumbnail">
+                <%= image_tag product.image.url(:thumb) %>
+                  <div class="caption">
+                    <h4 class="pull-right">Rs.<%= product.price %></h4>
+                    <h4><%= link_to 'Show', product %></h4>
+
+                    <p><b>Seller:</b><%= product.name %></p>
+                    <p><b>Status:</b><%= product.status %></p>
+                    <p><b>Description:</b><%= product.description %></p>
+                    <p><b>Reason:</b><%= product.reason %></p>
+                  </div>
+             </div>
+        </div>
+<% end %>
+</div>
