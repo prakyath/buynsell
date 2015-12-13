@@ -14,7 +14,7 @@
         </ul>
      
     <%= form_tag(products_path, :method => "get", id: "search-form", :class => "input-group col-md-6 col-xs-4 col-sm-8 col-lg-9") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Products" , class:"form-control" , :style => "padding:10px;"%>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Products" , class:"form-control" , :style => "padding:10px;", type: "search", data: {autocomplete: autocomplete_product_name_products_path} %>
           <span class="input-group-btn">
           <%= submit_tag "Search", :name => nil , :class => "btn btn-default"%>
     <% end %>

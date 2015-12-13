@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'my_products/index'
 resources :products do
+  get :autocomplete_product_name, on: :collection
   resources :comments
 end
 
