@@ -29,4 +29,9 @@ class Product < ActiveRecord::Base
 	#validates :image, presence: true 
 #>>>>>>> 49e24328385acbce0a08a2354603a6bfeee5150b
 #	accepts_nested_attributes_for :product , :reject_if => lambda { |t| t['image'].nil? }
+
+def self.search(query)
+  where("name like ?", "%#{query}%") 
+end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151212162335) do
+ActiveRecord::Schema.define(version: 20151213114000) do
 
   create_table "ads", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(version: 20151212162335) do
     t.datetime "image_updated_at"
     t.string   "status",             limit: 255
     t.integer  "category_id",        limit: 4
+  end
+
+  create_table "search_suggestions", force: :cascade do |t|
+    t.string   "term",       limit: 255
+    t.integer  "popularity", limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|

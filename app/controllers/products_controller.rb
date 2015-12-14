@@ -2,10 +2,20 @@ class ProductsController < ApplicationController
 before_action :logged_in_user,only: [:new,:edit]
 before_action :correct_user,only: [:edit,:destroy]
 before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+autocomplete :product, :name
   def index
-    @products = Product.all.order('created_at DESC')
+    @products = Product.all
+    if params[:search]
+      @products = Product.search(params[:search]).order("created_at DESC")
+    else
+      @products = Product.all.order('created_at DESC')
+    end
     @category = Category.all
+    
+    respond_to do |format|
+      format.html
+      format.json { @books = Book.search(params[:term]) }
+    end
   end
 
   # GET /products/1

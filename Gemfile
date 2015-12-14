@@ -32,6 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'net-ldap'
 gem 'json'
 gem 'imagemagick-identify', '~> 0.0.1'
+gem 'rails4-autocomplete'
+gem 'jquery-ui-rails'
+gem 'rails4-autocomplete'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
