@@ -8,7 +8,8 @@ end
 def edit
 end
 			
-def update
+def update 
+  @user=current_user
     respond_to do |format|	
       if @user.update(user_params)
         format.html { redirect_to user_path, notice: 'Profile was successfully updated.' }
