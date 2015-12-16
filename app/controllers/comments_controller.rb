@@ -14,6 +14,8 @@ class CommentsController < ApplicationController
     @notification = Notification.new
     @notification.notifier = current_user
     @notification.notifiee = @product.user
+    @notification.comment = @comment
+    @notification.product = @product
     @notification.save
     redirect_to @product
   else

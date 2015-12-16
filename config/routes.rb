@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   
 
-  get 'my_products/index'
+get 'my_products/index'
 resources :products do
   get :autocomplete_product_name, on: :collection
   resources :comments
 end
 resources :my_products
-
+get '/user' => 'user#show'
+patch '/user.(:id)' => 'user#update'
 resources :oauth
   get 'login' => 'oauth#index'
   delete 'logout' => 'oauth#signout'

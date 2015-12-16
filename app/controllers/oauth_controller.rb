@@ -48,7 +48,7 @@ class OauthController < ApplicationController
 
 
 	
-	end
+	end	
 
 	def signout
 		session.delete(:access_token)

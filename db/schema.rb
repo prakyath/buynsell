@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151213114000) do
+ActiveRecord::Schema.define(version: 20151216094725) do
 
   create_table "ads", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -25,19 +25,23 @@ ActiveRecord::Schema.define(version: 20151213114000) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "bid",        limit: 4
-    t.text     "message",    limit: 65535
-    t.integer  "user_id",    limit: 4
-    t.integer  "product_id", limit: 4
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "bid",             limit: 4
+    t.text     "message",         limit: 65535
+    t.integer  "user_id",         limit: 4
+    t.integer  "product_id",      limit: 4
+    t.integer  "notification_id", limit: 4
   end
 
   create_table "notifications", force: :cascade do |t|
     t.integer  "notifier_id", limit: 4
     t.integer  "notifiee_id", limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "message",     limit: 255
+    t.integer  "product_id",  limit: 4
+    t.integer  "comment_id",  limit: 4
   end
 
   create_table "photos", force: :cascade do |t|
@@ -71,11 +75,6 @@ ActiveRecord::Schema.define(version: 20151213114000) do
     t.integer  "popularity", limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
