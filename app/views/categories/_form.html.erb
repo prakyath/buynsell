@@ -1,7 +1,7 @@
 <% if logged_in? %>
     <div class="container categories">  
-      <% @category.each do |category| %>
-       <div class="category"><%= link_to (category.name),'#' %></div>
+      <% Category.order('name ASC').each do |category| %>
+       <div class="category"><%= link_to category.name,category %></div>
       <% end %>
     </div>
  <% end %>

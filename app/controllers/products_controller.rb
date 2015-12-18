@@ -4,14 +4,13 @@ before_action :correct_user,only: [:edit,:destroy]
 before_action :set_product, only: [:show, :edit, :update, :destroy]
 autocomplete :product, :name
   def index
-    @products = Product.all
+    @recent = Product.all.order('created_at DESC').limit('3')
     if params[:search]
-      @products = Product.search(params[:search]).order("created_at DESC")
+      @products = Product.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
     else
-      @products = Product.all.order('created_at DESC')
+      @products = Product.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
     end
     @category = Category.all
-    
     respond_to do |format|
       format.html
       format.json { @books = Book.search(params[:term]) }

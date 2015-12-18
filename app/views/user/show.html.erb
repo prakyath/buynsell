@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
-    <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>User Profile Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-    	body{margin-top:20px;}                                                                    
-    </style>
-</head>
 <body>
 <hr>
 <div class="container bootstrap snippet">
@@ -61,34 +50,34 @@
           </ul>
               
           <div class="tab-content">
-            <div class="tab-pane active" id="home">
-      <!--        <div class="table-responsive">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Label 1</th>
-                      <th>Label 2</th>
-                      <th>Label 3</th>
-                      <th>Label </th>
-                      <th>Label </th>
-                      <th>Label </th>
-                    </tr>
-                  </thead>
-                  <tbody id="items">
-                    <tr>
-                      <td>1</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
+            <div class="tab-pane active" id="home"><br>
+          <div class="row">
+                    <% @product.each do |product| %>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                        
+                            <%= image_tag product.image.url(:thumb) %>
+                            <div class="caption">
+                                <h4 class="pull-right">Rs.<%= product.price %></h4>
+                                <h4><%= link_to 'Show', product %>
+                                </h4>
+                                <p><strong>Name:</strong>&emsp;  <%= product.name %></span></p>
+                                <% if !product.description.blank? %>
+                                    <p><strong>Description:</strong> <%= product.description %></p>
+                                <% end %>
+                                <% if !product.reason.blank? %>
+                                    <p><strong>Reason:</strong><%= product.reason %></p>
+                                <% end %>
+                            
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <% end %>
+                </div>   
+<%= will_paginate @product%>
+
+                  <!--    <td>Table cell</td>
                       <td>Table cell</td>
                       <td>Table cell</td>
                       <td>Table cell</td>
@@ -182,13 +171,12 @@
              <div class="tab-pane" id="messages">
                
                <h2></h2>
-               
+             
                <ul class="list-group">
                   <li class="list-group-item text-muted">Inbox</li>
                   <% @user.notifications_as_notifiee.each do |notification| %>
                   
-
-                  <li class="list-group-item text-left"><%=notification.notifier.fullname %> has commented on your <%= notification.product.name %>  product at <%= notification.created_at.strftime("%b %e, %l:%M %p") %>  </li>
+                  <li class="list-group-item text-left"><%=notification.notifier.fullname %> has commented on your <%= notification.product.name %>  product at <%= notification.created_at.strftime("%b %e, %l:%M %p") %></li>
                   
 
                   <% end %>
@@ -324,10 +312,6 @@
 <script src="jquery-1.10.2.min.js"></script>
 <script src="bootstrap.min.js"></script>
 <script type="text/javascript">
-                        
-
-              	  
-                                                      
 </script>
 </body>
 </html>

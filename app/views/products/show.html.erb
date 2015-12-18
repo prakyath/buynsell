@@ -1,41 +1,52 @@
+<div class="container">
 
+        
+  <div class="show-wraper">
+  <div class="row">
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+            <div class="col-md-3">
+                <p class="lead">Categories</p>
+                
+                <div class="list-group">
+                <%= link_to "All",root_path,{class:"list-group-item"} %>
+                <% Category.order('name ASC').each do |category| %>
+                    <%= link_to category.name,category,{class:"list-group-item"} %>
+                <% end %>
+                </div>
+            </div>  
+        <div class="col-md-9">
 
-  <%= image_tag @product.image.url(:original) %>
+                <div class="thumbnail">
+                    <%= image_tag @product.image.url(:thumb) %>
+                    <div class="caption-full">
+                        <h4 class="pull-right">Rs.<%= @product.price %></h4>
+                        <h4><a href="#"><%= @product.name %></a>
+                        </h4>
+                        <% if !@product.description.blank? %>
+                                    <p><strong>Description:</strong> <%= @product.description %></p>
+                                <% end %>
+                                <% if !@product.reason.blank? %>
+                                    <p><strong>Reason:</strong><%= @product.reason %></p>
+                                <% end %>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+                                <span class="col-md-2">
+                                    <%= link_to @product.status ,"#", :class => "btn btn-info col-md-10" %></span>
+                                <span class="col-md-2 col-md-offset-3">
+                                <%= link_to 'edit', products_path, :class => "btn btn-default  col-md-6" %></span>
+                                <span class="col-md-2 col-md-offset-3">
+                                <%= link_to 'back', products_path, :class => "btn btn-primary  col-md-6" %></span>
+                                <br>
+                                <p></p>
+                    </div>
+               </div>
+               
+  <hr>
+  <div class="well">
+    <h2><%= @product.comments.count %> comments </h2>
+    <%= render 'comments/comment' %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Reason:</strong>
-  <%= @product.reason %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @product.status %>
-</p>
-<p>
-  <strong>Category:</strong>
-  <%= @category1.name %>
-</p>
-
-
-<%= link_to 'Back', products_path %>
-
-<h2><%= @product.comments.count %> comments </h2>
-<%= render 'comments/comment' %>
-
-<%= render 'comments/form' %>
+    <%= render 'comments/form' %>
+ </div>
+</div>
+</div>
 

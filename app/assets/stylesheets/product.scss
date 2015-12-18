@@ -2,6 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+ // new product page
+
+ @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+ @font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('./fonts/glyphicons-halflings-regular.eot');
+  src: url('./fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+ .slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
 
 #login-wraper {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
@@ -14,7 +36,7 @@
     margin-left: -235px;
     padding: 25px;
     width: 70%;
-    height: 550px;
+    height: 570px;
     background:white;
 }
 
@@ -36,4 +58,42 @@
     background: white;
     cursor: inherit;
     display: block;
+}
+.show-wraper{
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    display: block;
+    margin-top: -185px;
+    margin-left: -235px;
+    padding: 25px;
+    width: 90%;
+    height:auto;
+    background:white;
+    
+}
+
+.wraper{
+    top:47%;
+}
+
+h3{
+    margin-top:0px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    color: #333;
+    background-color: #333;
+}
+
+img{
+    width:100%;
+}
+
+a.list-group-item:selected{
+    color:blue;
 }

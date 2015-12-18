@@ -17,6 +17,8 @@ gem 'autoprefixer-rails'
 gem 'sass-rails', '~> 5.0.1'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'phony'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'oauth2'

@@ -7,6 +7,7 @@ resources :products do
   resources :comments
 end
 resources :my_products
+resources :categories, only: [:show]
 get '/user' => 'user#show'
 patch '/user.(:id)' => 'user#update'
 resources :oauth

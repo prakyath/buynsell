@@ -1,10 +1,11 @@
 class CategoriesController < ApplicationController
 	def show
 		@category = Category.find(params[:id])
+    @products = @category.products
 	end
 
 	def index
-		@category = Category.all.order('created_at DESC')
+		@category = Category.all
 	end
 
 	def new
