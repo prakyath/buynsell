@@ -1,0 +1,182 @@
+//custom.css
+
+.header{
+ margin-bottom:0px;
+ background-color: #2271b2;
+ }
+
+ //root page
+
+.caption {
+    height: 150px;
+    overflow: hidden;
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+    border-radius:7px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.caption-full{
+    height:auto;
+}
+
+//product-css
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('./fonts/glyphicons-halflings-regular.eot');
+  src: url('./fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+ .slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+#login-wraper {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    display: block;
+    margin-top: -185px;
+    margin-left: -235px;
+    padding: 25px;
+    width: 70%;
+    height: 570px;
+    background:white;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+.show-wraper{
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    position: absolute;
+    top: 48%;
+    left: 25%;
+    display: block;
+    margin-top: -185px;
+    margin-left: -235px;
+    padding: 25px;
+    width: 90%;
+    height:auto;
+    background:white;
+    
+}
+
+
+h3{
+    margin-top:0px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    color: #333;
+    background-color: #333;
+}
+
+img{
+    width:100%;
+}
+
+a.selected{
+    color:blue;
+}
+
+//application
+.button{
+  width:100px;
+  background:#3399cc;
+  display:block;
+  margin:0 auto;
+  margin-top:1%;
+  margin-bottom:-15px;
+  padding:10px;
+  border-radius:8%;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  cursor:pointer;
+  transition:background .3s;
+  -webkit-transition:background .3s;
+}
+
+.alert-error {
+    position:relative;
+    margin:auto;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+
+.alert-alert {
+    position:relative;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    position:relative;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    position:relative;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }

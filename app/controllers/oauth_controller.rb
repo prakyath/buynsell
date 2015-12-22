@@ -62,5 +62,4 @@ class OauthController < ApplicationController
 		@signout = $AUTH_SERVER +$CMD_SIGNOUT + "?response_type="+ $RESPONSE_TYPE +"&client_id=" +$CLIENT_ID +"&redirect_uri="+@redirect_uri +"&scope="+ $SCOPE +"&state=" +$STATE
 		redirect_to @signout
 	end
-
 end

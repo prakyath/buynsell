@@ -1,18 +1,18 @@
 class CategoriesController < ApplicationController
-	def show
-		@category = Category.find(params[:id])
+  def show
+    @category = Category.find(params[:id])
     @products = @category.products
-	end
+  end
 
-	def index
-		@category = Category.all
-	end
+  def index
+    @category = Category.all
+  end
 
-	def new
-		@category = Category.new
-	end
+  def new
+    @category = Category.new
+  end
 
-	def create
+  def create
     @category = Category.create(category_params)
     respond_to do |format|
       if @category.save
@@ -26,9 +26,9 @@ class CategoriesController < ApplicationController
   end
 
   private
-  	def category_params
-  		params.require(:category).permit(:name)
-  	end
+    def category_params
+      params.require(:category).permit(:name)
+    end
 
     def category_layout
       @category = Category.all

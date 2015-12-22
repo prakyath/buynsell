@@ -1,15 +1,15 @@
 module OauthHelper
-	$CLIENT_ID='buynsell'
+$CLIENT_ID='buynsell'
 $CLIENT_SECRET= '70268b65ecf0495b987fa32164eeb2b144fc28c9'
 $RESPONSE_TYPE='code'
 $GRANT_TYPE='authorization_code'
 $SCOPE= 'profile'
 $STATE= ''
-$AUTH_SERVER= 'http://students.iitm.ac.in/oauth/'
-$CMD_AUTHORIZE='authorize/'
-$CMD_SIGNOUT='signout/'
-$CMD_REQUEST_TOKEN='request_token/'
-$CMD_REQUEST_ACCESS='request_access/'
+$AUTH_SERVER= 'http://students.iitm.ac.in'
+$CMD_AUTHORIZE='/oauth/authorize/'
+$CMD_SIGNOUT='/oauth/signout/'
+$CMD_REQUEST_TOKEN='/oauth/request_token/'
+$CMD_REQUEST_ACCESS='/oauth/request_access/'
 $PRIVATE_SITE=false
 	
 

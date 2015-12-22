@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
 
   def create
-  @comment=set_product.comments.new(comment_params)	
+  @comment=set_product.comments.new(comment_params) 
   # @comment.message=comment_params[:message] 
    
    @comment.user_id = current_user.id #or whatever is you session name

@@ -8,6 +8,8 @@ gem 'mysql2', '~> 0.3.18'
 # Use SCSS for stylesheets
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+gem 'compass'
+gem 'rails_bootstrap_navbar'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 gem 'paperclip'

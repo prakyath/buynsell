@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   include OauthHelper
 
   def categories
-  	@category = Category.all
+    @category = Category.all
   end
 end
