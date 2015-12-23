@@ -21,6 +21,7 @@ gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'phony'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'open_uri_redirections'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'oauth2'
@@ -38,7 +39,6 @@ gem 'json'
 gem 'imagemagick-identify', '~> 0.0.1'
 gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
-gem 'rails4-autocomplete'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
