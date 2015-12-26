@@ -8,4 +8,5 @@ module CommentHelper
    def comment
   	     @comment = set_product.comments.find_by(params[:id])
     end
+
 end

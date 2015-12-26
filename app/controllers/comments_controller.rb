@@ -1,16 +1,18 @@
 class CommentsController < ApplicationController
   before_action :logged_in_user
   before_action :comment_admin,only: :destroy
-  before_action :set_product, only: [:create,:destroy]
-
+  before_action :set_product, only: [:new,:create,:destroy]
 
   def create
-  @comment=set_product.comments.new(comment_params) 
+    
   # @comment.message=comment_params[:message] 
-   
-   @comment.user_id = current_user.id #or whatever is you session name
+
+    #or whatever is you session name
   
-  if @comment.save
+  
+    @comment=set_product.comments.new(comment_params) 
+    @comment.user_id = current_user.id
+  if@comment.save
     @notification = Notification.new
     @notification.notifier = current_user
     @notification.notifiee = @product.user
@@ -19,7 +21,8 @@ class CommentsController < ApplicationController
     @notification.save
     redirect_to @product
   else
-    flash.now[:danger] = "error"
+    flash[:danger] = "Comment cannot be empty"
+    redirect_to @product
   end
   
 
@@ -27,7 +30,7 @@ class CommentsController < ApplicationController
   
 
     def destroy
-      @comment = set_product.comments.find(params[:id]) 
+      @comment = @product.comments.find(params[:id]) 
       @comment.destroy
       respond_to do |format|
         format.html { redirect_to @product, notice: 'Comment was successfully destroyed.' }

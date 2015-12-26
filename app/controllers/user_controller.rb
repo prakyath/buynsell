@@ -4,7 +4,7 @@ before_action :logged_in_user
 def show
   @user=current_user
    @product = Product.where(user_id: current_user.id).paginate(:page => params[:page], :per_page => 3)
-  flash.now[:error] = "No products" if @product.blank? 
+   flash.now[:error] = "No products" if @product.blank? 
 end	
 
 def edit
@@ -24,7 +24,7 @@ def update
 
 private
 def user_params
-      params.require(:user).permit(:fullname,:room,:hostel,:contact)
+      params.require(:user).permit(:fullname,:room,:hostel,:contact,:avatar)
     end
 
 end	

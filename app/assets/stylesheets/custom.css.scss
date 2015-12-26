@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Kameron);
 
 /*flash*/
 *{
@@ -41,25 +42,43 @@
 .caption {
     height: 150px;
     overflow: hidden;
-}
 
-.caption h4 {
+    >h4 {
     white-space: nowrap;
+    }
 }
 
-.thumbnail img {
-    width: 100%;
-}
+
 
 .thumbnail {
     padding: 0;
     border-radius:7px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    .caption-full {
+        padding: 9px;
+    color: #333;
+    }
+
+    img{
+    width:100%;
+    }
+
+    .images{
+    height:250px;
+    }
+
+    .image{
+    height:150px;
+    }
+
+    .product-image{
+        width:80%;
+    }
+    
 }
 
-.thumbnail .caption-full {
-    padding: 9px;
-    color: #333;
+.thumbnail p{
+        font: 400 17px/1.6 'Kameron', Georgia, serif;
 }
 
 footer {

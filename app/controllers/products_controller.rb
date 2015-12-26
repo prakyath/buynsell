@@ -1,30 +1,30 @@
 class ProductsController < ApplicationController
-before_action :logged_in_user,only: [:new,:edit]
+before_action :logged_in_user,only: [:new,:edit,:show]
 before_action :correct_user,only: [:edit,:destroy]
 before_action :set_product, only: [:show, :edit, :update, :destroy]
 autocomplete :product, :name
   def index
-    @recent = Product.all.order('created_at DESC').limit('3')
     if params[:search]
-      @products = Product.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
+      @products = Product.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
     else
-      @products = Product.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
+      @products = Product.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
     end
     @category = Category.all
     respond_to do |format|
       format.html
       format.json { @books = Book.search(params[:term]) }
     end
+    
+
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-    @comment = @product.comments.build
     @category_id = @product.category_id
     @category1 = Category.find_by(id: @category_id)
-
+    @comments = Comment.includes(:user)
   end
 
   # GET /products/new

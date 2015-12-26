@@ -1,3 +1,8 @@
 // Place all the styles related to the Comment controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Imprima);
+.comments p {
+  font: 400 16px/1.6 'Imprima', Verdana, Helvetica, sans-serif;
+  color: #232525;
+}

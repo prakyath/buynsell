@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151216094725) do
     t.integer  "user_id",         limit: 4
     t.integer  "product_id",      limit: 4
     t.integer  "notification_id", limit: 4
+    t.string   "ancestry",        limit: 255
   end
 
   create_table "notifications", force: :cascade do |t|

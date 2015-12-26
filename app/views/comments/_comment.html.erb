@@ -1,15 +1,28 @@
-<h1>Listing comments</h1>
- 
-<table>
- 
+<h1>Listing ccomments</h1>
  
 <% @product.comments.each do |comment| %>
-  <tr>
-    
-    <td><%= comment.message %></td>
+<div class="comments">
+<div class="col-sm-1">
+      <a href="/comment.user " class="pull-right">
+      <% if !comment.user.avatar.blank? %>
+        <%= image_tag(comment.user.avatar.url(:thumb),{class:"img-circle img-responsive"}) %>
+      <% else %>
+        <img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100">
+      <% end %>
+ 	</a>
+ </div>
+ <% if !comment.message.blank? %>
    
-   <% if !comment.message.blank? %> <td><%= link_to "Remove", [comment.product,comment], method: :delete, data: { confirm: "Are you sure?" } %></td><% end %>
-  </tr>
+   <p class="pull-right"><%= comment.created_at.strftime("%Y/%m/%d") %></p>
 <% end %>
-</table>
+<p><a href="/user"><strong><%= comment.user.fullname %></strong></a>
+    
+&nbsp;<%= comment.message %></p>
  
+   <% if !comment.message.blank? %>
+   <p><%= link_to "Remove", [comment.product,comment],{ method: :delete, data: { confirm: "Are you sure?" }} %></p> 
+   <% end %>
+<div>
+<% end %>
+
+  
