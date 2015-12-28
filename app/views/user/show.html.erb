@@ -185,8 +185,7 @@
                <ul class="list-group">
                   <li class="list-group-item text-muted">Inbox</li>
                   <% @user.notifications_as_notifiee.each do |notification| %>
-                  
-                  <li class="list-group-item text-left"><%=notification.notifier.fullname %> has commented on your <%= notification.product.name %>  product at <%= notification.created_at.strftime("%b %e, %l:%M %p") %></li>
+                  <li class="list-group-item text-left"><%=notification.notifier.fullname %> has commented on your <%=notification.product.name %>  product at <%= notification.created_at.strftime("%b %e, %l:%M %p") %></li>
                   
 
                   <% end %>

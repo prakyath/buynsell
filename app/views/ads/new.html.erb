@@ -1,0 +1,16 @@
+<%= form_for @ad, url: ads_path, :html => {:multipart => true,:class => " form-horizontal center"} do |f| %>
+  <div class="field">
+  	<%= f.label:Ad %>
+    <%= f.text_area :Ad,class:"form-control",placeholder:"Ad" %>
+  </div>
+  <div class="field">
+  	<%= f.label :category_id,class:"control-label col-md-1" %>
+    <div>
+       <%= f.collection_select :category_id, Category.all, :id, :name,{ :prompt => "Category", :multiple => true},{class: "form-control"} %>
+    </div>
+   </div>
+   <br>
+    <div class="actions">
+    <%= f.submit "Post Ad", class: "btn btn-default btn-primary" %>
+  </div>
+ <% end %>

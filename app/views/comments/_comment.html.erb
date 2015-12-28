@@ -3,11 +3,10 @@
 <% @product.comments.each do |comment| %>
 <div class="comments">
 <div class="col-sm-1">
-      <a href="/comment.user " class="pull-right">
       <% if !comment.user.avatar.blank? %>
-        <%= image_tag(comment.user.avatar.url(:thumb),{class:"img-circle img-responsive"}) %>
+        <%= link_to image_tag(comment.user.avatar.url(:thumb),{class:"img-circle img-responsive"}),profile_path(:user_id => comment.user_id) %>
       <% else %>
-        <img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100">
+        <%= link_to image_tag("user.jpg",{class:"img-circle img-responsive"}),profile_path(:user_id => comment.user_id) %>
       <% end %>
  	</a>
  </div>
@@ -15,7 +14,7 @@
    
    <p class="pull-right"><%= comment.created_at.strftime("%Y/%m/%d") %></p>
 <% end %>
-<p><a href="/user"><strong><%= comment.user.fullname %></strong></a>
+<p><%= link_to comment.user.fullname,profile_path(:user_id => comment.user_id),{class:"commentor"} %>
     
 &nbsp;<%= comment.message %></p>
  

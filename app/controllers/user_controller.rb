@@ -7,6 +7,11 @@ def show
    flash.now[:error] = "No products" if @product.blank? 
 end	
 
+def profile
+  @comments = Comment.includes(:user)
+  @user = User.find(params[:user_id])
+end
+
 def edit
 end
 			

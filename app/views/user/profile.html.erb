@@ -1,0 +1,26 @@
+<hr>
+<div class="container bootstrap snippet">
+<div class="row">
+  		<div class="col-sm-10"><h1><%= @user.fullname %></h1></div>
+    	<div class="col-sm-2">
+      <a href="#" class="pull-right">
+      <% if !@user.avatar.blank? %>
+        <%= image_tag(current_user.avatar.url(:thumb),{class:"img-circle img-responsive"}) %>
+      <% else %>
+        <img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100">
+      <% end %>
+      </a></div>
+  </div>
+  <br>
+  <div class="row">
+  		<div class="col-md-offset-3 col-md-5"><!--left col-->
+              
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Profile</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Contact Number</strong></span><%=@user.contact%></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Room No</strong></span><%= @user.room %></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Hostel:</strong></span><%= @user.hostel %></li>
+            
+          </ul> 
+    </div>
+ </div>

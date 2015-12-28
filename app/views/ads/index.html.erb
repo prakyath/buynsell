@@ -1,0 +1,11 @@
+<div class="container">
+	<%= link_to 'New Post',new_ad_path %>
+	<% @ads.each do |ad| %>
+		<%= ad.Ad %>
+		<% if !ad.Ad.blank? %>
+		<%= link_to 'Edit', edit_ad_path(Ad),{class:"btn btn-primary"} %>
+   	<%= link_to 'Destroy', Ad,{ method: :delete, data: { confirm: 'Are you sure?'},class:"btn btn-danger"} %>
+   	<% end %>
+	<% end %>
+	
+</div>

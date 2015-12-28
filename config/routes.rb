@@ -6,10 +6,10 @@ resources :products do
   get :autocomplete_product_name, on: :collection
   resources :comments
 end
-
 resources :my_products
 resources :categories, only: [:show]
 get '/user' => 'user#show'
+get 'profile' => 'user#profile'
 patch '/user.(:id)' => 'user#update'
 resources :oauth
   get 'login' => 'oauth#index'

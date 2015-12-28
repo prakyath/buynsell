@@ -11,11 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216094725) do
+ActiveRecord::Schema.define(version: 20151227101834) do
 
   create_table "ads", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "category_id", limit: 4
+    t.text     "Ad",          limit: 65535
+    t.integer  "user_id",     limit: 4
   end
 
   create_table "categories", force: :cascade do |t|
