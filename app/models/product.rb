@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
 	belongs_to :user
   belongs_to :category
+  belongs_to :oauth
 	has_many :comments , dependent: :destroy
 	has_many :product_followers, dependent: :destroy
 	has_many :followers ,:through => :product_followers

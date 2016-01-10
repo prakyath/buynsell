@@ -1,4 +1,12 @@
-<%= link_to "sign in",  @auth_url %>
+<%= link_to "sign in",  @auth_url, :id =>"login2" %>
 <%if session[:access_token] %>
 	<%= @signout %>
 <%end%>
+
+<script>
+
+        $(document).ready(function(){
+            document.getElementById("login2").click();
+        });
+
+    </script>

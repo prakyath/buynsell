@@ -1,15 +1,13 @@
  <header class="navbar  navbar-static-top">
     <div class="header">
         <div class="menu-trigger"></div>
-    
-
         <ul class="nav navbar-nav navbar-right" style="margin:auto;">
             <% if logged_in? %>
              <li><%= link_to 'Home',products_path %></li>
               <li><%= link_to 'User',user_path %></li>
               <li><%= link_to 'Logout',logout_path, method: "delete" %></li>
             <% else %>
-             <li><%= link_to 'Login',login_path %></li>
+             <li><%= link_to "Sign in",  login_path , :id => "login1"%></li>
             <% end %>
         </ul>
      
@@ -22,11 +20,10 @@
     </div>
     <div id="site" class="col-md-12">
     <div class="pull-right nav navbar-nav"style="margin:auto;">
+      <%= link_to 'New Product',  new_product_path , :class => "btn btn-primary" %>
       <a href="/ads">Posts</a>
     </div>
     <h1 id="site-primary-text">Buy and Sell</h1>
-    
+
 </div>
-
-
 </header>

@@ -4,6 +4,6 @@ class Logins < ApplicationMailer
         @product=product
           @user = user
         mail( :to => "#{@user['username']}@smail.iitm.ac.in",
-    :subject => "#{@user['fullname'].titleize} Successfull created Product" )
+    :subject => "Successfull created product #{@product['name'].titleize}" )
     end
 end

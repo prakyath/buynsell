@@ -6,6 +6,7 @@ get 'my_products/index'
 resources :products do
   get :autocomplete_product_name, on: :collection
   resources :comments
+  
 end
 resources :my_products
 resources :categories, only: [:show]
@@ -13,14 +14,16 @@ get '/user' => 'user#show'
 get 'profile' => 'user#profile'
 patch '/user.(:id)' => 'user#update'
 resources :oauth
-  get 'login' => 'oauth#index'
   delete 'logout' => 'oauth#signout'
+  get 'login' => 'oauth#index'
+
 # match '/:id', :to => "tags#show", :as => :category, :via => :get 
 # one can use category name as param
  #get 'login'=> 'sessions#new'
   #post 'login'=> 'sessions#create'
   #delete 'logout'=>'sessions#destroy'
 root 'products#index'
+get 'products/:id' => 'product#view'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
