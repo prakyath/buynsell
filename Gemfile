@@ -22,6 +22,7 @@ gem 'phony'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'open_uri_redirections'
+gem 'sidekiq'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'oauth2'

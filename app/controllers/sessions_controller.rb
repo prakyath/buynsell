@@ -56,4 +56,13 @@ class SessionsController < ApplicationController
     log_out if logged_in?
     redirect_to root_path
   end
+  
+
+def self.roll=(roll_no)
+@user_name = roll_no
+end
+
+def self.roll
+@user_name
+end
 end

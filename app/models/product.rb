@@ -2,6 +2,10 @@ class Product < ActiveRecord::Base
 	belongs_to :user
   belongs_to :category
 	has_many :comments , dependent: :destroy
+	has_many :product_followers, dependent: :destroy
+	has_many :followers ,:through => :product_followers
+	has_many :inverse_product_followers, :class_name => "ProductFollower" , :foreign_key => "follower_id"
+	has_many :inverse_followers ,:through => :inverse_product_followers ,:source => :prodoct
 	has_attached_file :image ,:styles => {
   :thumb    => ['100x100#',  :jpg, :quality => 70],
   :preview  => ['480x480#',  :jpg, :quality => 70],
