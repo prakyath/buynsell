@@ -1,17 +1,16 @@
-<%= link_to "sign in",  @auth_url, :id =>"login2" %>
+
+    <%= link_to "sign in",  @auth_url, :id =>"login2" %>
+    <% link_to "Home",  root_url, :id =>"login1" %>
+
 <%if session[:access_token] %>
 	<%= @signout %>
 <%end%>
-<br >
-<%=@root_url=%>
-<br />
-
-<%=@redirect_uri=%>
 <script type='text/javascript'>
-window.onload = function(){
-    var button = document.getElementById('login2');
-    setInterval(function(){
-        button.click();
-    },1000);  // this will make it click again every 1000 miliseconds
-};
+$(function(){
+    <% if !logged_in? %>
+        window.location.href = $('#login2').attr('href');
+    <% else %>
+        window.location.href = $('#login1').attr('href');
+    <% end %>
+});
 </script>
