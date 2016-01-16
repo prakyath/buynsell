@@ -1,6 +1,6 @@
 
     <%= link_to "sign in",  @auth_url, :id =>"login2" %>
-    <% link_to "Home",  root_url, :id =>"login1" %>
+    <%= link_to "Home",  products_path, :id =>"login1" %>
 
 <%if session[:access_token] %>
 	<%= @signout %>
