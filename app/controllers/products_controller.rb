@@ -81,6 +81,6 @@ after_action :mail , only: [:create]
       redirect_to root_url if @product.nil?
     end
     def mail
-        Logins.login_mail(current_user,@product).deliver
+     #   Logins.login_mail(current_user,@product).deliver
     end
 end

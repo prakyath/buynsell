@@ -4,10 +4,12 @@
                         <%= link_to "Follow", product_followers_path(:follower_id => current_user), :method => :post %>
                         <div class="thumbnail">
                         
-                            <%= image_tag product.image.url(:thumb),{class:"img-responsive images"} %>
+                            <%= image_tag product.image.url(:medium),{class:"img-responsive images"} %>
                             <div class="caption">
                                 <h4 class="pull-right"><b>Rs.<%= product.price %></b></h4>
                                 <h4><%= link_to 'Show', product %>
+                                </h4>
+                                <h4><%= link_to 'Make an Offer', product %>
                                 </h4>
                                 <p><strong>Name:</strong> <%= product.name %></span></p>
                                 <% if !product.description.blank? %>
