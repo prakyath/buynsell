@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105075128) do
+ActiveRecord::Schema.define(version: 20160116173016) do
 
   create_table "ads", force: :cascade do |t|
     t.datetime "created_at",                null: false
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20160105075128) do
     t.integer  "category_id", limit: 4
     t.text     "Ad",          limit: 65535
     t.integer  "user_id",     limit: 4
+  end
+
+  create_table "bids", force: :cascade do |t|
+    t.integer  "price",      limit: 4
+    t.text     "content",    limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.integer  "product_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -37,14 +46,25 @@ ActiveRecord::Schema.define(version: 20160105075128) do
     t.integer  "notification_id", limit: 4
   end
 
+  create_table "notification_offers", force: :cascade do |t|
+    t.integer  "price",      limit: 4
+    t.text     "content",    limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.integer  "product_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.integer  "notifier_id", limit: 4
     t.integer  "notifiee_id", limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "message",     limit: 255
     t.integer  "product_id",  limit: 4
     t.integer  "comment_id",  limit: 4
+    t.integer  "price",       limit: 4
+    t.text     "content",     limit: 65535
   end
 
   create_table "product_followers", force: :cascade do |t|
