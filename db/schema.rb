@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116173016) do
+ActiveRecord::Schema.define(version: 20160117070257) do
 
   create_table "ads", force: :cascade do |t|
     t.datetime "created_at",                null: false
@@ -47,12 +47,14 @@ ActiveRecord::Schema.define(version: 20160116173016) do
   end
 
   create_table "notification_offers", force: :cascade do |t|
-    t.integer  "price",      limit: 4
-    t.text     "content",    limit: 65535
-    t.integer  "user_id",    limit: 4
-    t.integer  "product_id", limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "price",       limit: 4
+    t.text     "content",     limit: 65535
+    t.integer  "user_id",     limit: 4
+    t.integer  "product_id",  limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "notifier_id", limit: 4
+    t.integer  "notifiee_id", limit: 4
   end
 
   create_table "notifications", force: :cascade do |t|

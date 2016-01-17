@@ -1,5 +1,6 @@
 class BidsController < ApplicationController
   before_action :set_bid, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:new,:create,:destroy]
 
   # GET /bids
   # GET /bids.json
@@ -29,11 +30,11 @@ class BidsController < ApplicationController
     respond_to do |format|
       if @bid.save
            
-          @notification = Notification.new
+          @notification = NotificationOffer.new
           @notification.notifier = current_user
-          @notification.notifiee = @product.user
-          @notification.comment = @comment
-          @notification.product = @product
+          @notification.notifiee = @product
+          @notification.content = @bid.content
+          @notification.price = @bid.price
           @notification.save
 
 
@@ -81,6 +82,10 @@ class BidsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bid_params
-      params.require(:bid).permit(:price, :content, :sender_id, :product_id)
+      params.require(:bid).permit(:price, :content,:product_id)
+    end
+
+    def set_product
+      @product = Product.find(params[:product_id]);
     end
 end

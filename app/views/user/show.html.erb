@@ -66,9 +66,10 @@
                             <%= image_tag product.image.url(:medium),{class:"img-responsive image"} %>
                             <div class="caption">
                              <%= link_to 'Edit', edit_product_path(product),{class:"btn btn-primary"} %>
+                              <%= link_to 'offers', edit_product_path(product),{class:"btn btn-success"} %>
                                 <%= link_to 'Destroy', product,{ method: :delete, data: { confirm: 'Are you sure?'},class:"btn btn-danger pull-right"} %>
                                 
-                                <h4><%= link_to 'Show', my_products_path %>
+                                <h4><%= link_to 'Show', product %>
                                 </h4>
                                 
                                 <% if !product.description.blank? %>
