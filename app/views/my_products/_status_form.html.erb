@@ -1,0 +1,11 @@
+<% if logged_in? %>
+    <%= form_for @product do |t| %>
+      <% if @product.status=="available" %>
+        <%= t.text_field :status, :value=>"sold"%>
+        <%= t.submit "available" %>
+      <% else %>
+        <%= t.hidden_field :status, :value=>"available"%>
+        <%= t.submit "sold" %>
+      <% end %>
+    <% end %>
+<% end %>
