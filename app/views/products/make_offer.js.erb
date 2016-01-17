@@ -1,1 +1,2 @@
-$("#mymodal").html("<%= escape_javascript(render 'product/make_offer') %>");
+$("#mymodal").html("<%=j render 'product/make_offer' %>");
+$('#mymodal').modal('show');

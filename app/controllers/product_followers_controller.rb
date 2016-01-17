@@ -24,6 +24,12 @@ class ProductFollowersController < ApplicationController
   end
 
   private
+  def make_offer
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_product_follower
       @product_follower = ProductFollower.find(params[:id])

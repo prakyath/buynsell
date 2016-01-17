@@ -6,8 +6,8 @@ get 'my_products/index'
 resources :products do
   get :autocomplete_product_name, on: :collection
   resources :comments
-  
 end
+get "product/make_offer" => 'product#make_offer', :as => :make_offer
 resources :my_products
 resources :categories, only: [:show]
 get '/user' => 'user#show'
