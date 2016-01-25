@@ -74,7 +74,7 @@
 <script src="/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" data-turbolinks-track="true"></script>
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="skKgisPFAGdLojsMSSu72montFYiHDqx6kZuCBmLDMy9eI1RSbAcYQDoYUf7Vm4Y/NL2JHujS3iJjo/D1wvi/A==" />
+<meta name="csrf-token" content="JUbmpYBSWJIFMrfwUS3oKQ8Y/oGvqbxvGCBxDYy2a70qfMt+CidElE547bvjUD3rme288/YWzaZ76JDGQjaFjQ==" />
 </head>
 <body>
   <nav id="slide-menu" >
@@ -111,56 +111,53 @@
     
 </script>
 <div class="container main-body">
-    
+      <div class="alert alert-notice">
+    <a href="#" data-dismiss="alert" class="close">×</a>
+    <ul>
+      <li>
+        Product was successfully created.
+      </li>
+    </ul>
+  </div>
+
     <div class="container">
-<div id="login-wraper">
-	<h1>New Product</h1>
 
-	<form class=" form-horizontal center" id="new_product" enctype="multipart/form-data" action="/products" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="9B8rUeh1KUsEL2DVws4oRubrUUqJ/firs5jZyzu9xtP7JQaKYgA1TU9lOp5ws/2EcB4TONBCiWLQUDgA9T0o4w==" />
-  <div class="field">
-    <label class="control-label" for="product_name">Name</label>
-    <input class="form-control" type="text" name="product[name]" id="product_name" />
-  </div>
-  <div class="field">
-    <label class="control-label" for="product_price">Price</label>
-    <input class="form-control" type="number" name="product[price]" id="product_price" />
-  </div>
-  <div class="field">
-    <label class="control-label" for="product_description">Description</label>
-    <textarea class="form-control" name="product[description]" id="product_description">
-</textarea>
-  </div>
-  <div class="field">
-    <label class="control-label" for="product_reason">Reason</label>
-    <textarea class="form-control" name="product[reason]" id="product_reason">
-</textarea>
-  </div><br/>
-  <div>
-    <label class="control-label col-md-1" for="product_status">Status</label>
-    <div class="col-md-4">
-   <select class="form-control" name="product[status]" id="product_status"><option value="available">available</option>
-<option value="sold">sold</option></select>
-    </div>
-    <label class="control-label col-md-1" for="product_category_id">Category</label>
-    <div class="col-md-4">
-       <select class="form-control" name="product[category_id]" id="product_category_id"><option value="">Category</option>
-</select>
-    </div>
-    <label class="control-label col-md-1" for="product_image">Image</label>
+          <div class="row">
 
-    <span class="btn btn-default btn-file">
-      Browse<input type="file" name="product[image]" id="product_image" />
-    </span>
-  </div>
-  <br/>
-  <div class="actions">
-    <input type="submit" name="commit" value="Submit" class="btn btn-default btn-primary" />
-  </div><br/>
+                <div class="thumbnail">
+                    <img class="product-image" src="/system/products/images/000/000/001/original/%C2%B7_Must_be_a_very_tall_man_.jpg?1453744955" alt="%c2%b7 must be a very tall man " />
+                    <div class="caption-full">
+                        <h4 class="pull-right"><b>Rs.250</b></h4>
+                        <h4><a href="#">optical illusion</a>
+                        </h4>
+                                    <p><strong>Description:</strong> jvlugc</p>
+                                    <p><strong>Reason:</strong>v uvl</p>
+                                <p>Seller can edit details of product here <a href="/products/1/edit">edit</a></p>  
+                                <a class="btn btn-info" href="#">available</a>
+                                <a class="btn btn-primary pull-right" href="/">Back</a>
+
+                                
+                    </div>
+               
+  <hr>
+  <div class="well">
+  
+   <h2>0 comments </h2>
+    <h1>Listing comments</h1>
+ 
+
+  
+       <form class="new_comment" id="new_comment" action="/products/1/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="I+JAKmJAcjhIBUMVp4uflaJsF6xtMhtLJgQNWvPtEQQs2G3x6DVuPgNPGV4V9kpXNJlV3jSNaoJFzOyRPW3/NA==" />
+      <textarea placeholder="Write Comment..." class="form-control" name="comment[message]" id="comment_message">
+</textarea>
+      <span class="input-group-btn">
+         <button name="button" type="submit" class="btn btn-default glyphicon glyphicon-comment pull-right"></button>%>
+      </span>
 </form>
+ </div>
+</div>
+</div>
 
-	<a class="btn btn-info col-md-1" href="/products">Back</a> 
-</div>
-</div>
 
   </div>
 </div>

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
 
-  resources :product_followers
 get 'my_products/index'
 resources :products do
   get :autocomplete_product_name, on: :collection

@@ -4,5 +4,7 @@ class CreateProducts < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    create_table :products do |t|
+      add_column :products, :pictures, :json
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160117070257) do
+ActiveRecord::Schema.define(version: 20160125164707) do
 
   create_table "ads", force: :cascade do |t|
     t.datetime "created_at",                null: false
@@ -65,24 +65,6 @@ ActiveRecord::Schema.define(version: 20160117070257) do
     t.string   "message",     limit: 255
     t.integer  "product_id",  limit: 4
     t.integer  "comment_id",  limit: 4
-  end
-
-  create_table "product_followers", force: :cascade do |t|
-    t.integer  "product_id",  limit: 4
-    t.integer  "follower_id", limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
-
-  create_table "product_images", force: :cascade do |t|
-    t.string   "caption",            limit: 255
-    t.integer  "product_id",         limit: 4
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
-    t.integer  "image_file_size",    limit: 4
-    t.datetime "image_updated_at"
   end
 
   create_table "products", force: :cascade do |t|

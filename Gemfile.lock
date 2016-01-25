@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: cc2ab785a9d475a777f67f5fb12751c8c6171e03
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -247,6 +257,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass (~> 3.3.5.1)
   bootstrap-will_paginate
+  carrierwave!
   coffee-rails (~> 4.1.0)
   compass
   devise
