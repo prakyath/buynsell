@@ -4,6 +4,8 @@ before_action :correct_user,only: [:edit,:destroy]
 before_action :set_product, only: [:show, :edit, :update, :destroy]
 autocomplete :product, :name
 after_action :mail , only: [:create]
+caches_page :show, :new ,:index
+
 
   def index
     if params[:search]
@@ -68,6 +70,12 @@ after_action :mail , only: [:create]
   end
 
   private
+  def make_offer
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
     def set_product
       @product = Product.find(params[:id])
     end

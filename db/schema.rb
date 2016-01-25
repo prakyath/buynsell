@@ -60,13 +60,11 @@ ActiveRecord::Schema.define(version: 20160117070257) do
   create_table "notifications", force: :cascade do |t|
     t.integer  "notifier_id", limit: 4
     t.integer  "notifiee_id", limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "message",     limit: 255
     t.integer  "product_id",  limit: 4
     t.integer  "comment_id",  limit: 4
-    t.integer  "price",       limit: 4
-    t.text     "content",     limit: 65535
   end
 
   create_table "product_followers", force: :cascade do |t|

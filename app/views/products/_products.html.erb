@@ -16,7 +16,7 @@
                 <h4 class="pull-right"><b>Rs.<%= product.price %></b></h4>
                 <h4><%= link_to 'Show', product %></h4>
                 <h4><%= link_to 'Click Here', "#", data: {toggle: "modal", target: "#mymodal"} %></h4>
-                <%= link_to 'Add release', make_offer_path, {:remote => true, 'data-toggle'=> "modal", 'data-target' => '#mymodal'}  %>
+                <%= link_to 'Add release', make_offer_path,  {:remote => true, 'data-toggle'=> "modal", 'data-target' => '#mymodal', id:'adds' }  %>
                 <p><strong>Name:</strong> <%= product.name %></span></p>
                 <% if !product.description.blank? %>
                     <p><strong>Description:</strong> <%= product.description %></p>

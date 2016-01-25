@@ -1,5 +1,6 @@
 class UserController < ApplicationController
 before_action :logged_in_user
+caches_page :show, :profile
 
 def show
   @user=current_user
