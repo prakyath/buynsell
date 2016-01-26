@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 get 'my_products/index'
 resources :products do
   get :autocomplete_product_name, on: :collection
+  get "delete"
   resources :comments
 end
 get "product/make_offer" => 'product#make_offer', :as => :make_offer

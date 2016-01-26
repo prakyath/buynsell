@@ -72,7 +72,7 @@
 <script src="/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" data-turbolinks-track="true"></script>
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="nKy/7abN811HkudyhtY2N3VKIvM6YDk2P9Lp4tgd6H2TlpI2LLjvWwzYvTk0q+P1479ggWPfSP9cGggpFp0GTQ==" />
+<meta name="csrf-token" content="sHHTuFnOMSHzEm/vfaoVDHUIfwuhl4INHokEHd84Cby/S/5j07stJ7hYNaTP18DO4/09efgo88R9QeXWEbjnjA==" />
 </head>
 <body>
   <nav id="slide-menu" >
@@ -116,7 +116,10 @@
 <div id="login-wraper">
 	<h1>New Product</h1>
 
-	<form class=" form-horizontal center" id="new_product" enctype="multipart/form-data" action="/products" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ne6fyMCZ+zm2SBAauUWcT4udzmV6bp/fZFdbGxKHzKaS1LITSuznP/0CSlELOEmNHWiMFyPR7hYHn7rQ3Acilg==" />
+	<div class="modal-dialog">
+  <div class="modal-content">
+<form class=" form-horizontal center" id="new_product" enctype="multipart/form-data" action="/products" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="JbfXgWRmItLmeiGWD7WyXmw+SGaZk7gUGeArkmMSGC0qjfpa7hM+1K0we929yGec+ssKFMAsyd16KMpZrZL2HQ==" />
+<div class="modal-body">
   <div class="field">
     <label class="control-label" for="product_name">Name</label>
     <input class="form-control" type="text" name="product[name]" id="product_name" />
@@ -153,10 +156,16 @@
     </span>
   </div>
   <br/>
+  </div>
+  <div class="modal-footer">
   <div class="actions">
     <input type="submit" name="commit" value="Submit" class="btn btn-default btn-primary" />
+    <a class="btn" data-dismiss="modal" href="#">Cancel</a>
+      </div>
   </div><br/>
-</form>
+</form>  </div>
+</div>
+
 
 	<a class="btn btn-info col-md-1" href="/products">Back</a> 
 </div>

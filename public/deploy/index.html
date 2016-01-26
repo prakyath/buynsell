@@ -72,7 +72,7 @@
 <script src="/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" data-turbolinks-track="true"></script>
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="nlTrDs2rGJxqSaF3pMc8sI14WRKm9Tpeaz4Gnt9LAWqRbsbVR94EmiED+zwWuulyG40bYP9KS5cI9udVEcvvWg==" />
+<meta name="csrf-token" content="vUHJOPC7EkMVqBAm3UVRkfQVKbeKkz3Tjn1OUq1wGk6ye+Tjes4ORV7iSm1vOIRTYuBrxdMsTBrtta+ZY/D0fg==" />
 </head>
 <body>
   <nav id="slide-menu" >
@@ -95,11 +95,7 @@
           <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;" data-autocomplete="/products/autocomplete_product_name" />
       </div>
 </form>    </div>
-    <!--<div id="site" class="col-md-12">-->
-    <div class="pull-right nav navbar-nav navbar-right" style="margin:1em 1.5em 0 0;">
-      <a class="btn btn-primary" href="/products/new">New Product</a>
-    <!--</div>-->
-    </div>
+    
 </header>
 <style >
     h1{
@@ -112,17 +108,24 @@
 </style>
 <div class="container main-body">
     
-    
+    <div class="well">
+    <a class="btn btn-primary" data-remote="true" href="/products/new">New Product</a>
+</div>
 <div class="show-wraper wraper">
-<head>
-	<link rel="stylesheet" href="bootstrap.css">
-	<link rel="stylesheet" href="bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-</head>
 
 <div class="row">
+        <div class="col-sm-3  col-lg-3 col-md-3">
+        <div class="thumbnail">
+            <img class="img-responsive images" src="/system/products/images/000/000/002/medium/Screenshot_%284%29.png?1453809824" alt="Screenshot %284%29" />
+            <div class="caption">
+                <h4 class="pull-right"><b>Rs.</b></h4>
+                <h4><a href="/products/2">Show</a></h4>
+                <h4><a data-toggle="modal" data-target="#mymodal" id="adds" data-remote="true" href="/product/make_offer">Make bid</a></h4>
+                
+                <p><strong>Name:</strong> </span></p>
+            </div>
+        </div>
+        </div>
         <div class="col-sm-3  col-lg-3 col-md-3">
         <div class="thumbnail">
             <img class="img-responsive images" src="/system/products/images/000/000/001/medium/%C2%B7_Must_be_a_very_tall_man_.jpg?1453744955" alt="%c2%b7 must be a very tall man " />
@@ -130,6 +133,7 @@
                 <h4 class="pull-right"><b>Rs.250</b></h4>
                 <h4><a href="/products/1">Show</a></h4>
                 <h4><a data-toggle="modal" data-target="#mymodal" id="adds" data-remote="true" href="/product/make_offer">Make bid</a></h4>
+                
                 <p><strong>Name:</strong> optical illusion</span></p>
                     <p><strong>Description:</strong> jvlugc</p>
             </div>
@@ -142,7 +146,7 @@
 </div>
 </div>
 </div>
-
+<div id="product-modal" class="modal fade"></div>
 <div id="mymodal" class="modal fade out" tabindex="-1" role="dialog">
 	<div class="modal-dialog">
 	<div class="modal-content">
