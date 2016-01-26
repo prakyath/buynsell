@@ -9,7 +9,6 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *= require bootstrap.min
  *= require_tree .
  *= require_self
  *= require jquery-ui/datepicker
@@ -18,8 +17,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@import url(http://fonts.googleapis.com/css?family=Oxygen:400,700);
-@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Oxygen:400,700);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
 
 @font-face {
   font-family: 'ico';
@@ -191,10 +190,14 @@ body.menu-active div#content .menu-trigger { left: 294px; }
 
 .header{
 	padding:0 2em 0 3em;
-	background-color:#313a47;
+	background-color:#ccccff;
 	margin-bottom:0px;
 }
-
+h1.header {
+    	line-height: 1em;
+    	margin: 0;
+	
+}
 #site{
 	padding:1em 0 1em 3.5em;
 	box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);

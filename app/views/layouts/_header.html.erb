@@ -1,32 +1,34 @@
  <header class="navbar  navbar-static-top">
     <div class="header">
         <div class="menu-trigger"></div>
+            <h1 class="pull-left" style="margin:auto;"><%= link_to 'Buy and Sell',products_path %></h1>
         <ul class="nav navbar-nav navbar-right" style="margin:auto;">
             <% if logged_in? %>
-             <li><%= link_to 'Home',products_path %></li>
+                <li><%= link_to 'Home',products_path %></li>
               <li><%= link_to 'User',user_path %></li>
               <li><%= link_to 'Logout',logout_path, method: "delete" %></li>
             <% else %>
              <li><%= link_to "Sign in",  login_path , :id => "login1"%></li>
             <% end %>
         </ul>
-     
     <%= form_tag(products_path, :method => "get", id: "search-form", :class => "input-group col-md-offset-7 col-md-2 search") do %>
       <div class="form-group">
           <%= text_field_tag :search, params[:search], placeholder: "Search" , class:"form-control input" , :style => "padding-left:8px;", type: "search", data: {autocomplete: autocomplete_product_name_products_path} %>
       </div>
-          
     <% end %>
     </div>
-    <div id="site" class="col-md-12">
-    <div class="pull-right nav navbar-nav"style="margin:auto;">
+    <!--<div id="site" class="col-md-12">-->
+    <div class="pull-right nav navbar-nav navbar-right" style="margin:1em 1.5em 0 0;">
       <%= link_to 'New Product',  new_product_path , :class => "btn btn-primary" %>
-      <a href="/ads">Posts</a>
+    <!--</div>-->
     </div>
-    <h1 id="site-primary-text">Buy and Sell</h1>
-
-</div>
 </header>
-<script >
-    
-</script>
+<style >
+    h1{
+         font-family: Pacifico, Helvetica, Arial, sans-serif;
+         margin:auto;
+    }
+    .pull-right{
+        margin-top:2px;
+    }
+</style>
