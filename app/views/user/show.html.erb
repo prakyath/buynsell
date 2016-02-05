@@ -63,7 +63,6 @@
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                         `
-                            <%= image_tag product.image.url(:medium),{class:"img-responsive image"} %>
                             <div class="caption">
                              <%= link_to 'Edit', edit_product_path(product),{class:"btn btn-primary"} %>
                               <%= link_to 'offers', edit_product_path(product),{class:"btn btn-success"} %>
@@ -243,7 +242,7 @@
                               <%= f.label :avatar,class:"control-label" %>
 
                               <span class="btn btn-default btn-file">
-                                  Browse <%= f.file_field :image %>
+                                  Browse <%= f.file_field :avatar %>
                               </span>
                           </div> 
                     </div>        

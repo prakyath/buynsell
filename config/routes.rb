@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   
 
   resources :pictures
-  patch '/products/:id/edit(.:format)' => 'products#edit'
 get 'my_products/index'
 resources :products do
   get :autocomplete_product_name, on: :collection

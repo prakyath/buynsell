@@ -1,6 +1,5 @@
 class UserController < ApplicationController
 before_action :logged_in_user
-caches_page :show, :profile
 
 def show
   @user=current_user
@@ -25,13 +24,13 @@ def update
         format.html { render :show }
       end
     end
-  end
+end
 
 
 private
 def user_params
-      params.require(:user).permit(:fullname,:room,:hostel,:contact,:avatar)
-    end
+    params.require(:user).permit(:fullname,:room,:hostel,:contact,:avatar)
+end
 
 end	
 
