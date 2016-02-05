@@ -10,8 +10,9 @@
 <link rel="stylesheet" media="all" href="/assets/login_form.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/my_products.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/oauth.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true" />
+<link rel="stylesheet" media="all" href="/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/product.self-d9f67ee9d215de8bc80dd3099b8107a00dd74ad3c7fd600bdcc07121bd2fb282.css?body=1" data-turbolinks-track="true" />
-<link rel="stylesheet" media="all" href="/assets/scaffolds.self-422affad9cbcaf4c3ba3ac06e8e695d208b5c6d1af2937dc16ca8b9bd4d85bf2.css?body=1" data-turbolinks-track="true" />
+<link rel="stylesheet" media="all" href="/assets/scaffolds.self-d2e5ccad1506299feea3a35bfb7c525e101bb3b214303715deb675fdc539948b.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/application.self-eb703d6b091ef9c54d50d038abfa620c79b26cea8c345e19325d2c83fb179afb.css?body=1" data-turbolinks-track="true" />
@@ -26,6 +27,7 @@
 <script src="/assets/comment.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/my_products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/oauth.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="true"></script>
+<script src="/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/product.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/products.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="true"></script>
@@ -72,7 +74,7 @@
 <script src="/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" data-turbolinks-track="true"></script>
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="vUHJOPC7EkMVqBAm3UVRkfQVKbeKkz3Tjn1OUq1wGk6ye+Tjes4ORV7iSm1vOIRTYuBrxdMsTBrtta+ZY/D0fg==" />
+<meta name="csrf-token" content="9xY5hAT3xTBULFAi5ApEPnR0cDRBnV4TMzN4mZy8JstDAB+tBFJlql3cjokFsWe5y/ZtdP10e9oRlUuP89f2AA==" />
 </head>
 <body>
   <nav id="slide-menu" >
@@ -95,7 +97,11 @@
           <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;" data-autocomplete="/products/autocomplete_product_name" />
       </div>
 </form>    </div>
-    
+    <!--<div id="site" class="col-md-12">-->
+    <div class="pull-right nav navbar-nav navbar-right" style="margin:1em 1.5em 0 0;">
+        <a class="btn btn-primary" data-remote="true" href="/products/new">New Product</a>
+    </div>
+    <!--</div>-->
 </header>
 <style >
     h1{
@@ -108,34 +114,17 @@
 </style>
 <div class="container main-body">
     
-    <div class="well">
-    <a class="btn btn-primary" data-remote="true" href="/products/new">New Product</a>
-</div>
-<div class="show-wraper wraper">
+    <div class="show-wraper wraper">
 
 <div class="row">
         <div class="col-sm-3  col-lg-3 col-md-3">
         <div class="thumbnail">
-            <img class="img-responsive images" src="/system/products/images/000/000/002/medium/Screenshot_%284%29.png?1453809824" alt="Screenshot %284%29" />
             <div class="caption">
                 <h4 class="pull-right"><b>Rs.</b></h4>
-                <h4><a href="/products/2">Show</a></h4>
-                <h4><a data-toggle="modal" data-target="#mymodal" id="adds" data-remote="true" href="/product/make_offer">Make bid</a></h4>
-                
-                <p><strong>Name:</strong> </span></p>
-            </div>
-        </div>
-        </div>
-        <div class="col-sm-3  col-lg-3 col-md-3">
-        <div class="thumbnail">
-            <img class="img-responsive images" src="/system/products/images/000/000/001/medium/%C2%B7_Must_be_a_very_tall_man_.jpg?1453744955" alt="%c2%b7 must be a very tall man " />
-            <div class="caption">
-                <h4 class="pull-right"><b>Rs.250</b></h4>
                 <h4><a href="/products/1">Show</a></h4>
                 <h4><a data-toggle="modal" data-target="#mymodal" id="adds" data-remote="true" href="/product/make_offer">Make bid</a></h4>
                 
-                <p><strong>Name:</strong> optical illusion</span></p>
-                    <p><strong>Description:</strong> jvlugc</p>
+                <p><strong>Name:</strong> </span></p>
             </div>
         </div>
         </div>

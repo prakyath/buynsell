@@ -14,6 +14,7 @@ caches_page :show, :new ,:index
       @products = Product.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
     end
     @category = Category.all
+
     respond_to do |format|
       format.html
       format.json { @books = Book.search(params[:term]) }
@@ -22,6 +23,7 @@ caches_page :show, :new ,:index
 
   def show
     @product = Product.find(params[:id])
+    @pictures=@product.pictures
     @category_id = @product.category_id
     @category1 = Category.find_by(id: @category_id)
     @comments = Comment.includes(:user)
@@ -38,7 +40,11 @@ caches_page :show, :new ,:index
     @product = current_user.products.build(product_params)
     respond_to do |format|
       if @product.save
-          
+        if params[:images]
+          params[:images].each { |image|
+            @product.pictures.create(image: image)
+          }
+        end
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
@@ -81,7 +87,7 @@ caches_page :show, :new ,:index
     end
 
     def product_params
-      params.require(:product).permit(:name, :price, :description, :reason, :user_id,:image,:status,:category_id)
+      params.require(:product).permit(:name, :price, :description, :reason, :user_id,:pictures,:status,:category_id)
     end
 
     def correct_user

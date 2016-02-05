@@ -3,7 +3,9 @@
           <div class="row">
 
                 <div class="thumbnail">
-                    <%= image_tag @product.image.url(:original),{class:"product-image"} %>
+                    <% @pictures.each do |pic| %>
+                    <%= image_tag pic.image.url(:original) %>
+                    <% end %>
                     <div class="caption-full">
                         <h4 class="pull-right"><b>Rs.<%= @product.price %></b></h4>
                         <h4><a href="#"><%= @product.name %></a>

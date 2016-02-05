@@ -26,10 +26,10 @@
     <div class="col-md-4">
        <%= f.collection_select :category_id, Category.all, :id, :name,{ :prompt => "Category", :multiple => true},{class: "form-control"} %>
     </div>
-    <%= f.label :image,class:"control-label col-md-1" %>
+    <%= f.label :pictures,class:"control-label col-md-1" %>
 
     <span class="btn btn-default btn-file">
-      Browse<%= f.file_field :image %>
+      Browse<%= file_field_tag "images[]", type: :file, multiple: true %>
     </span>
   </div>
   <br/>

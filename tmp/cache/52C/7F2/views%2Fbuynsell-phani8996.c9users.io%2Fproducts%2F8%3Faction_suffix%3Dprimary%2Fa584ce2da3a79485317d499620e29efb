@@ -1,0 +1,27 @@
+o: ActiveSupport::Cache::Entry:@valueI"v <header class="navbar  navbar-static-top">
+    <div class="header">
+        <div class="menu-trigger"></div>
+        <ul class="nav navbar-nav navbar-right" style="margin:auto;">
+             <li><a href="/products">Home</a></li>
+              <li><a href="/user">User</a></li>
+              <li><a rel="nofollow" data-method="delete" href="/logout">Logout</a></li>
+        </ul>
+     
+    <form id="search-form" class="input-group col-md-offset-7 col-md-2 search" action="/products" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+      <div class="form-group">
+          <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;" data-autocomplete="/products/autocomplete_product_name" />
+      </div>
+          
+</form>    </div>
+    <div id="site" class="col-md-12">
+    <div class="pull-right nav navbar-nav"style="margin:auto;">
+      <a class="btn btn-primary" href="/products/new">New Product</a>
+      <a href="/ads">Posts</a>
+    </div>
+    <h1 id="site-primary-text">Buy and Sell</h1>
+
+</div>
+</header>
+<script >
+    
+</script>:ET:@created_atf1453533731.2753305:@expires_in0
