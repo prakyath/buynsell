@@ -40,6 +40,8 @@ caches_page :show, :new ,:index
     @product = current_user.products.build(product_params)
     respond_to do |format|
       if @product.save
+        @product.pictures.create( image: params[:images][0])
+#        raise params[:images][0].inspect
         if params[:images]
           params[:images].each { |image|
             @product.pictures.create(image: image)

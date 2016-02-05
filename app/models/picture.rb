@@ -1,10 +1,9 @@
 class Picture < ActiveRecord::Base
   belongs_to :product
 
-# attr_accessor :image_file_name
   has_attached_file :image,
+    :styles => { :small => "100x100#", :medium=>"250x250#",:large => "500x500>" },
     :path => ":rails_root/public/images/:id/:filename",
     :url  => "/images/:id/:filename"
-
-  do_not_validate_attachment_file_type :image
+validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 end
