@@ -5,7 +5,8 @@
         <ul class="nav navbar-nav navbar-right" style="margin:auto;">
             <% if logged_in? %>
                 <li><%= link_to 'Home',products_path %></li>
-              <li><%= link_to 'User',user_path %></li>
+                <li><%= image_tag(current_user.avatar.url(:thumb),{class:"img-circle img-responsive"}) %></li>
+              <li><%= link_to current_user['fullname'],user_path %></li>
               <li><%= link_to 'Logout',logout_path, method: "delete" %></li>
             <% else %>
              <li><%= link_to "Sign in",  login_path , :id => "login1"%></li>

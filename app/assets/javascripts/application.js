@@ -18,3 +18,5 @@
 //= require jquery-ui/autocomplete
 //= require autocomplete-rails
 //=require bootstrap/modal
+//= require image_zoomer_main   
+//= require easyzoom

@@ -1,11 +1,19 @@
 <div class="container">
 
           <div class="row">
-
-                <div class="thumbnail">
+<div class="col-sm-6">
                     <% @pictures.each do |pic| %>
-                    <%= image_tag pic.image.url(:original) %>
+                        <% if pic==@pictures.first %>
+                            <%= image_tag pic.image.url(:medium), :id => "zoom_01",:class => 'image_zoomer'%>
+                        <% else %>
+                            <div class="col-sm-4 pull-left">
+                                <%= image_tag pic.image.url(:thumb), :id => "zoom_01",:class => 'image_zoomer'%>
+                            </div>
+                        <% end %>
                     <% end %>
+</div>
+<div class="col-sm-6">
+                <div class="thumbnail">
                     <div class="caption-full">
                         <h4 class="pull-right"><b>Rs.<%= @product.price %></b></h4>
                         <h4><a href="#"><%= @product.name %></a>
@@ -33,3 +41,12 @@
 </div>
 </div>
 
+</div>
+<script>
+    $('#zoom_01').elevateZoom({
+    zoomType: "inner",
+cursor: "crosshair",
+zoomWindowFadeIn: 500,
+zoomWindowFadeOut: 750
+   }); 
+</script>

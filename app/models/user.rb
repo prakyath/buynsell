@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
  	has_many :notifications_as_notifier, :class_name=>'Notification', :foreign_key=>'notifier_id'
     has_many :notifications_as_notifiee, :class_name=>'Notification', :foreign_key=>'notifiee_id'
   has_attached_file :avatar,
-    :styles => { :small => "100x100#", :medium=>"250x250#",:large => "500x500>" },
-    :path => ":rails_root/public/images/:id/:filename",
-    :url  => "/images/:id/:filename"
+    :styles => {:thumb=>"30x30#", :small => "100x100#", :medium=>"250x250#",:large => "500x500>" },
+    :path => ":rails_root/public/images/Users/:id/:style/:filename",
+    :url  => "/images/Users/:id/:style/:filename"
     do_not_validate_attachment_file_type :avatar
 
 end

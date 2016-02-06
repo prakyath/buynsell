@@ -15,10 +15,11 @@
 <link rel="stylesheet" media="all" href="/assets/scaffolds.self-d2e5ccad1506299feea3a35bfb7c525e101bb3b214303715deb675fdc539948b.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true" />
-<link rel="stylesheet" media="all" href="/assets/application.self-eb703d6b091ef9c54d50d038abfa620c79b26cea8c345e19325d2c83fb179afb.css?body=1" data-turbolinks-track="true" />
+<link rel="stylesheet" media="all" href="/assets/application.self-fec38aea95f2c6e4d424eeb591bc5db505b24f9670da42348587a32f1c63d83f.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/jquery-ui/theme.self-df1da30301997b52795cb0213bccd335f2897b65f84d1d7d7c63c04f048d902f.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/jquery-ui/core.self-23329dbe1961b938278306c019037fe36ff6ccb28193f1038e52ccbf52858163.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/jquery-ui/datepicker.self-bf92a2196df590f06fad4ab5bb7ed4db1874a9bef0c9af85ea0490d2108b9966.css?body=1" data-turbolinks-track="true" />
+<link rel="stylesheet" media="all" href="/assets/easyzoom.self-f814a752f45fcc62a7f030aa609c79954b4e60797bfbbce5a77cc7be4d8858d6.css?body=1" data-turbolinks-track="true" />
   <script src="/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" data-turbolinks-track="true"></script>
@@ -72,9 +73,15 @@
 <script src="/assets/jquery-ui.self-52111578aa54225c9ebfe06f78a62771020ee548bb27d62228ee3f5e6633969d.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/autocomplete-rails.self-5d8d93a5f6e19ab6e682b9dd9999592b61ff3c3d69ea242a830a8556158001fa.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" data-turbolinks-track="true"></script>
-<script src="/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" data-turbolinks-track="true"></script>
+<script src="/assets/image_zoomer.self-b44263305eda7950e4d02f05bef1b868f22df7a4e47a4208699972b619da5b7a.js?body=1" data-turbolinks-track="true"></script>
+<script src="/assets/image_zoomer_initializer.self-1eaa5073bb90605fa2934dbeb9bbff7f66692846b7c72a2ed09bec4ae6eb8a4f.js?body=1" data-turbolinks-track="true"></script>
+<script src="/assets/image_zoomer_options.self-d45d780740d73e44903ebd2f9344dde01f7c5630f6d0b0e84d1e69ef3845d4e4.js?body=1" data-turbolinks-track="true"></script>
+<script src="/assets/image_zoomer_main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" data-turbolinks-track="true"></script>
+<script src="/assets/easyzoom.self-c72f8a7a5de00ac7511ea7e1e7f8434ba5105e3c507e5d122bb1b448edcce142.js?body=1" data-turbolinks-track="true"></script>
+<script src="/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" data-turbolinks-track="true"></script>
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="eyI3tDm9d0T/etqRvirIGHRp5FR+4lPulxVCgH5z35UHXpGc6XBLjN79UGGJX67yICdQ4GeidZcRTWRm7fa5JQ==" />
+<meta name="csrf-token" content="DZkDfGGGZ53Y4RcU5qADzdaRsCl7LfZ71jrMU5EjF+Zx5aVUsUtbVflmneTR1WUngt8EnWJt0AJQYuq1AqZxVg==" />
+
 </head>
 <body>
   <nav id="slide-menu" >
@@ -117,11 +124,17 @@
     <div class="container">
 
           <div class="row">
-
+<div class="col-sm-6">
+                            <img id="zoom_01" class="image_zoomer" src="/images/Product_Pictures/1/medium/206288-minions-superhero-hd-wallpapers.jpg?1454753289" alt="206288 minions superhero hd wallpapers" />
+                            <div class="col-sm-4 pull-left">
+                                <img id="zoom_01" class="image_zoomer" src="/images/Product_Pictures/2/thumb/arrow_by_miresalawj.jpg?1454753290" alt="Arrow by miresalawj" />
+                            </div>
+                            <div class="col-sm-4 pull-left">
+                                <img id="zoom_01" class="image_zoomer" src="/images/Product_Pictures/3/thumb/arrow_hd_wallpaper_by_chadski51-d5a5was.jpg?1454753292" alt="Arrow hd wallpaper by chadski51 d5a5was" />
+                            </div>
+</div>
+<div class="col-sm-6">
                 <div class="thumbnail">
-                    <img src="/images/1/206288-minions-superhero-hd-wallpapers.jpg?1454753289" alt="206288 minions superhero hd wallpapers" />
-                    <img src="/images/2/arrow_by_miresalawj.jpg?1454753290" alt="Arrow by miresalawj" />
-                    <img src="/images/3/arrow_hd_wallpaper_by_chadski51-d5a5was.jpg?1454753292" alt="Arrow hd wallpaper by chadski51 d5a5was" />
                     <div class="caption-full">
                         <h4 class="pull-right"><b>Rs.</b></h4>
                         <h4><a href="#"></a>
@@ -141,7 +154,7 @@
  
 
   
-       <form class="new_comment" id="new_comment" action="/products/1/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="VEWH3XU4Qwdb148YFYiK7QSQn7otipHGcVTm6UF8Sz0oOSH1pfV/z3pQBegi/ewHUN4rDjTKt7/3DMAP0vktjQ==" />
+       <form class="new_comment" id="new_comment" action="/products/1/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="a3DahbayInXdvAVB8DTpnzudPMjyJAYEx5XFu5uoaCMXDHytZn8evfw7j7HHQY91b9OIfOtkIH1BzeNdCC0Okw==" />
       <textarea placeholder="Write Comment..." class="form-control" name="comment[message]" id="comment_message">
 </textarea>
       <span class="input-group-btn">
@@ -152,7 +165,15 @@
 </div>
 </div>
 
-
+</div>
+<script>
+    $('#zoom_01').elevateZoom({
+    zoomType: "inner",
+cursor: "crosshair",
+zoomWindowFadeIn: 500,
+zoomWindowFadeOut: 750
+   }); 
+</script>
   </div>
 </div>
 <script type="text/javascript">
