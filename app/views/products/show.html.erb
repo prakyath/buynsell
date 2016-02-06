@@ -2,15 +2,20 @@
 
           <div class="row">
 <div class="col-sm-6">
-                    <% @pictures.each do |pic| %>
-                        <% if pic==@pictures.first %>
-                            <%= image_tag pic.image.url(:medium), :id => "zoom_01",:class => 'image_zoomer'%>
-                        <% else %>
-                            <div class="col-sm-4 pull-left">
-                                <%= image_tag pic.image.url(:thumb), :id => "zoom_01",:class => 'image_zoomer'%>
-                            </div>
-                        <% end %>
-                    <% end %>
+    <div id="slider" class="flexslider">
+        <ul class="slides">
+            <% @pictures.each do |pic| %>
+                    <li><%= image_tag pic.image.url(:medium),:class => "zoom_01",data:{zoom_image:pic.image.url}%></li>
+            <% end %>
+        </ul>
+    </div>
+<div id="carousel" class="flexslider" style="margin-top:-3.5em">
+        <ul class="slides">
+            <% @pictures.each do |pic| %>
+                    <li><%= image_tag pic.image.url(:small)%></li>
+            <% end %>
+        </ul>
+    </div>
 </div>
 <div class="col-sm-6">
                 <div class="thumbnail">
@@ -32,21 +37,60 @@
                     </div>
                
   <hr>
+</div>
+</div>
+</div>
   <div class="well">
   
    <h2><%= @product.comments.count %> comments </h2>
     <%= render 'comments/comment' %>
     <%= render 'comments/form' %>
  </div>
-</div>
-</div>
 
-</div>
+
 <script>
-    $('#zoom_01').elevateZoom({
-    zoomType: "inner",
-cursor: "crosshair",
-zoomWindowFadeIn: 500,
-zoomWindowFadeOut: 750
-   }); 
+    
+$(window).load(function() {
+  // The slider being synced must be initialized first
+  $('#carousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 250,
+    itemMargin: 5,
+    asNavFor: '#slider'
+  });
+ 
+  $('#slider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#carousel"
+  });
+});
+$(".zoom_01").elevateZoom({
+    scrollZoom : true
+});
+
+function leftArrowPressed() {
+   // Keyboard action
+}
+
+function rightArrowPressed() {
+   // Keyboardaction
+}
+
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    switch (evt.keyCode) {
+        case 37:
+            leftArrowPressed();
+            break;
+        case 39:
+            rightArrowPressed();
+            break;
+    }
+};
 </script>

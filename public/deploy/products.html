@@ -26,6 +26,7 @@
 <script src="/assets/ads.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/comment.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="true"></script>
+<script src="/assets/easyzoom.self-41f2900e04000a8c6e7058c3bc1d14637a00f81afacf45b90dc066b9c685d2c6.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/my_products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/oauth.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" data-turbolinks-track="true"></script>
@@ -77,10 +78,9 @@
 <script src="/assets/image_zoomer_initializer.self-1eaa5073bb90605fa2934dbeb9bbff7f66692846b7c72a2ed09bec4ae6eb8a4f.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/image_zoomer_options.self-d45d780740d73e44903ebd2f9344dde01f7c5630f6d0b0e84d1e69ef3845d4e4.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/image_zoomer_main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" data-turbolinks-track="true"></script>
-<script src="/assets/easyzoom.self-c72f8a7a5de00ac7511ea7e1e7f8434ba5105e3c507e5d122bb1b448edcce142.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" data-turbolinks-track="true"></script>
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="Qx6CdVfe5t9vKBT759ejJWbDu9kiP3PFPoQbekg3EOA/YiRdhxPaF06vngvQosXPMo0PbTt/Vby43D2c27J2UA==" />
+<meta name="csrf-token" content="BYbA0NpCEFbHB4/4JFHLxPjEhGbNEWY5DmEJEmEXCDp5+mb4Co8snuaABQgTJK0urIow0tRRQECIOS/08pJuig==" />
 
 </head>
 <body>
@@ -126,7 +126,7 @@
 <div class="row">
         <div class="col-sm-3  col-lg-3 col-md-3">
         <div class="thumbnail">
-            <img class="img-responsive images" src="/images/Product_Pictures/1/small/206288-minions-superhero-hd-wallpapers.jpg?1454753289" alt="206288 minions superhero hd wallpapers" />
+            <a class="zoom img-responsive images" href="/images/Product_Pictures/1/original/206288-minions-superhero-hd-wallpapers.jpg?1454753289"><img src="/images/Product_Pictures/1/small/206288-minions-superhero-hd-wallpapers.jpg?1454753289" alt="206288 minions superhero hd wallpapers" /></a>
             <div class="caption">
                 <h4 class="pull-right"><b>Rs.</b></h4>
                 <h4><a href="/products/1">Show</a></h4>
@@ -138,7 +138,43 @@
         </div>
 </div>   
 
+<script type="text/javascript">
+	
+jQuery(function($){
+	
+	$('a.zoom').easyZoom();
 
+});
+
+</script>
+<style>
+
+/*
+
+Copy/paste this into your own stylesheet.
+Edit width, height and placement of the dynamically created image zoom box. 
+
+*/
+
+#easy_zoom{
+	width:600px;
+	height:400px;	
+	border:5px solid #eee;
+	background:#fff;
+	color:#333;
+	position:absolute;
+	top:60px;
+	left:400px;
+	overflow:hidden;
+	-moz-box-shadow:0 0 10px #777;
+	-webkit-box-shadow:0 0 10px #777;
+	box-shadow:0 0 10px #777;
+	/* vertical and horizontal alignment used for preloader text */
+	line-height:400px;
+	text-align:center;
+	}
+
+</style>
 
 </div>
 </div>
@@ -154,7 +190,7 @@
 		</div>
 		<div class="modal-body">
 <!--			<form class="form-horizontal" role="form"> -->
-              <form class="new_bid" id="new_bid" action="/bids" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Er0dmk5TYNKQBKXq2JKep07jujynhoLXUjxMcLmtAxxuwbuynp5cGrGDLxrv5/hNGq0OiL7GpK7UZGqWKihlrA==" />
+              <form class="new_bid" id="new_bid" action="/bids" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Tj/X/6J2d2QUlGNrh2RfZwOazt6YxTqh8i0ozhyOV+UyQ3HXcrtLrDUT6ZuwETmNV9R6aoGFHNh0dQ4ojwsxVQ==" />
               <input class="Product_id" style="display:none" type="number" name="bid[product_id]" id="bid_product_id" />
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="Price">Price:</label>
