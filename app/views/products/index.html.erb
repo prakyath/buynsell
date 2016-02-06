@@ -4,7 +4,8 @@
 </div>
 </div>
 </div>
-<div id="product-modal" class="modal fade"></div>
+
+
 <div id="mymodal" class="modal fade out" tabindex="-1" role="dialog">
 	<div class="modal-dialog">
 	<div class="modal-content">
@@ -13,24 +14,29 @@
 			<h4 class="modal-title">Make an Offer</h4>
 		</div>
 		<div class="modal-body">
-			<form class="form-horizontal" role="form">
+		<%# @product=Product.last %>
+		<%# form_for([@product, Bid.new], :class => 'form-horizontal', :role=>'form') do |f| %>	
+<!--			<form class="form-horizontal" role="form"> -->
+              <%= form_for(Bid.new, :class => 'form-horizontal', :role=>'form') do |f| %>
+              <%= f.number_field :product_id , :class=>'Product_id',:style=>'display:none' %>
 			  <div class="form-group">
-			    <label class="control-label col-sm-2" for="Price">Email:</label>
+			    <label class="control-label col-sm-2" for="Price">Price:</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="email" placeholder="Enter Price">
+			       <%= f.text_field :price, :class =>'form-control', :id => 'email', :placeholder =>'Enter Price'   %>
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label class="control-label col-sm-2" for="Content">Content:</label>
+			    <label class="control-label col-sm-2" for="Content">Message:</label>
 			    <div class="col-sm-10"> 
-			      <textarea type="text" class="form-control" id="pwd" placeholder="Content"></textarea>
+			      <%= f.text_field :content, :class =>'form-control', :id => 'pwd', :placeholder =>'Content'   %>
 			    </div>
 			  </div>
 			  <div class="form-group"> 
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-default">Submit</button>
+			      <%= f.submit "submit",:class => 'btn btn-primary' %> 
 			    </div>
 			  </div>
+		<% end %>	 
 			</form>
 		</div>
 		<div class="modal-footer">
@@ -39,3 +45,19 @@
 	</div>
 	</div>
 </div>
+
+
+<script type="text/javascript"> 
+ $('#mymodal').on('show.bs.modal', function (event) {
+
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = parseInt(button.data('uni'))
+  // alert(recipient) // Extract info from data-* attributes
+ //  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+ //  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+   var modal = $(this)
+ // modal.find('.modal-title').text('New message to ' + recipient)
+ // modal.find('.modal-body input').val(recipient)
+  modal.find('.modal-body .Product_id').val(recipient)
+})
+</script>

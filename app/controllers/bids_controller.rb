@@ -41,7 +41,7 @@ class BidsController < ApplicationController
 
 
 
-        format.html { redirect_to @bid, notice: 'Bid was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Bid was successfully created.' }
         format.json { render :show, status: :created, location: @bid }
       else
         format.html { render :new }
@@ -86,6 +86,6 @@ class BidsController < ApplicationController
     end
 
     def set_product
-      @product = Product.find(params[:product_id]);
+      @product = Product.find(bid_params[:product_id]);
     end
 end
