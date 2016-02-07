@@ -20,20 +20,19 @@
 <div class="col-sm-6">
                 <div class="thumbnail">
                     <div class="caption-full">
-                        <h4 class="pull-right"><b>Rs.<%= @product.price %></b></h4>
-                        <h4><a href="#"><%= @product.name %></a>
-                        </h4>
+                        <h4 class="pull-right"><strong>Price:</strong><b>Rs.<%= @product.price %></b></h4>
+                        <h4><strong>Name:</strong> <a href="#"><%= @product.name %></a></h4>
+                        <p><strong>Description:</strong> 
                         <% if !@product.description.blank? %>
-                                    <p><strong>Description:</strong> <%= @product.description %></p>
-                                <% end %>
-                                <% if !@product.reason.blank? %>
-                                    <p><strong>Reason:</strong><%= @product.reason %></p>
-                                <% end %>
-                                <p>Seller can edit details of product here <%= link_to "edit",edit_product_path %></p>  
+                            <%= @product.description %></p>
+                        <% end %>
+                        <p><strong>Reason:</strong>
+                        <% if !@product.reason.blank? %>
+                            <%= @product.reason %></p>
+                        <% end %>
+                        <p>Seller can edit details of product here <%= link_to "edit",edit_product_path %></p>  
                                 <%= link_to @product.status,"#",{class:"btn btn-info"} %>
                                 <%= link_to "Back",root_path,{class:"btn btn-primary pull-right"} %>
-
-                                
                     </div>
                
   <hr>
@@ -71,7 +70,9 @@ $(window).load(function() {
   });
 });
 $(".zoom_01").elevateZoom({
-    scrollZoom : true
+    //scrollZoom : true,
+    zoomWindowWidth : 400,
+    zoomWindoHeight : 400
 });
 
 function leftArrowPressed() {

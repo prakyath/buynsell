@@ -85,7 +85,7 @@
 <script src="/assets/image_zoomer_main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/application.self-55d2f88127dcaaa99d5c6a5261f9015880991431c520781213525a199c900f0d.js?body=1" data-turbolinks-track="true"></script>
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="QWVkvYINhN2gF6zY4JRwsMZmSNU/s2YHk1wMuHwXWDg9GcKVUsC4FYGQJijX4RZakij8YSbzQH4VBCpe75I+iA==" />
+<meta name="csrf-token" content="HSYprkjTu5D21cLYIOnzTgkQm3pZBLTadMYrKqcXIpouMWCaRHvBVFlWHB+7bjkxJH/msSqYDwdS3BjnUiFOeQ==" />
 
 </head>
 <body>
@@ -95,28 +95,39 @@
 </ul>
 </nav>
 <div id="content">
- <header class="navbar  navbar-static-top">
-    <div class="header">
-        <div class="menu-trigger"></div>
-            <h1 class="pull-left" style="margin:auto;"><a href="/products">Buy and Sell</a></h1>
-        <ul class="nav navbar-nav navbar-right" style="margin:auto;">
-                <li><a href="/products">Home</a></li>
-                <li><img class="img-circle img-responsive" src="/images/Users/553/thumb/cool-detective-minion-hitman-ipad-wallpaper-hd-ipad-retina-wallpapers-ipad-air-wallpaper-ipad-mini-wallpaper-apple-wallpapers-backgrounds-new-2014-2015-2016_ab9f4dae28ba52c750e9468e169c6b13_raw.jpg?1454766069" alt="Cool detective minion hitman ipad wallpaper hd ipad retina wallpapers ipad air wallpaper ipad mini wallpaper apple wallpapers backgrounds new 2014 2015 2016 ab9f4dae28ba52c750e9468e169c6b13 raw" /></li>
-              <li><a href="/user">PENTAKOTA HIMA SAI PHANINDHRA</a></li>
-              <li><a rel="nofollow" data-method="delete" href="/logout">Logout</a></li>
-        </ul>
-    <form id="search-form" class="input-group col-md-offset-7 col-md-2 search" action="/products" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-      <div class="form-group">
-          <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;" data-autocomplete="/products/autocomplete_product_name" />
-      </div>
-</form>    </div>
-    <!--<div id="site" class="col-md-12">-->
-    <div class="pull-right nav navbar-nav navbar-right" style="margin:1em 1.5em 0 0;">
-        <a class="btn btn-primary" data-remote="true" href="/products/new">New Product</a>
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <ul class="nav nav-pills">
+          <li><a id="nav-head" href="/products">Buy and Sell</a></li>
+      </ul>
     </div>
-    <!--</div>-->
-</header>
+	     <ul class="nav navbar-nav navbar-right" style="margin:auto;">
+                <li>/</li>
+                <li><a href="/">Home</a></li>
+                <li id="user-nmae"><a href="/user"><img id="user-thumb" class="img-circle img-responsive" src="/images/Users/553/thumb/cool-detective-minion-hitman-ipad-wallpaper-hd-ipad-retina-wallpapers-ipad-air-wallpaper-ipad-mini-wallpaper-apple-wallpapers-backgrounds-new-2014-2015-2016_ab9f4dae28ba52c750e9468e169c6b13_raw.jpg?1454766069" alt="Cool detective minion hitman ipad wallpaper hd ipad retina wallpapers ipad air wallpaper ipad mini wallpaper apple wallpapers backgrounds new 2014 2015 2016 ab9f4dae28ba52c750e9468e169c6b13 raw" />PENTAKOTA HIMA SAI PHANINDHRA</a></li>
+                <li><a rel="nofollow" data-method="delete" href="/logout">Logout</a></li>
+        </ul>
+    <form id="search-form" class="input-group col-xs-offset-2 col-md-offset-3 col-md-3 col-xs-3 search pull-right" action="/products" accept-charset="UTF-8" method="get">	<input name="utf8" type="hidden" value="✓">
+      <div class="form-group">
+          <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;" data-autocomplete="/products/autocomplete_product_name">
+      </div>
+	</form>
+
+
+  </div>
+</nav>
 <style >
+    #nav-head {
+        font-size:2rem;
+        margin-top:1rem;
+    }
+    #user-thumb{
+        float : left;
+    }
+    #user-name {
+        white-space: nowrap;
+    }
     h1{
          font-family: Pacifico, Helvetica, Arial, sans-serif;
          margin:auto;
@@ -149,14 +160,13 @@
 <div class="col-sm-6">
                 <div class="thumbnail">
                     <div class="caption-full">
-                        <h4 class="pull-right"><b>Rs.</b></h4>
-                        <h4><a href="#"></a>
-                        </h4>
-                                <p>Seller can edit details of product here <a href="/products/1/edit">edit</a></p>  
+                        <h4 class="pull-right"><strong>Price:</strong><b>Rs.</b></h4>
+                        <h4><strong>Name:</strong> <a href="#"></a></h4>
+                        <p><strong>Description:</strong> 
+                        <p><strong>Reason:</strong>
+                        <p>Seller can edit details of product here <a href="/products/1/edit">edit</a></p>  
                                 <a class="btn btn-info" href="#">available</a>
                                 <a class="btn btn-primary pull-right" href="/">Back</a>
-
-                                
                     </div>
                
   <hr>
@@ -170,7 +180,7 @@
  
 
   
-       <form class="new_comment" id="new_comment" action="/products/1/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="gPTzD9+jrGWgOPi0vChOXivJ1fvFNMqWZF/rCtFCymj8iFUnD26QrYG/ckSLXSi0f4dhT9x07O/iB83sQses2A==" />
+       <form class="new_comment" id="new_comment" action="/products/1/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="CFnEhDg0XdOA1IYkCPT1ZguTjS12Y7NWmZXVUxbPYZw7To2wNJwnFy9XWOOTcz8ZJvzw5gX/CIu/j+ae4/kNfw==" />
       <textarea placeholder="Write Comment..." class="form-control" name="comment[message]" id="comment_message">
 </textarea>
       <span class="input-group-btn">
@@ -189,7 +199,7 @@ $(window).load(function() {
     controlNav: false,
     animationLoop: false,
     slideshow: false,
-    itemWidth: 250,
+    itemWidth: 150,
     itemMargin: 5,
     asNavFor: '#slider'
   });
@@ -203,15 +213,17 @@ $(window).load(function() {
   });
 });
 $(".zoom_01").elevateZoom({
-    scrollZoom : true
+    //scrollZoom : true,
+    zoomWindowWidth : 400,
+    zoomWindoHeight : 400
 });
 
 function leftArrowPressed() {
-   // Your stuff here
+   // Keyboard action
 }
 
 function rightArrowPressed() {
-   // Your stuff here
+   // Keyboardaction
 }
 
 document.onkeydown = function(evt) {

@@ -5,12 +5,3 @@
 <%if session[:access_token] %>
 	<%= @signout %>
 <%end%>
-<script type='text/javascript'>
-$(function(){
-    <% if !logged_in? %>
-        window.location.href = $('#login2').attr('href');
-    <% else %>
-        window.location.href = $('#login1').attr('href');
-    <% end %>
-});
-</script>
