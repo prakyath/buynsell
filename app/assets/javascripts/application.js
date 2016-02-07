@@ -11,13 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require fancybox
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require jquery.turbolinks
 //= require jquery-ui
 //= require jquery-ui/autocomplete
+//= require bootstrap
+//= require_tree
 //= require autocomplete-rails
-//=require bootstrap/modal
 //= require image_zoomer_main   
 //= require easyzoom.js
 //= require jquery.elevatezoom.js

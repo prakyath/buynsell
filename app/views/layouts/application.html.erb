@@ -5,18 +5,11 @@
   <title>Buynsell</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.flexslider.js' %>
+  
   <%= csrf_meta_tags %>
-
 </head>
 <body>
-  <nav id="slide-menu" >
-<ul>
-<li><%= link_to "All",root_path,{class:"category-link"} %></li>
-<% Category.order('name ASC').each do |category| %>
-      <li><%= link_to category.name,category,{class:"category-link"} %></li>
-      <% end %>
-</ul>
-</nav>
 <div id="content">
 <%= render 'oauth/header' %>
 <div class="container main-body">
@@ -24,20 +17,5 @@
     <%= yield %>
   </div>
 </div>
-<script type="text/javascript">
-  (function() {
-  var $body = document.body
-  , $menu_trigger = $body.getElementsByClassName('menu-trigger')[0];
-
-  if ( typeof $menu_trigger !== 'undefined' ) {
-    $menu_trigger.addEventListener('click', function() {
-      $body.className = ( $body.className == 'menu-active' )? '' : 'menu-active';
-    });
-  }
-
-}).call(this);
-</script>
-
-  
 </body>
 </html>

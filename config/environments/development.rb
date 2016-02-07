@@ -37,6 +37,7 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
+  #config.serve_static_files = true
   config.time_zone = "Chennai"
 
   # Raises error for missing translations

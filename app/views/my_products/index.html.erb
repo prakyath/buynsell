@@ -1,8 +1,9 @@
 <% if !@product.blank? %>
-  <table>
+  <table class="table">
     <thead>
      <tr>
       <th>Image</th> 
+      <th>Name</th>
       <th>Price</th>
       <th>Description</th>
       <th>Reason</th>
@@ -14,15 +15,15 @@
   <tbody>
     <% @product.each do |product| %>
       <tr>
-        <td><%= image_tag product.image.url(:thumb) %></td> 
+        <td><%= image_tag product.pictures.first.image.url(:thumb) %></td> 
+        <td><%= product.name %></td>
         <td><%= product.price %></td>
         <td><%= product.description %></td>
         <td><%= product.reason %></td>
         <td><%= product.status %></td>
-        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Show', product ,:class => "btn btn-primary btn-default"%>
         <% if logged_in? %>
-          <td></td>
-          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%= link_to 'Destroy', product ,:class => "btn btn-primary btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

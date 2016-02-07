@@ -5,7 +5,7 @@
     <div id="slider" class="flexslider">
         <ul class="slides">
             <% @pictures.each do |pic| %>
-                    <li><%= image_tag pic.image.url(:medium),:class => "zoom_01",data:{zoom_image:pic.image.url}%></li>
+                    <li><%= image_tag pic.image.url(:medium),:id => "zoom_01",data:{zoom_image:pic.image.url}%></li>
             <% end %>
         </ul>
     </div>
@@ -69,7 +69,7 @@ $(window).load(function() {
     sync: "#carousel"
   });
 });
-$(".zoom_01").elevateZoom({
+$("#zoom_01").elevateZoom({
     //scrollZoom : true,
     zoomWindowWidth : 400,
     zoomWindoHeight : 400
