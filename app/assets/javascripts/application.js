@@ -18,3 +18,8 @@
 //= require jquery-ui/autocomplete
 //= require autocomplete-rails
 //=require bootstrap/modal
+//= require image_zoomer_main   
+//= require easyzoom.js
+//= require jquery.elevatezoom.js
+//= require jquery.slideme2.js
+//= require jquery.flexslider.js

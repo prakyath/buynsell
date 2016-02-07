@@ -2,8 +2,11 @@ class Picture < ActiveRecord::Base
   belongs_to :product
 
   has_attached_file :image,
-    :styles => { :small => "100x100#", :medium=>"250x250#",:large => "500x500>" },
-    :path => ":rails_root/public/images/:id/:style/:filename",
-    :url  => "/images/:id/:filename"
+    :styles => { :thumb => "100x100#", :small => "250x250#", :medium=>"400x400#",:large => "600x600>" },
+    :path => ":rails_root/public/images/Product_Pictures/:id/:style/:filename",
+    :url  => "/images/Product_Pictures/:id/:style/:filename"
 validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 end
+
+#medium for zoom galler,thumb for zoom gallery,small from index thumb
+#zoom source is medium and zoom target is large

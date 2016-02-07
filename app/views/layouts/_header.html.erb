@@ -1,29 +1,44 @@
- <header class="navbar  navbar-static-top">
-    <div class="header">
-        <div class="menu-trigger"></div>
-            <h1 class="pull-left" style="margin:auto;"><%= link_to 'Buy and Sell',products_path %></h1>
-        <ul class="nav navbar-nav navbar-right" style="margin:auto;">
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <ul class="nav nav-pills">
+          <li><%= link_to 'Buy and Sell',products_path , :id=> "nav-head"%></li>
+      </ul>
+    </div>
+	     <ul class="nav navbar-nav navbar-right" style="margin:auto;">
             <% if logged_in? %>
-                <li><%= link_to 'Home',products_path %></li>
-              <li><%= link_to 'User',user_path %></li>
-              <li><%= link_to 'Logout',logout_path, method: "delete" %></li>
+                <li><%= root_path %></li>
+                <li><%= link_to 'Home',root_path %></li>
+              <% if !current_user.avatar.blank? %>
+                <li id="user-nmae"><%= link_to image_tag(current_user.avatar.url(:thumb),{:id => "user-thumb",class:"img-circle img-responsive"})+current_user['fullname'],user_path %></li>
+              <% else %>
+                <li id="user-nmae"><%= link_to image_tag("user.jpg",{:id => "user-thumb",class:"img-circle img-responsive"})+current_user['fullname'],user_path %></li>
+              <% end %>
+                <li><%= link_to 'Logout',logout_path, method: "delete" %></li>
             <% else %>
-             <li><%= link_to "Sign in",  login_path , :id => "login1"%></li>
+                <li><%= link_to "Sign in",  login_path , :id => "login1"%></li>
             <% end %>
         </ul>
-    <%= form_tag(products_path, :method => "get", id: "search-form", :class => "input-group col-md-offset-7 col-md-2 search") do %>
+    <form id="search-form" class="input-group col-xs-offset-2 col-md-offset-3 col-md-3 col-xs-3 search pull-right" action="/products" accept-charset="UTF-8" method="get">	<input name="utf8" type="hidden" value="✓">
       <div class="form-group">
-          <%= text_field_tag :search, params[:search], placeholder: "Search" , class:"form-control input" , :style => "padding-left:8px;", type: "search", data: {autocomplete: autocomplete_product_name_products_path} %>
+          <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;" data-autocomplete="/products/autocomplete_product_name">
       </div>
-    <% end %>
-    </div>
-    <!--<div id="site" class="col-md-12">-->
-    <div class="pull-right nav navbar-nav navbar-right" style="margin:1em 1.5em 0 0;">
-        <%= link_to "New Product", new_product_path, remote: true, class: "btn btn-primary" %>
-    </div>
-    <!--</div>-->
-</header>
+	</form>
+
+
+  </div>
+</nav>
 <style >
+    #nav-head {
+        font-size:2rem;
+        margin-top:1rem;
+    }
+    #user-thumb{
+        float : left;
+    }
+    #user-name {
+        white-space: nowrap;
+    }
     h1{
          font-family: Pacifico, Helvetica, Arial, sans-serif;
          margin:auto;

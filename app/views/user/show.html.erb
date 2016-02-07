@@ -8,9 +8,9 @@
     	<div class="col-sm-2">
       <a href="/user" class="pull-right">
       <% if !@user.avatar.blank? %>
-        <%= image_tag(current_user.avatar.url(:thumb),{class:"img-circle img-responsive"}) %>
+        <%= image_tag(current_user.avatar.url(:small),{class:"img-circle img-responsive"}) %>
       <% else %>
-        <img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100">
+        <%= image_tag("user-small.jpg",{class:"img-circle img-responsive"}) %>
       <% end %>
       </a></div>
     </div>
@@ -62,7 +62,7 @@
                     <% @product.each do |product| %>
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                        `
+                        `            <%= image_tag product.pictures.first.image.url(:small),{class:"img-responsive images"} %>
                             <div class="caption">
                              <%= link_to 'Edit', edit_product_path(product),{class:"btn btn-primary"} %>
                               <%= link_to 'offers', edit_product_path(product),{class:"btn btn-success"} %>

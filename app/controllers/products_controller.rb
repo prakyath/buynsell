@@ -40,8 +40,6 @@ caches_page :show, :new ,:index
     @product = current_user.products.build(product_params)
     respond_to do |format|
       if @product.save
-        @product.pictures.create( image: params[:images][0])
-#        raise params[:images][0].inspect
         if params[:images]
           params[:images].each { |image|
             @product.pictures.create(image: image)
@@ -89,7 +87,7 @@ caches_page :show, :new ,:index
     end
 
     def product_params
-      params.require(:product).permit(:name, :price, :description, :reason, :user_id,:pictures,:status,:category_id)
+      params.require(:product).permit(:name, :price, :description, :reason, :user_id,:status,:category_id,pictures_attributes: [:image])
     end
 
     def correct_user

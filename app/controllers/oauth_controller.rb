@@ -22,6 +22,7 @@ class OauthController < ApplicationController
 	     		@student = User.find_by(username: @username)
 	     		if @username
 	     			log_in @student
+#	                cookies.permanent[:auth_token] = @user.auth_token
 	     		else
 	     			redirect_to root_url
 	     		end

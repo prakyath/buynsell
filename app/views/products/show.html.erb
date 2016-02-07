@@ -1,35 +1,97 @@
 <div class="container">
 
           <div class="row">
-
+<div class="col-sm-6">
+    <div id="slider" class="flexslider">
+        <ul class="slides">
+            <% @pictures.each do |pic| %>
+                    <li><%= image_tag pic.image.url(:medium),:class => "zoom_01",data:{zoom_image:pic.image.url}%></li>
+            <% end %>
+        </ul>
+    </div>
+<div id="carousel" class="flexslider" style="margin-top:-3.5em">
+        <ul class="slides">
+            <% @pictures.each do |pic| %>
+                    <li><%= image_tag pic.image.url(:small)%></li>
+            <% end %>
+        </ul>
+    </div>
+</div>
+<div class="col-sm-6">
                 <div class="thumbnail">
-                    <% @pictures.each do |pic| %>
-                    <%= image_tag pic.image.url(:original) %>
-                    <% end %>
                     <div class="caption-full">
-                        <h4 class="pull-right"><b>Rs.<%= @product.price %></b></h4>
-                        <h4><a href="#"><%= @product.name %></a>
-                        </h4>
+                        <h4 class="pull-right"><strong>Price:</strong><b>Rs.<%= @product.price %></b></h4>
+                        <h4><strong>Name:</strong> <a href="#"><%= @product.name %></a></h4>
+                        <p><strong>Description:</strong> 
                         <% if !@product.description.blank? %>
-                                    <p><strong>Description:</strong> <%= @product.description %></p>
-                                <% end %>
-                                <% if !@product.reason.blank? %>
-                                    <p><strong>Reason:</strong><%= @product.reason %></p>
-                                <% end %>
-                                <p>Seller can edit details of product here <%= link_to "edit",edit_product_path %></p>  
+                            <%= @product.description %></p>
+                        <% end %>
+                        <p><strong>Reason:</strong>
+                        <% if !@product.reason.blank? %>
+                            <%= @product.reason %></p>
+                        <% end %>
+                        <p>Seller can edit details of product here <%= link_to "edit",edit_product_path %></p>  
                                 <%= link_to @product.status,"#",{class:"btn btn-info"} %>
                                 <%= link_to "Back",root_path,{class:"btn btn-primary pull-right"} %>
-
-                                
                     </div>
                
   <hr>
+</div>
+</div>
+</div>
   <div class="well">
   
    <h2><%= @product.comments.count %> comments </h2>
     <%= render 'comments/comment' %>
     <%= render 'comments/form' %>
  </div>
-</div>
-</div>
 
+
+<script>
+    
+$(window).load(function() {
+  // The slider being synced must be initialized first
+  $('#carousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 150,
+    itemMargin: 5,
+    asNavFor: '#slider'
+  });
+ 
+  $('#slider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#carousel"
+  });
+});
+$(".zoom_01").elevateZoom({
+    //scrollZoom : true,
+    zoomWindowWidth : 400,
+    zoomWindoHeight : 400
+});
+
+function leftArrowPressed() {
+   // Keyboard action
+}
+
+function rightArrowPressed() {
+   // Keyboardaction
+}
+
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    switch (evt.keyCode) {
+        case 37:
+            leftArrowPressed();
+            break;
+        case 39:
+            rightArrowPressed();
+            break;
+    }
+};
+</script>

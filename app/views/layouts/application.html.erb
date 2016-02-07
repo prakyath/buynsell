@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
   <nav id="slide-menu" >
@@ -17,7 +18,7 @@
 </ul>
 </nav>
 <div id="content">
-<%= render 'layouts/header' %>
+<%= render 'oauth/header' %>
 <div class="container main-body">
     <%= render 'layouts/errors' %>
     <%= yield %>
