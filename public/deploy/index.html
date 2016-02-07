@@ -74,7 +74,7 @@
 <script src="/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" data-turbolinks-track="true"></script>
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="2ciujVfXYxFO32t53kJDkz9B2pZhvQrNmwHDLGqpe10A5v6uHwdIvzqNxJCvC1SGWuNynRCIzQaRxUCpmny2kQ==" />
+<meta name="csrf-token" content="kjpLYAsqh11UGOrDBBoYuZT9wT67wDmb4CHNJlVqvCxLFBtDQ/qs8yBKRSp1Uw+s8V9pNcr1/lDq5U6jpb9x4A==" />
 </head>
 <body>
   <nav id="slide-menu" >
@@ -88,7 +88,9 @@
         <div class="menu-trigger"></div>
             <h1 class="pull-left" style="margin:auto;"><a href="/products">Buy and Sell</a></h1>
         <ul class="nav navbar-nav navbar-right" style="margin:auto;">
-             <li><a id="login1" href="/login">Sign in</a></li>
+                <li><a href="/products">Home</a></li>
+              <li><a href="/user">User</a></li>
+              <li><a rel="nofollow" data-method="delete" href="/logout">Logout</a></li>
         </ul>
     <form id="search-form" class="input-group col-md-offset-7 col-md-2 search" action="/products" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
       <div class="form-group">
@@ -111,15 +113,7 @@
     }
 </style>
 <div class="container main-body">
-      <div class="alert alert-notice">
-    <a href="#" data-dismiss="alert" class="close">×</a>
-    <ul>
-      <li>
-        Bid was successfully created.
-      </li>
-    </ul>
-  </div>
-
+    
     <div class="show-wraper wraper">
 <div class="row">
         <div class="col-sm-3  col-lg-3 col-md-3">
@@ -199,7 +193,7 @@
 		</div>
 		<div class="modal-body">
 <!--			<form class="form-horizontal" role="form"> -->
-              <form class="new_bid" id="new_bid" action="/bids" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="r8ySsHSSg/AFAu97arxp8lyZYauYka8Adw1GqGN/mwd24sKTPEKoXnFQQJIb9X7nOTvJoOmkaMt9ycUtk6pWyw==" />
+              <form class="new_bid" id="new_bid" action="/bids" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="/09L8fYh14hZ6mSagVfKzmQDAZjA3J7xGwy3rCwsHhMmYRvSvvH8Ji24y3PwHt3bAaGpk7HpWToRyDQp3PnT3w==" />
               <input class="Product_id" style="display:none" type="number" name="bid[product_id]" id="bid_product_id" />
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="Price">Price:</label>
