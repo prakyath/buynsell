@@ -1,7 +1,57 @@
 
-    <%= link_to "sign in",  @auth_url, :id =>"login2" %>
-    <%= link_to "Home",  products_path, :id =>"login1" %>
+    <%#= link_to "sign in",  @auth_url, :id =>"login2" %>
+    <%#= link_to "Home",  products_path, :id =>"login1" %>
+
+<div class="flexslider" style="width:600px; margin:0 auto;">
+  <ul class="slides">
+    <li padding="10px;"><%= image_tag('index/slide1.jpeg', :class => "img img-responsive", :style => "width:50%")%></li>
+    <li padding="10px;"><%= image_tag('index/slide2.jpeg', :class => "img img-responsive", :style => "width:50%") %></li>
+    <li padding="10px;"><%= image_tag('index/slide3.jpeg', :class => "img img-responsive", :style => "width:50%") %></li>
+  </ul>
+</div>
+
+<script>
+(function() {
+ 
+  // store the slider in a local variable
+  var $window = $(window),
+      flexslider;
+ 
+  // tiny helper function to add breakpoints
+  function getGridSize() {
+    return 1;
+  }
+ 
+  $(function() {
+    SyntaxHighlighter.all();
+  });
+ 
+  $window.load(function() {
+    $('.flexslider').flexslider({
+      animation: "slide",
+      animationLoop: true,
+      itemWidth: 110,
+      itemMargin: 5,
+      minItems: getGridSize(), // use function to pull in initial value
+      maxItems: getGridSize() // use function to pull in initial value
+    });
+  });
+ 
+  // check grid size on resize event
+  $window.resize(function() {
+    var gridSize = getGridSize();
+ 
+    flexslider.vars.minItems = gridSize;
+    flexslider.vars.maxItems = gridSize;
+  });
+}());
+</script>
 
 <%if session[:access_token] %>
 	<%= @signout %>
 <%end%>
+<style>
+    .img {
+        object-fit : contain;
+    }
+</style>

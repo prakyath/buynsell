@@ -1,6 +1,9 @@
-  <%= link_to "New Product", new_product_path, remote: true, class: "btn btn-primary" %>
-
-<div class="show-wraper wraper">
+<%= render 'layouts/sidebar' %>
+<div class="show-wraper wraper col-sm-9 pull-right">
+	<div class="row">
+		<%= link_to "Post New Product", new_product_path, remote: true, class: "btn btn-primary pull-right" %>
+	</div>
+	<br>
 <%= render partial: 'products', locals: { products: @products } %>
 <%= will_paginate %>
 </div>

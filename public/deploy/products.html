@@ -96,12 +96,13 @@
   <script src="/assets/jquery.flexslider.self-2b4fb7025ec1a4721c4f4ed7396e2a0882064e38f48c1dd20b19e7c4bf637e71.js?body=1"></script>
   
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="YZlq0OzlAmUamvzRykGXMDLgHxTINgV94xpAQye9oM0ihgjPRS666kk8ilKsiox9ItUwoTRIEDAXCIeJ7623ew==" />
+<meta name="csrf-token" content="sDnFulovlP0AtvxGZQwoEfxTcPi8rtKHpoyahNySkP4ofR3SdAOl8TqQaMh+LkmZT57InKBtWOmi72huf8O9yw==" />
 </head>
 <body>
 <div id="content">
+  
 
-<nav class="navbar navbar-inverse navbar-static-top">
+<nav class="navbar navbar-inverse navbar-static-top"  style="box-shadow:0px 0px 5px rgba(0,0,0,0.9);">
   <div class="container-fluid">
     <div class="navbar-header">
       <ul class="nav nav-pills">
@@ -165,10 +166,23 @@
 </script>
 <div class="container main-body">
     
-      <a class="btn btn-primary" data-remote="true" href="/products/new">New Product</a>
-
-<div class="show-wraper wraper">
-<div class="row">
+    <div class="col-sm-2 pull-left affix" style="height:100%;background-color:rgba(0,0,0,0.1); box-shadow:0px 0px 3px rgba(0.5);">
+ <div class="btn-group-vertical btn-group-lg" style="width:100%;top:20%;">
+  <button type="button" class="btn btn-primary active" style="margin-bottom:10px">category</button>
+  <button type="button" class="btn" style="margin-bottom:10px">category</button>
+  <button type="button" class="btn" style="margin-bottom:10px">category</button>
+  <button type="button" class="btn" style="margin-bottom:10px">category</button>
+  <button type="button" class="btn" style="margin-bottom:10px">category</button>
+  <button type="button" class="btn" style="margin-bottom:10px">category</button>
+  <button type="button" class="btn" style="margin-bottom:10px">category</button>
+</div>
+</div>
+<div class="show-wraper wraper col-sm-9 pull-right">
+	<div class="row">
+		<a class="btn btn-primary pull-right" data-remote="true" href="/products/new">Post New Product</a>
+	</div>
+	<br>
+<div class="row" style="padding-top:20px;border-top:1px solid grey;">
         <div class="col-sm-3  col-lg-3 col-md-3">
         <div class="thumbnail">
             <a class="zoom img-responsive images" href="/images/Product_Pictures/1/original/206288-minions-superhero-hd-wallpapers.jpg?1454847417"><img src="/images/Product_Pictures/1/small/206288-minions-superhero-hd-wallpapers.jpg?1454847417" alt="206288 minions superhero hd wallpapers" /></a>
@@ -183,43 +197,7 @@
         </div>
 </div>   
 
-<script type="text/javascript">
-	
-jQuery(function($){
-	
-	$('a.zoom').easyZoom();
 
-});
-
-</script>
-<style>
-
-/*
-
-Copy/paste this into your own stylesheet.
-Edit width, height and placement of the dynamically created image zoom box. 
-
-*/
-
-#easy_zoom{
-	width:600px;
-	height:400px;	
-	border:5px solid #eee;
-	background:#fff;
-	color:#333;
-	position:absolute;
-	top:60px;
-	left:400px;
-	overflow:hidden;
-	-moz-box-shadow:0 0 10px #777;
-	-webkit-box-shadow:0 0 10px #777;
-	box-shadow:0 0 10px #777;
-	/* vertical and horizontal alignment used for preloader text */
-	line-height:400px;
-	text-align:center;
-	}
-
-</style>
 
 </div>
 </div>
@@ -235,7 +213,7 @@ Edit width, height and placement of the dynamically created image zoom box.
 		</div>
 		<div class="modal-body">
 <!--			<form class="form-horizontal" role="form"> -->
-              <form class="new_bid" id="new_bid" action="/bids" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="yFnPdRpYGS2SBC5nBO5o1PV3qSYWfF4upcu6J3gbQZ6LRq1qs5OhosGiWORiJXOZ5UKGk+oCS2NR2X3tsAtWKA==" />
+              <form class="new_bid" id="new_bid" action="/bids" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="mkcdpAthleKnG8xY+iNVfMCARdqq+p1KibedP1tgeZwCA8XMJU2k7p09WNbhATT0c039vrY5FySN1G/V+DFUqQ==" />
               <input class="Product_id" style="display:none" type="number" name="bid[product_id]" id="bid_product_id" />
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="Price">Price:</label>
