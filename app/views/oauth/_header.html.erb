@@ -21,6 +21,18 @@
                     <li ><%= link_to 'Logout',logout_path, method: "delete" %></li>
                   </ul>
                 </li>
+<!--
+                <li class="dropdown">
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown">Notifications
+                  <span class="caret"></span></a>
+                  <ul class="list-group dropdown-menu">
+                    <li class="list-group-item text-muted">Inbox</li>
+                    <%# @user.notifications_as_notifiee.each do |notification| %>
+                      <li class="list-group-item text-left"><%#=notification.notifier.fullname %> has commented on your <%#=notification.product.name %>  product at <%#= notification.created_at.strftime("%b %e, %l:%M %p") %></li>
+                    <%# end %>
+                  </ul>
+                </li>
+-->
                 <li><%= link_to 'Logout',logout_path, method: "delete" %></li>
             <% else %>
                 <li><%= link_to "Sign in",  @auth_url , :id => "login1"%></li>
