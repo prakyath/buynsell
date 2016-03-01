@@ -62,7 +62,7 @@
                         `            <%= image_tag product.pictures.first.image.url(:small),{class:"img-responsive images"} %>
                             <div class="caption">
                              <%= link_to 'Edit', edit_product_path(product),{class:"btn btn-primary"} %>
-                              <%= link_to 'offers', edit_product_path(product),{class:"btn btn-success"} %>
+                              <%# link_to 'offers', edit_product_path(product),{class:"btn btn-success"} %>
                                 <%= link_to 'Destroy', product,{ method: :delete, data: { confirm: 'Are you sure?'},class:"btn btn-danger pull-right"} %>
                                 
                                 <h4><%= link_to 'Show', product %>

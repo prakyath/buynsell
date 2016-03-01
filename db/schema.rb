@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160205190807) do
+ActiveRecord::Schema.define(version: 20160207085013) do
 
   create_table "ads", force: :cascade do |t|
     t.datetime "created_at",                null: false
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20160205190807) do
     t.integer  "category_id", limit: 4
     t.text     "Ad",          limit: 65535
     t.integer  "user_id",     limit: 4
-    t.integer  "product_id",  limit: 4
   end
 
   create_table "bids", force: :cascade do |t|
@@ -61,21 +60,23 @@ ActiveRecord::Schema.define(version: 20160205190807) do
   create_table "notifications", force: :cascade do |t|
     t.integer  "notifier_id", limit: 4
     t.integer  "notifiee_id", limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "message",     limit: 255
     t.integer  "product_id",  limit: 4
     t.integer  "comment_id",  limit: 4
+    t.integer  "price",       limit: 4
+    t.text     "content",     limit: 65535
   end
 
   create_table "pictures", force: :cascade do |t|
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
-    t.integer  "product_id",         limit: 4
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
+    t.integer  "product_id",         limit: 4
   end
 
   create_table "products", force: :cascade do |t|
@@ -88,6 +89,7 @@ ActiveRecord::Schema.define(version: 20160205190807) do
     t.integer  "user_id",     limit: 4
     t.string   "status",      limit: 255
     t.integer  "category_id", limit: 4
+    t.integer  "bid_id",      limit: 4
   end
 
   create_table "users", force: :cascade do |t|
