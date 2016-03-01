@@ -1,8 +1,9 @@
-class CreateProducts < ActiveRecord::Migration
+class CreateCategories < ActiveRecord::Migration
   def change
-    create_table :products do |t|
+    create_table :categories do |t|
 
       t.timestamps null: false
+      add_reference :products, :category
     end
   end
 end
