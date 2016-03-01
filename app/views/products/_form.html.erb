@@ -17,21 +17,20 @@
     <%= f.label :reason,class:"control-label" %>
     <%= f.text_area :reason,class:"form-control" %>
   </div><br/>
-  <div>
+  <div class="field col-md-6">
     <%= f.label :status,class:"control-label col-md-1" %>
-    <div class="col-md-4">
    <%= f.select :status, [["available"], ["sold"]], {}, {class: "form-control"} %>
     </div>
+    <div class="field col-md-6">
     <%= f.label :category_id,class:"control-label col-md-1" %>
-    <div class="col-md-4">
        <%= f.collection_select :category_id, Category.all, :id, :name,{ :prompt => "Category", :multiple => true},{class: "form-control"} %>
     </div>
-    <%= f.label :pictures,class:"control-label col-md-1" %>
-
+  <div class="field">
+    <%= f.label :pictures,class:"control-label" %>
     <span class="btn btn-default btn-file">
       Browse<%= file_field_tag "images[]", type: :file, multiple: true %>
     </span>
-  </div>
+    </div>
   <br/>
   </div>
   <div class="modal-footer">
