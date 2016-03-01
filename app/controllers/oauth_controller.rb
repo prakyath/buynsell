@@ -1,5 +1,6 @@
 class OauthController < ApplicationController
 	def index
+		@products = Product.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
 		#@posts = Post.where("solved=?",false).order('created_at DESC')
 		@redirect_uri = request.original_url
 		@auth_code = params[:authorization_code]	

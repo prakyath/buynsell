@@ -5,6 +5,10 @@
     margin:0px;
     padding:0px;    
 }
+.sidebar {
+    position:fixed;
+    z-index:100;
+}
 .alert-error {
     position:relative;
     margin:auto;
