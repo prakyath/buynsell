@@ -48,6 +48,7 @@ gem 'image_zoomer'
 gem 'easy_zoom_on_rails'
 gem 'fancybox-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
+gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
