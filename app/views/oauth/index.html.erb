@@ -6,18 +6,17 @@
   </ol>
 
   <div class="carousel-inner" role="listbox" align="center">
-    <div class="item active">
-      <%= image_tag('index/slide1.jpeg', :class => "img img-responsive")%>
-    </div>
-
-    <div class="item">
-      <%= image_tag('index/slide2.jpeg', :class => "img img-responsive")%>
-    </div>
-
-    <div class="item">
-      <%= image_tag('index/slide3.jpeg', :class => "img img-responsive")%>
-    </div>
-
+    <% @images.each do |image| %>
+      <% if image!=@images.first %>
+        <div class="item">
+          <%= image_tag "carousel/#{image.split('/').last}" %>
+        </div>
+      <% else %>
+        <div class="item active">
+          <%= image_tag "carousel/#{image.split('/').last}" %>
+        </div>      
+      <% end %>
+    <% end %>
   </div>
 
 </div>

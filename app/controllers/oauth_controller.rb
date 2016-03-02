@@ -1,5 +1,6 @@
 class OauthController < ApplicationController
 	def index
+		@images = Dir.glob("app/assets/images/carousel/*.{gif,jpg,jpeg,png}")
 		@products = Product.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
 		#@posts = Post.where("solved=?",false).order('created_at DESC')
 		@redirect_uri = request.original_url
