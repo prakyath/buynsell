@@ -10,6 +10,8 @@ caches_page :show, :new ,:index
   def index
     if params[:search]
       @products = Product.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
+    elsif params[:category_id]
+       @products = Product.where(category_id: params[:category_id]).order("created_at DESC").paginate(:page => params[:page], :per_page => 20)  
     else
       @products = Product.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 20)
     end
@@ -74,7 +76,6 @@ caches_page :show, :new ,:index
       format.json { head :no_content }
     end
   end
-
   private
   def make_offer
     respond_to do |format|

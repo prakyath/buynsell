@@ -8,7 +8,7 @@ resources :products do
   get "delete"
   resources :comments
 end
-resources :bids
+ resources :bids
 get "product/make_offer" => 'product#make_offer', :as => :make_offer
 resources :my_products
 resources :categories, only: [:show]

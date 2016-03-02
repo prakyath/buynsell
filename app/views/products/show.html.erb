@@ -45,6 +45,11 @@
     <%= render 'comments/comment' %>
     <%= render 'comments/form' %>
  </div>
+ <div class="well">
+  
+   <h2><%= @product.bids.count %> offers </h2>
+    <%= render 'bids/bid' %>
+ </div>
 
 
 <script>
