@@ -26,7 +26,7 @@ class BidsController < ApplicationController
   # POST /bids.json
   def create
     @bid = Bid.new(bid_params)
-
+    @bid.user_id=current_user.id
     respond_to do |format|
       if @bid.save
            

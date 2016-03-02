@@ -1,0 +1,25 @@
+<h1>Listing Offers</h1>
+ 
+<% @product.bids.each do |bid| %>
+<div class="comments">
+<div class="col-sm-1">
+      <% if !bid.user.avatar.blank? %>
+        <%= link_to image_tag(comment.user.avatar.url(:thumb),{class:"img-circle img-responsive"}),profile_path(:user_id => bid.user_id) %>
+      <% else %>
+        <%= link_to image_tag("user.jpg",{class:"img-circle img-responsive"}),profile_path(:user_id =>bid.user_id) %>
+      <% end %>
+ 	</a>
+ </div>
+ <% if !bid.content.blank? %>
+   
+   <p class="pull-right"><%= bid.created_at.strftime("%Y/%m/%d") %></p>
+<% end %>
+<p><%= link_to bid.user.fullname,profile_path(:user_id => bid.user_id),{class:"commentor"} %>
+    
+&nbsp;<%= bid.message %></p>
+ 
+   <% if !bid.message.blank? %>
+   <p><%= link_to "Remove", [bid.product,bid],{ method: :delete, data: { confirm: "Are you sure?" }} %></p> 
+   <% end %>
+<div>
+<% end %>

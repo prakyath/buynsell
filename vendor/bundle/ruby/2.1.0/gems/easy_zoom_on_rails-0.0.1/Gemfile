@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+
+# Specify your gem's dependencies in easy_zoom_on_rails.gemspec
+gemspec
