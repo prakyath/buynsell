@@ -1,3 +1,4 @@
+<%= @user %>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -25,6 +26,7 @@
   <br>
   <%= render partial: 'products/products', locals: { products: @products } %>
 </div>
+<%= render partial: 'products/offers'%>
 <%if session[:access_token] %>
 	<%= @signout %>
 <%end%>

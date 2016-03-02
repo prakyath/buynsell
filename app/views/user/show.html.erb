@@ -178,23 +178,7 @@
              <div class="tab-pane" id="messages">
                
                <h2></h2>
-             
-               <ul class="list-group">
-                  <li class="list-group-item text-muted">Inbox</li>
-                  <% @user.notifications_as_notifiee.each do |notification| %>
-                  <li class="list-group-item text-left"><%=notification.notifier.fullname %> has commented on your <%=notification.product.name %>  product at <%= notification.created_at.strftime("%b %e, %l:%M %p") %></li>
-                  
-
-                  <% end %>
-          <!--       <li class="list-group-item text-right"><a href="#" class="pull-left">Hi Joe, There has been a request on your account since that was..</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Nullam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Thllam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Wesm sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is assaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                      -->       
-                </ul> 
+                <%= render 'notification' %>
                
              </div><!--/tab-pane-->
              <div class="tab-pane" id="settings">

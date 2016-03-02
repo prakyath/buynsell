@@ -1,4 +1,7 @@
 <div class="row" style="padding-top:20px;border-top:1px solid grey;">
+    <% if @products.blank? %>
+        <p>There are No Products in this Category.Be the First person to add <i class="fa fa-smile-o"></i></p>
+    <% end %>
     <% @products.each do |product| %>
         <div class="col-sm-3  col-lg-3 col-md-3">
         <div class="thumbnail">

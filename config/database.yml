@@ -50,8 +50,7 @@ test:
 production:
   <<: *default
   database: buynsell_production
-  username: buynsell
-  password: <%= ENV['BUYNSELL_DATABASE_PASSWORD'] %>
+
 
 students_1415:
   <<: *default

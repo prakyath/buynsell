@@ -21,6 +21,11 @@
                     <li ><%= link_to 'Logout',logout_path, method: "delete" %></li>
                   </ul>
                 </li>
+                <li id="user-name" class="dropdown">
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown">hii
+                  <span class="caret"></span></a>
+                  <%= render partial: 'user/notification'%>
+                </li>
 <!--
                 <li class="dropdown">
                   <a class="dropdown-toggle" href="#" data-toggle="dropdown">Notifications

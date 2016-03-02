@@ -7,43 +7,9 @@
 <%= render partial: 'products', locals: { products: @products } %>
 <%= will_paginate %>
 </div>
+<%= render partial: 'offers'%>
 
 
-<div id="mymodal" class="modal fade out" tabindex="-1" role="dialog"  data-backdrop="false">
-	<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
-			<h4 class="modal-title">Make an Offer</h4>
-		</div>
-		<div class="modal-body">
-              <%= form_for(Bid.new, :class => 'form-horizontal', :role=>'form') do |f| %>
-              <%= f.number_field :product_id , :class=>'Product_id',:style=>'display:none' %>
-			  <div class="form-group">
-			    <label class="control-label col-sm-2" for="Price">Price:</label>
-			    <div class="col-sm-10">
-			       <%= f.text_field :price, :class =>'form-control', :id => 'email', :placeholder =>'Enter Price'   %>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label class="control-label col-sm-2" for="Content">Message:</label>
-			    <div class="col-sm-10"> 
-			      <%= f.text_field :content, :class =>'form-control', :id => 'pwd', :placeholder =>'Content'   %>
-			    </div>
-			  </div>
-			  <div class="form-group"> 
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <%= f.submit "submit",:class => 'btn btn-primary' %> 
-			    </div>
-			  </div>
-		<% end %>	 
-		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</div>
-	</div>
-	</div>
-</div>
 <script type="text/javascript"> 
  $('#mymodal').on('show.bs.modal', function (event) {
 
