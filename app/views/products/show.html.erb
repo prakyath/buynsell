@@ -31,7 +31,7 @@
                             <%= @product.reason %></p>
                         <% end %>
                         <p>Seller can edit details of product here <%= link_to "edit",edit_product_path %></p>  
-                                <%= link_to @product.status,"#",{class:"btn btn-info"} %>
+                                <%= link_to @product.status, {:controller =>'products', :action => :toggles, :id=>@product.id},{class:"btn btn-info"} %>
                                 <%= link_to "Back",root_path,{class:"btn btn-primary pull-right"} %>
                     </div>
                
@@ -39,15 +39,15 @@
 </div>
 </div>
 </div>
-  <div class="well">
+  <div class="well" id="cmnts">
   
    <h2><%= @product.comments.count %> comments </h2>
     <%= render 'comments/comment' %>
     <%= render 'comments/form' %>
  </div>
+ <if>
+<% if  @product.user_id==current_user.id %>
  <div class="well">
- <% if current_user.id==@product.user.id %>
-  
    <h2><%= @product.bids.count %> offers </h2>
     <%= render 'bids/bid' %>
  </div>

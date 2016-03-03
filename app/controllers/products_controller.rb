@@ -56,7 +56,6 @@ caches_page :show, :new ,:index
     end
 
   end
-
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -76,6 +75,17 @@ caches_page :show, :new ,:index
       format.json { head :no_content }
     end
   end
+  
+def toggles
+  @product = Product.find(params[:id])
+  if (@product.status=="available")
+    @product.status="sold"
+  else
+    @product.status="available"
+  end
+  @product.save
+  redirect_to :back
+end
   private
   def make_offer
     respond_to do |format|
@@ -86,7 +96,7 @@ caches_page :show, :new ,:index
     def set_product
       @product = Product.find(params[:id])
     end
-
+  
     def product_params
       params.require(:product).permit(:name, :price, :description, :reason, :user_id,:status,:category_id,pictures_attributes: [:image])
     end

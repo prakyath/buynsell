@@ -178,7 +178,17 @@
              <div class="tab-pane" id="messages">
                
                <h2></h2>
-                <%= render 'notification' %>
+
+               <ul class="list-group dropdown-menu ">
+                   <% if current_user.notifications_as_notifiee.blank? %>
+                       <li>No New Notifications</li>
+                    <% end %>
+                  <% @user.notifications_as_notifiee.reverse.each do |notification| %>
+                  <% @p=Product.find( notification.product_id )%>
+                  <li class="list-group-item text-left"><a href='<%= url_for @p %>' style="display:inline;"><%=notification.notifier.fullname %> has commented on your <%=notification.product.name %>  product at <%= notification.created_at.strftime("%b %e, %l:%M %p") %></a></li>
+                  <% end %>
+                </ul> 
+                <p>vgujvguyjfvu</p>
                
              </div><!--/tab-pane-->
              <div class="tab-pane" id="settings">

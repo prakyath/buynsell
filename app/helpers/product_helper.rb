@@ -8,5 +8,10 @@ module ProductHelper
       end
     end
   end
+def toggle(attribute)
+      self[attribute] = !send("#{attribute}?")
+      self
+    end
+
 
 end

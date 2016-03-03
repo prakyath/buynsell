@@ -10,4 +10,10 @@ def self.search(query)
   where("name like ?", "%#{query}%") 
 end
 
+def toggle(attribute)
+      self[attribute] = !send("#{attribute}?")
+      self
+    end
+
+
 end

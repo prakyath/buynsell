@@ -23,7 +23,7 @@
     </div>
     <div class="field col-md-6">
     <%= f.label :category_id,class:"control-label col-md-1" %>
-       <%= f.collection_select :category_id, Category.all, :id, :name,{ :prompt => "Category", :multiple => true},{class: "form-control"} %>
+       <%= f.collection_select :category_id, Category.all, :id, :name,{ :multiple => true},{class: "form-control"} %>
     </div>
   <div class="field">
     <%= f.label :pictures,class:"control-label" %>

@@ -11,19 +11,24 @@
                 <li><%= root_path %></li>
                 <li><%= link_to 'Home',root_path %></li>
                 <li><%= link_to 'Products',products_path%></li>
-                <li id="user-name" class="dropdown">
-                  <a class="dropdown-toggle" href="#" data-toggle="dropdown"><%= image_tag(current_user.avatar.url(:thumb),{:id => "user-thumb",class:"img-circle img-responsive" , alt:""})+current_user['fullname'].titleize %>
+                <li class="user-name dropdown">
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown"><%= image_tag(current_user.avatar.url(:thumb),{:id => "user-thumb",class:"img-circle img-responsive" , alt:""}) %>
                   <span class="caret"></span></a>
                   <ul class="dropdown-menu ">
-                    <li ><%= link_to "My Profile",user_path %></li>
+                    <li ><%= link_to "#{current_user['fullname'].titleize}",user_path %></li>
                     <li ><%= link_to 'My products',my_products_index_path %></li>
                     <li class="divider"></li>
                     <li ><%= link_to 'Logout',logout_path, method: "delete" %></li>
                   </ul>
                 </li>
-                <li id="user-name" class="dropdown">
-                  <a class="dropdown-toggle" href="#" data-toggle="dropdown">hii
-                  <span class="caret"></span></a>
+                <li class="user-name dropdown">
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                    <div class="notification-icon">
+                      <span class="glyphicon glyphicon-globe"></span>
+                      <span class="caret"></span>
+                      <!--<span class="badge">19</span>-->
+                    </div>
+                  </a>
                   <%= render partial: 'user/notification'%>
                 </li>
 <!--
@@ -38,7 +43,6 @@
                   </ul>
                 </li>
 -->
-                <li><%= link_to 'Logout',logout_path, method: "delete" %></li>
             <% else %>
                 <li><%= link_to "Sign in",  @auth_url , :id => "login1"%></li>
             <% end %>
@@ -61,11 +65,61 @@
     #user-thumb{
         float : left;
     }
-    #user-name {
+    .user-name {
         white-space: nowrap;
     }
     h1{
          font-family: Pacifico, Helvetica, Arial, sans-serif;
          margin:auto;
     }
+    .ui-autocomplete { position: absolute; cursor: default; }       
+.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
+
+/* workarounds */
+* html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
+
+/* Menu
+----------------------------------*/
+.ui-menu {
+        list-style:none;
+        padding: 10px;
+        margin: 0;
+        display:block;
+        width:227px;
+}
+.ui-menu .ui-menu {
+        margin-top: -3px;
+}
+.ui-menu .ui-menu-item {
+        margin:0;
+        padding: 0;
+        width: 100%;
+
+}
+.ui-menu-item:after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 10px;
+}
+.ui-menu .ui-menu-item a {
+        text-decoration:none;
+        display:block;
+        line-height:1;
+        zoom:1;
+        font-size:1rem !important;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+        color:white;
+}
+.ui-widget {
+    font-size:75% !important;
+    border:none !important;
+}
+.ui-state-focus {
+background: none !important;
+background-color: #f2f2f2 !important;
+border: none !important;}
 </style>

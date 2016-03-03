@@ -18,7 +18,8 @@
         <td><%= product.price %></td>
         <td><%= product.description %></td>
         <td><%= product.reason %></td>
-        <td><%= product.status %></td>
+        <td>      <%= link_to product.status, {:controller =>'my_products', :action => 'toggles', :id=>@product.id}, class: "btn btn-medium btn-default" %>
+<%= product.status %></td>
         <td><%= link_to 'Show', product %></td>
         <% if logged_in? %>
           <td></td>

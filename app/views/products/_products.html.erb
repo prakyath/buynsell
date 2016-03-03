@@ -3,9 +3,11 @@
         <p>There are No Products in this Category.Be the First person to add <i class="fa fa-smile-o"></i></p>
     <% end %>
     <% @products.each do |product| %>
+    <%#= product.status=="available" %>
+        <% if product.status=="available" %>
         <div class="col-sm-3  col-lg-3 col-md-3">
         <div class="thumbnail">
-            <%=link_to image_tag(product.pictures.first.image.url(:small)) , product.pictures.first.image.url, :class =>"zoom img-responsive"%>
+            <%= image_tag(product.pictures.first.image.url(:small) , :class =>"zoom img-responsive")%>
             <%#= image_tag product.pictures.first.image.url(:small),{class:"img-responsive images"} %>
             <div class="caption">
                 <h4 class="pull-right"><b>Rs.<%= product.price %></b></h4>
@@ -19,6 +21,7 @@
             </div>
         </div>
         </div>
+        <% end %>
     <% end %>
 </div>   
 

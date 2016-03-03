@@ -4,8 +4,7 @@
                        <li>No New Notifications</li>
                     <% end %>
                   <% current_user.notifications_as_notifiee.reverse.each do |notification| %>
-                  <li class="list-group-item text-left"><%=notification.notifier.fullname %> has commented on your <%=notification.product.name %>  product at <%= notification.created_at.strftime("%b %e, %l:%M %p") %></li>
-                  
-
+                  <% @p=Product.find( notification.product_id )%>
+                  <li class="list-group-item text-left"><a href='<%= url_for @p %>' style="display:inline;"><%=notification.notifier.fullname %> has commented on your <%=notification.product.name %>  product at <%= notification.created_at.strftime("%b %e, %l:%M %p") %></a></li>
                   <% end %>
                 </ul> 

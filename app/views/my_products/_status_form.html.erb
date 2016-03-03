@@ -1,4 +1,7 @@
 <% if logged_in? %>
+  <%# @product.each do |p| %>
+      <%= link_to @product.status, {:controller =>'my_products', :action => 'toggles', :id=>@product.id}, class: "btn btn-medium btn-default" %>
+  <%# end %>
     <%= form_for @product do |t| %>
       <% if @product.status=="available" %>
         <%= t.text_field :status, :value=>"sold"%>
