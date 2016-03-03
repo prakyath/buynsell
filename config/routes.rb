@@ -9,6 +9,7 @@ resources :products do
   get :autocomplete_product_name, on: :collection
   get "delete"
   resources :comments
+  resources :bids
 end
  resources :bids
 get "product/make_offer" => 'product#make_offer', :as => :make_offer

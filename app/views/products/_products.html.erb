@@ -1,18 +1,15 @@
 <div class="row" style="padding-top:20px;border-top:1px solid grey;">
-    <% if @products.blank? %>
-        <p>There are No Products in this Category.Be the First person to add <i class="fa fa-smile-o"></i></p>
+    <% if  @products.where(status: "available").count==0%>
+        <p>There are No Products available for sale in this Category<%= @category1%>.Be the First person to add <i class="fa fa-smile-o"></i></p>
     <% end %>
     <% @products.each do |product| %>
-    <%#= product.status=="available" %>
         <% if product.status=="available" %>
         <div class="col-sm-3  col-lg-3 col-md-3">
         <div class="thumbnail">
             <%= image_tag(product.pictures.first.image.url(:small) , :class =>"zoom img-responsive")%>
-            <%#= image_tag product.pictures.first.image.url(:small),{class:"img-responsive images"} %>
             <div class="caption">
                 <h4 class="pull-right"><b>Rs.<%= product.price %></b></h4>
                 <h4><%= link_to 'Show', product %></h4>
-                <h4><button type="button"  class="btn btn-primary btn-default"data-toggle="modal" data-target="#mymodal" id="adds" data-uni=<%=product.id%>>Send offers</button></h4>
                 <p><strong>Name:</strong> <%= product.name %></span></p>
                 <p><strong>Description:</strong>
                 <% if !product.description.blank? %>
@@ -24,4 +21,3 @@
         <% end %>
     <% end %>
 </div>   
-

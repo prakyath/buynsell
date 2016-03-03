@@ -7,11 +7,12 @@
 		</div>
 		<div class="modal-body">
               <%= form_for(Bid.new, :class => 'form-horizontal', :role=>'form') do |f| %>
-              <%= f.number_field :product_id , :class=>'Product_id',:style=>'display:none' %>
+              <%= f.hidden_field :product_id , :value => @product.id,:style=>'display:block' %>
+              <%= f.hidden_field :user_id , :value => current_user.id,:style=>'display:block' %>
 			  <div class="form-group">
 			    <label class="control-label col-sm-2" for="Price">Price:</label>
 			    <div class="col-sm-10">
-			       <%= f.text_field :price, :class =>'form-control', :id => 'email', :placeholder =>'Enter Price'   %>
+			       <%= f.number_field :price, :class =>'form-control', :id => 'email', :placeholder =>'Enter Price'   %>
 			    </div>
 			  </div>
 			  <div class="form-group">

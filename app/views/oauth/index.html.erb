@@ -25,7 +25,6 @@
   <br>
   <%= render partial: 'products/products', locals: { products: @products } %>
 </div>
-<%= render partial: 'products/offers'%>
 <%if session[:access_token] %>
 	<%= @signout %>
 <%end%>

@@ -29,19 +29,13 @@ class BidsController < ApplicationController
     @bid.user_id=current_user.id
     respond_to do |format|
       if @bid.save
-           
-          @notification = NotificationOffer.new
-          @notification.notifier = current_user
-          @notification.notifiee = @product
-          @notification.content = @bid.content
-          @notification.price = @bid.price
-          @notification.save
-
-
-
-
-
-        format.html { redirect_to root_path, notice: 'Bid was successfully created.' }
+          @notification_offer = NotificationOffer.new
+          @notification_offer.notifier = current_user
+          @notification_offer.notifiee = @product.user
+          @notification_offer.content = @bid.content
+          @notification_offer.price = @bid.price
+          @notification_offer.save
+        format.html { redirect_to :back, notice: 'Bid was successfully created.' }
         format.json { render :show, status: :created, location: @bid }
       else
         format.html { render :new }
@@ -69,7 +63,7 @@ class BidsController < ApplicationController
   def destroy
     @bid.destroy
     respond_to do |format|
-      format.html { redirect_to bids_url, notice: 'Bid was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Bid was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -86,6 +80,6 @@ class BidsController < ApplicationController
     end
 
     def set_product
-      @product = Product.find(bid_params[:product_id]);
+      @product = Product.find(5);
     end
 end

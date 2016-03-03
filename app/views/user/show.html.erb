@@ -3,13 +3,15 @@
 <body>
 <hr>
 <div class="container bootstrap snippet">
-  <%= link_to "New Product", new_product_path, class: "btn btn-primary" %>
     <div class="row">
   		<div class="col-sm-10"><h1><%= @user.fullname.titleize %></h1></div>
     	<div class="col-sm-2">
       <a href="/user" class="pull-right">
         <%= image_tag(current_user.avatar.url(:small),{class:"img-circle img-responsive"}) %>
       </a></div>
+    </div>
+    <div class="row">
+      <%= link_to "New Product", new_product_path, class: "btn btn-primary" %>
     </div>
     <div class="row">
   		<div class="col-sm-3"><!--left col-->
@@ -49,7 +51,7 @@
           
           <ul class="nav nav-tabs" id="myTab">
             <li class="active"><a href="#home" data-toggle="tab">Uploaded Products</a></li>
-            <li><a href="#messages" data-toggle="tab">Notifications</a></li>
+            <li id="noti"><a href="#messages" data-toggle="tab">Notifications</a></li>
             <li><a href="#settings" data-toggle="tab">Profile Settings</a></li>
           </ul>
               
@@ -178,18 +180,23 @@
              <div class="tab-pane" id="messages">
                
                <h2></h2>
-
-               <ul class="list-group dropdown-menu ">
-                   <% if current_user.notifications_as_notifiee.blank? %>
-                       <li>No New Notifications</li>
-                    <% end %>
+               <ul class="list-group">
+                  <li class="list-group-item text-muted">Inbox</li>
                   <% @user.notifications_as_notifiee.reverse.each do |notification| %>
                   <% @p=Product.find( notification.product_id )%>
-                  <li class="list-group-item text-left"><a href='<%= url_for @p %>' style="display:inline;"><%=notification.notifier.fullname %> has commented on your <%=notification.product.name %>  product at <%= notification.created_at.strftime("%b %e, %l:%M %p") %></a></li>
+                  <li class="list-group-item text-left"><a href='<%= url_for @p %>' style="display:inline;"><%=notification.notifier.fullname %> has commented on your <b><%=notification.product.name %></b> at <small><%= notification.created_at.strftime("%b %e, %l:%M %p") %></small></a></li>
+                  
+
                   <% end %>
+          <!--       <li class="list-group-item text-right"><a href="#" class="pull-left">Hi Joe, There has been a request on your account since that was..</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Nullam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Thllam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Wesm sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is assaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                      -->       
                 </ul> 
-                <p>vgujvguyjfvu</p>
-               
              </div><!--/tab-pane-->
              <div class="tab-pane" id="settings">
             	

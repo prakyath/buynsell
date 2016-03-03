@@ -96,7 +96,7 @@
   <script src="/assets/jquery.flexslider.self-2b4fb7025ec1a4721c4f4ed7396e2a0882064e38f48c1dd20b19e7c4bf637e71.js?body=1"></script>
   
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="0pnJP1gl7rzDCv0pDZbOQTtXMAjTgpYcXwREsbbjD9jNzMVJO7R70kulbhaAzLd7Hl/rRdvqwjWBxxO98M0qKA==" />
+<meta name="csrf-token" content="VJwcVVPhsn4WpI6crNLLt5q8k66dzHAXNROuqDiXtolLyRAjMHAnEJ4LHaMhiLKNv7RI45WkJD7r0PmkfrmTeQ==" />
 </head>
 <body>
 <div id="content">
@@ -117,7 +117,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/products">Products</a></li>
                 <li class="user-name dropdown">
-                  <a class="dropdown-toggle" href="#" data-toggle="dropdown"><img id="user-thumb" class="img-circle img-responsive" alt="" src="/images/Users/553/thumb/Arrow-arrow-cw-35030067-1920-1200.jpg?1454845248" />
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown"><img id="user-thumb" class="img-circle img-responsive" alt="" src="/images/Users/553/thumb/Arrow-arrow-cw-35030067-1920-1200.jpg?1454845248" />Phanindhra
                   <span class="caret"></span></a>
                   <ul class="dropdown-menu ">
                     <li ><a href="/user">Phanindhra</a></li>
@@ -135,12 +135,49 @@
                     </div>
                   </a>
                   
-               <ul class="list-group dropdown-menu ">
-                  <li class="list-group-item text-left"><a href='/products/3' style="display:inline;">PHANINDHRA has commented on your product 2  product at Mar  3,  1:53 AM</a></li>
-                  <li class="list-group-item text-left"><a href='/products/3' style="display:inline;">PHANINDHRA has commented on your product 2  product at Mar  2, 11:02 PM</a></li>
-                  <li class="list-group-item text-left"><a href='/products/3' style="display:inline;">PHANINDHRA has commented on your product 2  product at Mar  2, 10:56 PM</a></li>
-                </ul> 
-
+               <div class="list-group dropdown-menu " id="notificationContainer">
+                   <div id="notificationTitle" align="center">Notifications</div>
+                <div id="notificationsBody" class="notifications">
+                <ul class="list-group">
+                       <li>No New Notifications</li>
+                  </ul>
+                </div>
+                  <div id="notificationFooter"><a href='https://buynsell-phani8996.c9users.io/user#noti' align="center">Show more</a></div>
+                  </div>
+<style>
+    #notificationContainer:before {
+content: '';
+display: block;
+position: absolute;
+width: 0;
+height: 0;
+color: transparent;
+border: 10px solid black;
+border-color: transparent transparent white;
+margin-top: -20px;
+margin-left: 450px;
+}
+#notificationTitle
+{
+font-weight: bold;
+padding: 8px;
+font-size: 2rem;
+}
+#notificationsBody
+{
+padding: 33px 0px 0px 0px !important;
+min-height:50px;
+}
+#notificationFooter
+{
+background-color: #e9eaed;
+text-align: center;
+font-weight: bold;
+padding: 8px;
+font-size: 12px;
+border-top: 1px solid #dddddd;
+}
+</style>
                 </li>
 <!--
                 <li class="dropdown">
@@ -238,7 +275,7 @@ border: none !important;}
 <h3>New Product</h3>
 </div>
 
-<form class=" form-horizontal center" id="new_product" enctype="multipart/form-data" action="/products" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="QgOsMx4GYAoO2aWvyxPEto6XmCNh6FJuLYboKp2cM65dVqBFfZf1ZIZ2NpBGSb2Mq59DbmmABkfzRb8m27IWXg==" />
+<form class=" form-horizontal center" id="new_product" enctype="multipart/form-data" action="/products" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="+KNCrJ7nBiDk5byQkqtmTByzpTPpvLotNPJDstudYznn9k7a/XaTTmxKL68f8R92Obt+fuHU7gTqMRS+nbNGyQ==" />
 <div class="modal-body">
   <div class="field">
     <label class="control-label" for="product_name">Name</label>
@@ -265,8 +302,7 @@ border: none !important;}
     </div>
     <div class="field col-md-6">
     <label class="control-label col-md-1" for="product_category_id">Category</label>
-       <select class="form-control" name="product[category_id]" id="product_category_id"><option value="">Category</option>
-<option value="1">Electronics</option>
+       <select class="form-control" name="product[category_id]" id="product_category_id"><option value="1">Electronics</option>
 <option value="3">Men&#39;s Fashion</option>
 <option value="4">Women&#39;s Fashion</option>
 <option value="5">Sports</option>
@@ -283,7 +319,7 @@ border: none !important;}
   <div class="modal-footer">
   <div class="actions">
     <input type="submit" name="commit" value="Submit" class="btn btn-default btn-primary" />
-    <a class="btn" data-dismiss="modal" href="#">Cancel</a>
+    <a class="btn" data-dismiss="modal" href="/products">Cancel</a>
       </div>
   </div><br/>
 </form>  </div>

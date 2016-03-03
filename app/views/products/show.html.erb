@@ -21,7 +21,7 @@
                 <div class="thumbnail">
                     <div class="caption-full">
                         <h4 class="pull-right"><strong>Price:</strong><b>Rs.<%= @product.price %></b></h4>
-                        <h4><strong>Name:</strong> <a href="#"><%= @product.name %></a></h4>
+                        <h4><strong>Name:</strong><%= @product.name %></h4>
                         <p><strong>Description:</strong> 
                         <% if !@product.description.blank? %>
                             <%= @product.description %></p>
@@ -30,11 +30,17 @@
                         <% if !@product.reason.blank? %>
                             <%= @product.reason %></p>
                         <% end %>
-                        <p>Seller can edit details of product here <%= link_to "edit",edit_product_path %></p>  
-                                <%= link_to @product.status, {:controller =>'products', :action => :toggles, :id=>@product.id},{class:"btn btn-info"} %>
+                        <% if current_user.id==@product.user_id %>
+                            <p>Seller can edit details of product here <%= link_to "edit",edit_product_path %></p>  
+                            <%= link_to @product.status, {:controller =>'products', :action => :toggles, :id=>@product.id},:class=> ( @product.status=="available"  ? "btn btn-success" : "btn btn-danger") %>
+                        <% else %>
+                            <%= link_to @product.status, "#",:class=> ( @product.status=="available"  ? "btn btn-success" : "btn btn-danger") %>
+                        <% end %>
+                <h4><button type="button"  class="btn btn-primary btn-default"data-toggle="modal" data-target="#mymodal" id="adds" data-uni=<%=@product.id%>>Send offers</button></h4>
                                 <%= link_to "Back",root_path,{class:"btn btn-primary pull-right"} %>
                     </div>
-               
+<%= render partial: 'offers'%>
+
   <hr>
 </div>
 </div>

@@ -31,7 +31,7 @@
         <td class="vert-align"><%= product.price %></td>
         <td class="vert-align"><%= product.description %></td>
         <td class="vert-align"><%= product.reason %></td>
-        <td class="vert-align" style="color:yellowgreen;"><%= link_to product.status, {:controller =>'products', :action => :toggles, :id=>product.id}, class: "btn btn-medium btn-default" %></td>
+        <td class="vert-align" style="color:yellowgreen;"><%= link_to product.status, {:controller =>'products', :action => :toggles, :id=>product.id}, :class=> ( product.status=="available"  ? "btn btn-success" : "btn btn-danger") %></td>
         <td class="vert-align"><%= link_to 'Show', product ,:class => "btn btn-primary btn-default",:style => "color:white" %>
         <% if logged_in? %>
           <%= link_to 'Destroy', product ,:class => "btn btn-primary btn-danger",:style => "color:white", method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,10 +1,46 @@
 
-               <ul class="list-group dropdown-menu ">
+               <div class="list-group dropdown-menu " id="notificationContainer">
+                   <div id="notificationTitle" align="center">Notifications</div>
+                <div id="notificationsBody" class="notifications">
+                <ul class="list-group">
                    <% if current_user.notifications_as_notifiee.blank? %>
-                       <li>No New Notifications</li>
+                       <li class="list-group-item">No New Notifications                  <%= current_user%>
+</li>
+                       
                     <% end %>
-                  <% current_user.notifications_as_notifiee.reverse.each do |notification| %>
+                  <% current_user.notifications_as_notifiee.reverse[0..10].each do |notification| %>
                   <% @p=Product.find( notification.product_id )%>
-                  <li class="list-group-item text-left"><a href='<%= url_for @p %>' style="display:inline;"><%=notification.notifier.fullname %> has commented on your <%=notification.product.name %>  product at <%= notification.created_at.strftime("%b %e, %l:%M %p") %></a></li>
+                  <%= current_user%>
+                  <li class="list-group-item"><a href='<%= url_for @p %>' style="display:inline;"><%=notification.notifier.fullname %> has commented on your <b><%=notification.product.name %></b> at <small><%= notification.created_at.strftime("%b %e, %l:%M %p") %></small></a></li>
                   <% end %>
-                </ul> 
+                  </ul>
+                </div>
+                  <div id="notificationFooter"><a href='<%= user_url%>#noti' align="center">Show more</a></div>
+                  </div>
+<style>
+    #notificationContainer {
+
+        border-radius:5px;
+    }
+#notificationTitle
+{
+font-weight: bold;
+padding: 8px;
+font-size: 2rem;
+}
+#notificationsBody
+{
+padding: 33px 0px 0px 0px !important;
+min-height:50px;
+min-width:30em;
+}
+#notificationFooter
+{
+background-color: #e9eaed;
+text-align: center;
+font-weight: bold;
+padding: 8px;
+font-size: 12px;
+border-top: 1px solid #dddddd;
+}
+</style>

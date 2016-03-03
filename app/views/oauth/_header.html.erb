@@ -1,18 +1,27 @@
 
-<nav class="navbar navbar-inverse navbar-static-top"  style="box-shadow:0px 0px 5px rgba(0,0,0,0.9);">
+<nav class="navbar navbar-default navbar-static-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <ul class="nav nav-pills">
-          <li><h3 id="nav-head">Buy and Sell</h3></li>
-      </ul>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= @root_url %>" style="font-size:2rem;">Buy and Sell</a>
     </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <form id="search-form" class="navbar-form navbar-left col-md-5" action="/products" accept-charset="UTF-8" method="get">	<input name="utf8" type="hidden" value="✓">
+      <div class="form-group">
+          <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;" data-autocomplete="/products/autocomplete_product_name">
+      </div>
+	</form>
 	     <ul class="nav navbar-nav navbar-right" style="margin:auto;">
             <% if logged_in? %>
-                <li><%= root_path %></li>
                 <li><%= link_to 'Home',root_path %></li>
                 <li><%= link_to 'Products',products_path%></li>
                 <li class="user-name dropdown">
-                  <a class="dropdown-toggle" href="#" data-toggle="dropdown"><%= image_tag(current_user.avatar.url(:thumb),{:id => "user-thumb",class:"img-circle img-responsive" , alt:""}) %>
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown"><%= image_tag(current_user.avatar.url(:thumb),{:id => "user-thumb",class:"img-circle img-responsive" , alt:""})+current_user['fullname'].titleize %>
                   <span class="caret"></span></a>
                   <ul class="dropdown-menu ">
                     <li ><%= link_to "#{current_user['fullname'].titleize}",user_path %></li>
@@ -21,12 +30,11 @@
                     <li ><%= link_to 'Logout',logout_path, method: "delete" %></li>
                   </ul>
                 </li>
-                <li class="user-name dropdown">
+                    <li class="user-name dropdown">
                   <a class="dropdown-toggle" href="#" data-toggle="dropdown">
                     <div class="notification-icon">
                       <span class="glyphicon glyphicon-globe"></span>
                       <span class="caret"></span>
-                      <!--<span class="badge">19</span>-->
                     </div>
                   </a>
                   <%= render partial: 'user/notification'%>
@@ -47,19 +55,43 @@
                 <li><%= link_to "Sign in",  @auth_url , :id => "login1"%></li>
             <% end %>
         </ul>
-    <form id="search-form" class="input-group col-xs-offset-2 col-md-offset-3 col-md-3 col-xs-3 search" action="/products" accept-charset="UTF-8" method="get">	<input name="utf8" type="hidden" value="✓">
-      <div class="form-group">
-          <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;" data-autocomplete="/products/autocomplete_product_name">
-      </div>
-	</form>
 
+
+
+  </div>
 
   </div>
 </nav>
 <style >
+.navbar-nav > li > a:focus {
+    color: #111 !important;
+    background-color: transparent;
+}
+.navbar-nav > li > a {
+    color: #111 !important;
+    background-color: transparent;
+}.navbar-header > a:focus {
+    color: #111 !important;
+    background-color: transparent;
+}
+.navbar-header > a {
+    color: #111 !important;
+    background-color: transparent;
+}
+.navbar{
+  color:black !important;
+  background-color:#d35400;
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+  background:#e67e22 !important;
+  color:#000 !important;
+  
+}
+
     #nav-head {
         font-size:3rem;
-        color:white;
+        color:#111;
         margin-top:1rem;
     }
     #user-thumb{
@@ -121,5 +153,8 @@
 .ui-state-focus {
 background: none !important;
 background-color: #f2f2f2 !important;
-border: none !important;}
+border: none !important;
+  
+}
+
 </style>
