@@ -1,0 +1,11 @@
+
+    <div class="dropdown pull-left" id="cat-butt" style="">
+      <a class="btn btn-default dropdown-toggle pull-left" data-toggle="dropdown">Categories<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li class="dropdown-header">Shop By Category</li>
+        <li class="divider"></li>
+  <% @category.each do |category| %>
+    <li>  <%= link_to "#{category.name}",products_path(:category_id=>"#{category.id}")%></li>
+  <% end %>
+      </ul>
+    </div>

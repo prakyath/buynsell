@@ -1,7 +1,6 @@
-<div class="container">
-
-          <div class="row">
-<div class="col-sm-6">
+<div class="container" style="margin-top:2em;">
+<div class="row">
+    <div class="col-sm-6">
     <div id="slider" class="flexslider">
         <ul class="slides">
             <% @pictures.each do |pic| %>
@@ -51,7 +50,6 @@
     <%= render 'comments/comment' %>
     <%= render 'comments/form' %>
  </div>
- <if>
 <% if  @product.user_id==current_user.id %>
  <div class="well">
    <h2><%= @product.bids.count %> offers </h2>
@@ -71,7 +69,7 @@ $(window).load(function() {
     itemWidth: 150,
     itemMargin: 5,
     asNavFor: '#slider'
-  });
+  })
  
   $('#slider').flexslider({
     animation: "slide",
@@ -81,11 +79,7 @@ $(window).load(function() {
     sync: "#carousel"
   });
 });
-$(".zoom_01").elevateZoom({
-    //scrollZoom : true,
-    zoomWindowWidth : 400,
-    zoomWindoHeight : 400
-});
+
 
 function leftArrowPressed() {
    // Keyboard action
@@ -106,4 +100,10 @@ document.onkeydown = function(evt) {
             break;
     }
 };
+var zooms=$(".zoom_01").elevateZoom({
+    //scrollZoom : true,
+    zoomWindowWidth : 400,
+    zoomWindoHeight : 400
+});
+setTimeout(zooms, 2000);
 </script>

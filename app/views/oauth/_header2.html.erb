@@ -1,0 +1,180 @@
+<nav class="navbar navbar-default navbar-static-top" >
+  <div class="container-fluid">
+    <div class="navbar-header" >
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "BUY AND SELL" , root_url , :style=> "font-size:2rem;", :class=> "navbar-brand" %>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+        
+	     <ul class="nav navbar-nav navbar-left" style="margin:auto;">
+            <% if logged_in? %>
+                <li><%#= link_to 'Home',root_path %></li>
+                <li class="user-name dropdown">
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown">Products<span class="caret"></span></a>
+                <ul class="dropdown-menu ">
+                    <li><%= link_to 'All Products',products_path%></li>
+                    <li ><%= link_to 'My products',my_products_index_path %></li>
+            <% end%>
+                </ul>
+        </ul>
+    <form id="search-form" class="navbar-form navbar-left col-md-6" action="/products" accept-charset="UTF-8" method="get">	<input name="utf8" type="hidden" value="✓">
+      <div class="form-group">
+          <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;" data-autocomplete="/products/autocomplete_product_name">
+      </div>
+	</form>
+        <ul class="nav navbar-nav navbar-right" style="margin:auto;">
+            <% if logged_in? %>
+                <li class="user-name dropdown">
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown"><%= image_tag(current_user.avatar.url(:thumb),{:id => "user-thumb",class:"img-circle img-responsive" , alt:""})+current_user['fullname'].titleize %>
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu ">
+                    <li ><%= link_to "My Profile",user_path %></li>
+                    <li class="divider"></li>
+                    <li ><%= link_to 'Logout',logout_path, method: "delete" %></li>
+                  </ul>
+                </li>
+                    <li class="user-name dropdown">
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                    <div class="notification-icon">
+                      <span class="glyphicon glyphicon-globe"></span>
+                      <span class="caret"></span>
+                    </div>
+                  </a>
+                  <%= render partial: 'user/notification'%>
+                </li>
+<!--
+                <li class="dropdown">
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown">Notifications
+                  <span class="caret"></span></a>
+                  <ul class="list-group dropdown-menu">
+                    <li class="list-group-item text-muted">Inbox</li>
+                    <%# @user.notifications_as_notifiee.each do |notification| %>
+                      <li class="list-group-item text-left"><%#=notification.notifier.fullname %> has commented on your <%#=notification.product.name %>  product at <%#= notification.created_at.strftime("%b %e, %l:%M %p") %></li>
+                    <%# end %>
+                  </ul>
+                </li>
+-->
+            <% else %>
+            <li><%#=  @auth_url %></li>
+                <li><%= link_to "Sign in",  @auth_url , :id => "login1"%></li>
+            <% end %>
+        </ul>
+                </div>
+
+</nav>
+
+<style>
+.navbar-brand {
+    color:white !important;
+}
+.navbar-nav > li > a:focus {
+    color: white !important;
+    background-color: transparent;
+}
+.navbar-nav > li > a:hover {
+    color: white !important;
+    background-color: transparent;
+}
+.navbar-nav > li > a {
+    color: white !important;
+    background-color: transparent;
+}.navbar-header > a:focus {
+    color: white !important;
+    background-color: transparent;
+}
+.navbar-header > a {
+    color: white !important;
+    background-color: transparent;
+}
+.navbar-header > a:hover {
+    color: white !important;
+    background-color: transparent;
+}
+.navbar{
+  color:white !important;
+  background-color:#3498db;
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+  background:#2980b9 !important;
+  color:#000 !important;
+  
+}
+#login1{
+    float:right;
+}
+
+    #nav-head {
+        font-size:3rem;
+        margin-top:1rem;
+    }
+    #user-thumb{
+        float : left;
+    }
+    .user-name {
+        white-space: nowrap;
+    }
+    h1{
+         font-family: Pacifico, Helvetica, Arial, sans-serif;
+         margin:auto;
+    }
+    .ui-autocomplete { position: absolute; cursor: default; }       
+.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
+
+/* workarounds */
+* html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
+
+/* Menu
+----------------------------------*/
+.ui-menu {
+        list-style:none;
+        padding: 10px;
+        margin: 0;
+        display:block;
+        width:227px;
+}
+.ui-menu .ui-menu {
+        margin-top: -3px;
+}
+.ui-menu .ui-menu-item {
+        margin:0;
+        padding: 0;
+        width: 100%;
+
+}
+.ui-menu-item:after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 10px;
+}
+.ui-menu .ui-menu-item a {
+        text-decoration:none;
+        display:block;
+        line-height:1;
+        zoom:1;
+        font-size:1rem !important;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+        color:white;
+}
+.ui-widget {
+    font-size:75% !important;
+    border:none !important;
+}
+.ui-state-focus {
+background: none !important;
+background-color: #f2f2f2 !important;
+border: none !important;
+  
+}
+
+</style>
+

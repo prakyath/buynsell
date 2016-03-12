@@ -1,5 +1,3 @@
-<% if @flag %>
-
 <script type="text/javascript">
 
 function category(some)
@@ -9,16 +7,23 @@ window.location.href="products?category_id="+some;
 }	
 
 </script>
-
-<div class="col-sm-2 pull-left affix" style="height:100%;background-color:rgba(0,0,0,0.1); box-shadow:0px 0px 3px rgba(0.5);">
+ <% if @flag %>
+<div class="hidden-xs col-sm-3  col-lg-2 col-md-3 pull-left affix" style="height:100%;background-color:rgba(0,0,0,0.1); box-shadow:0px 0px 3px rgba(0.5);">
  <div class="btn-group-vertical btn-group-lg" style="width:100%;top:20%;">
   <% @category.each do |category| %>
-  <!--
-  <button type="button" class="btn btn-primary active" style="margin-bottom:10px" onclick="category(<%=category.id%>);" ><%= category.name %></button>
-  -->
   <%= link_to "#{category.name}",products_path(:category_id=>"#{category.id}"), :class=>'btn btn-primary',:style=>"margin-bottom:1rem"%>
   <% end %>
-</div>
-</div>
-<% end %>
 
+</div>
+</div>
+  <% end%>
+
+<style>
+ a:focus {
+    color: #111 !important;
+    background-color: transparent;
+}
+ a {
+    color: #111 !important;
+    background-color: transparent;
+}</style>

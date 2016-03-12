@@ -1,9 +1,9 @@
 <h1>Listing Offers</h1>
- 
+ <br />
 <% @product.bids.reverse.each do |bid| %>
-<div class="comments">
-<div class="col-sm-1">
-            <%= image_tag(current_user.avatar.url(:small),{class:"img-circle img-responsive"}) %>
+<div class="comments cmnt-name">
+<div class="col-sm-1 cmnt-name">
+    <%= image_tag(bid.user.avatar.url(:small),{class:"img-circle img-responsive"}) %>
       <%# if !bid.user.avatar.blank? %>
         <%#= link_to image_tag(comment.user.avatar.url(:thumb),{class:"img-circle img-responsive"}),profile_path(:user_id => bid.user_id) %>
       <%# else %>

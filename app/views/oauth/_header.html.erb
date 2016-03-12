@@ -1,17 +1,16 @@
-
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-static-top" >
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar-header" >
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<%= @root_url %>" style="font-size:2rem;">Buy and Sell</a>
+      <%= link_to "BUY AND SELL" , root_url , :style=> "font-size:2rem;", :class=> "navbar-brand" %>
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <form id="search-form" class="navbar-form navbar-left col-md-5" action="/products" accept-charset="UTF-8" method="get">	<input name="utf8" type="hidden" value="✓">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+    <form id="search-form" class="navbar-form navbar-left col-md-6" action="/products" accept-charset="UTF-8" method="get">	<input name="utf8" type="hidden" value="✓">
       <div class="form-group">
           <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;" data-autocomplete="/products/autocomplete_product_name">
       </div>
@@ -52,17 +51,18 @@
                 </li>
 -->
             <% else %>
+            <li><%#=  @auth_url %></li>
                 <li><%= link_to "Sign in",  @auth_url , :id => "login1"%></li>
             <% end %>
         </ul>
+                </div>
 
-
-
-  </div>
-
-  </div>
 </nav>
-<style >
+
+<style>
+.navbar-brand > a:hover {
+    background-color:;
+}
 .navbar-nav > li > a:focus {
     color: #111 !important;
     background-color: transparent;
@@ -158,3 +158,14 @@ border: none !important;
 }
 
 </style>
+<script>
+      $(function(){
+    $('.dropdown').hover(function() {
+        $(this).addClass('open');
+    },
+    function() {
+        $(this).removeClass('open');
+    });
+})
+</script>
+

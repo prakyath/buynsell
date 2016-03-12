@@ -1,3 +1,4 @@
+<%@flag=true%>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -16,12 +17,11 @@
           <%= image_tag "carousel/#{image.split('/').last}" %>
         </div>      
       <% end %>
-    <% end %>
+      <% end %>
   </div>
 
 </div>
-<div class="row col-sm-9 pull-right">
-  <% @flag=true%>
+<div class="row col-sm-offset-2 col-sm-9">
   <br>
   <%= render partial: 'products/products', locals: { products: @products } %>
 </div>

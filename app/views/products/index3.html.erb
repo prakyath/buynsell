@@ -1,0 +1,25 @@
+<% @flag=true%>
+<div class="show-wraper wraper col-sm-9 pull-right">
+	<div class="row">
+		<%= link_to "Post New Product", new_product_path, class: "btn btn-primary pull-right" %>
+	</div>
+	<br>
+<%= render partial: 'products', locals: { products: @products } %>
+<%= will_paginate %>
+</div>
+
+
+<script type="text/javascript"> 
+ $('#mymodal').on('show.bs.modal', function (event) {
+
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = parseInt(button.data('uni'))
+  // alert(recipient) // Extract info from data-* attributes
+ //  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+ //  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+   var modal = $(this)
+ // modal.find('.modal-title').text('New message to ' + recipient)
+ // modal.find('.modal-body input').val(recipient)
+  modal.find('.modal-body .Product_id').val(recipient)
+})
+</script>

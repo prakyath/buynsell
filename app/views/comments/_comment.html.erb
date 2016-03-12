@@ -1,8 +1,8 @@
 <h1>Listing comments</h1>
- 
+ <br />
 <% @product.comments.each do |comment| %>
-<div class="comments">
-<div class="col-sm-1">
+<div class="comments cmnt-name">
+<div class="col-sm-1 cmnt-nmae">
       <% if !comment.user.avatar.blank? %>
         <%= link_to image_tag(comment.user.avatar.url(:thumb),{class:"img-circle img-responsive"}),profile_path(:user_id => comment.user_id) %>
       <% else %>
@@ -11,8 +11,7 @@
  	</a>
  </div>
  <% if !comment.message.blank? %>
-   
-   <p class="pull-right"><%= comment.created_at.strftime("%Y/%m/%d") %></p>
+      <p class="pull-right"><%= comment.created_at.strftime("%Y/%m/%d") %></p>
 <% end %>
 <p><%= link_to comment.user.fullname,profile_path(:user_id => comment.user_id),{class:"commentor"} %>
     
@@ -21,7 +20,14 @@
    <% if !comment.message.blank? %>
    <p><%= link_to "Remove", [comment.product,comment],{ method: :delete, data: { confirm: "Are you sure?" }} %></p> 
    <% end %>
-<div>
+</div>
 <% end %>
 
-  
+  <style>
+      .cmnt-name>p>a:hover {
+          background-color:white;
+      }
+      .cmnt-name>a:hover {
+          background-color:white;
+      }
+  </style>
