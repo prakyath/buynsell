@@ -10,8 +10,9 @@ window.location.href="products?category_id="+some;
  <% if @flag %>
 <div class="hidden-xs col-sm-3  col-lg-2 col-md-3 pull-left affix" style="height:100%;background-color:rgba(0,0,0,0.1); box-shadow:0px 0px 3px rgba(0.5);">
  <div class="btn-group-vertical btn-group-lg" style="width:100%;top:20%;">
+  <%= link_to 'All Categories',products_path, :class=>'btn btn-primary',:style=>"margin-bottom:1rem;color: #fff !important;"%>
   <% @category.each do |category| %>
-  <%= link_to "#{category.name}",products_path(:category_id=>"#{category.id}"), :class=>'btn btn-primary',:style=>"margin-bottom:1rem"%>
+  <%= link_to "#{category.name}",products_path(:category_id=>"#{category.id}"), :class=>'btn btn-primary',:style=>"margin-bottom:1rem;color: #fff !important;"%>
   <% end %>
 
 </div>
@@ -20,10 +21,10 @@ window.location.href="products?category_id="+some;
 
 <style>
  a:focus {
-    color: #111 !important;
+    color: #fff !important;
     background-color: transparent;
 }
  a {
-    color: #111 !important;
+    color: #fff !important;
     background-color: transparent;
 }</style>

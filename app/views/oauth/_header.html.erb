@@ -7,12 +7,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "BUY AND SELL" , root_url , :style=> "font-size:2rem;", :class=> "navbar-brand" %>
+      <b><%= link_to "BUY AND SELL" , root_url , :style=> "font-size:2rem;", :class=> "navbar-brand" %></b>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
     <form id="search-form" class="navbar-form navbar-left col-md-6" action="/products" accept-charset="UTF-8" method="get">	<input name="utf8" type="hidden" value="✓">
       <div class="form-group">
-          <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;" data-autocomplete="/products/autocomplete_product_name">
+          <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;width:16em !important;" data-autocomplete="/products/autocomplete_product_name">
       </div>
 	</form>
 	     <ul class="nav navbar-nav navbar-right" style="margin:auto;">
@@ -108,54 +108,6 @@
 .ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
 
 /* workarounds */
-* html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
-
-/* Menu
-----------------------------------*/
-.ui-menu {
-        list-style:none;
-        padding: 10px;
-        margin: 0;
-        display:block;
-        width:227px;
-}
-.ui-menu .ui-menu {
-        margin-top: -3px;
-}
-.ui-menu .ui-menu-item {
-        margin:0;
-        padding: 0;
-        width: 100%;
-
-}
-.ui-menu-item:after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 100%;
-    margin: 10px;
-}
-.ui-menu .ui-menu-item a {
-        text-decoration:none;
-        display:block;
-        line-height:1;
-        zoom:1;
-        font-size:1rem !important;
-}
-.ui-menu .ui-menu-item a.ui-state-hover,
-.ui-menu .ui-menu-item a.ui-state-active {
-        color:white;
-}
-.ui-widget {
-    font-size:75% !important;
-    border:none !important;
-}
-.ui-state-focus {
-background: none !important;
-background-color: #f2f2f2 !important;
-border: none !important;
-  
-}
 
 </style>
 <script>

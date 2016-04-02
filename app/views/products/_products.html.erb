@@ -9,7 +9,7 @@
             <%= image_tag(product.pictures.first.image.url(:small) , :class =>"zoom img-responsive")%>
             <div class="caption">
                 <h4 class="pull-right"><b>Rs.<%= product.price %></b></h4>
-                <h4><%= link_to 'Show', product %></h4>
+                <h4><%= link_to 'Show', product,:class=> "show" %></h4>
                 <p><strong>Name:</strong> <%= product.name %></span></p>
                 <p><strong>Description:</strong>
                 <% if !product.description.blank? %>
@@ -23,16 +23,20 @@
 </div>   
 
 <style>
- a:focus {
-    color: #111 !important;
-    background-color: transparent;
-}
- a:hover {
-    color: #111 !important;
+ .show:focus {
+    color: #2980B9 !important;
     background-color: transparent;
     text-decoration:none !important;
+    border:none !important;
+
 }
- a {
-    color: #111 !important;
+ .show:hover {
+    color: #2980B9 !important;
+    background-color: transparent;
+    text-decoration:none !important;
+    font-size:1.1em;
+}
+ .show {
+    color: #2980B9 !important;
     background-color: transparent;
 }</style>

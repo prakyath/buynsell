@@ -33,7 +33,7 @@
                             <p>Seller can edit details of product here <%= link_to "edit",edit_product_path %></p>  
                             <%= link_to @product.status, {:controller =>'products', :action => :toggles, :id=>@product.id},:class=> ( @product.status=="available"  ? "btn btn-success" : "btn btn-danger") %>
                         <% else %>
-                            <%= link_to @product.status, "#",:class=> ( @product.status=="available"  ? "btn btn-success" : "btn btn-danger") %>
+                            <%= link_to @product.status, "#",:class=> ( @product.status=="available"  ? "btn btn-success" : "btn btn-danger"),:style=>"color: #fff !important;" %>
                         <% end %>
                 <h4><button type="button"  class="btn btn-primary btn-default"data-toggle="modal" data-target="#mymodal" id="adds" data-uni=<%=@product.id%>>Send offers</button></h4>
                                 <%= link_to "Back",root_path,{class:"btn btn-primary pull-right"} %>
