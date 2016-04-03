@@ -1,3 +1,0 @@
-module ImageZoomer
-  VERSION = "0.0.2"
-end

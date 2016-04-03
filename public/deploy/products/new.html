@@ -27,6 +27,7 @@
 <link rel="stylesheet" media="all" href="/assets/jquery-ui/core.self-23329dbe1961b938278306c019037fe36ff6ccb28193f1038e52ccbf52858163.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/jquery-ui/datepicker.self-bf92a2196df590f06fad4ab5bb7ed4db1874a9bef0c9af85ea0490d2108b9966.css?body=1" data-turbolinks-track="true" />
 <link rel="stylesheet" media="all" href="/assets/easyzoom.self-f814a752f45fcc62a7f030aa609c79954b4e60797bfbbce5a77cc7be4d8858d6.css?body=1" data-turbolinks-track="true" />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/jquery.fancybox.self-a3da87b643d6da65379a35b88ea65752ecbf64cb3a9faf91f3f58ddb79db1383.js?body=1" data-turbolinks-track="true"></script>
 <script src="/assets/jquery.fancybox-buttons.self-33642167959619dbf7a787a72836fa409114cb21cb6543d00dc46d4633e19d83.js?body=1" data-turbolinks-track="true"></script>
@@ -98,7 +99,7 @@
   <script src="/assets/jquery.flexslider.self-2b4fb7025ec1a4721c4f4ed7396e2a0882064e38f48c1dd20b19e7c4bf637e71.js?body=1"></script>
   
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="3nSrECRvY4wTZCQgrPGSOPZAD4rgAJWToHQdudtC9lEb2sDvqLSh6GczESdqlh91YDO3w0zti10kagbIVsaT6g==" />
+<meta name="csrf-token" content="4G5xNjzH9naoWKwjAR0DSauYGH8kI71nrIx/eT98ZsOT4RUj0nGBaRS3Xyj1risPWqPe23ekVCCq02fFRNLDow==" />
 </head>
 <body>
 <div id="content">
@@ -132,7 +133,7 @@ window.location.href="products?category_id="+some;
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a style="font-size:2rem;" class="navbar-brand" href="https://buynsell-phani8996.c9users.io/">BUY AND SELL</a>
+      <a style="font-size:2rem;" class="navbar-brand" id="head" href="https://buynsell-phani8996.c9users.io/">BUY AND SELL</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
         
@@ -152,7 +153,7 @@ window.location.href="products?category_id="+some;
 	</form>
         <ul class="nav navbar-nav navbar-right" style="margin:auto;">
                 <li class="user-name dropdown">
-                  <a class="dropdown-toggle" href="#" data-toggle="dropdown"><img id="user-thumb" class="img-circle img-responsive" alt="" src="/assets/user-5bfaffb7395ed694a859ccbd952438a3c5ccc7f0e2df658ecfcc1bf9f018eb15.jpg" />Sourav Debnath
+                  <a class="dropdown-toggle" href="#" data-toggle="dropdown"><img id="user-thumb" class="img-circle img-responsive" alt="" src="/images/Users/553/thumb/endou_small.jpg?1459410402" />Phanindhra
                   <span class="caret"></span></a>
                   <ul class="dropdown-menu ">
                     <li ><a href="/user">My Profile</a></li>
@@ -169,7 +170,8 @@ window.location.href="products?category_id="+some;
                   </a>
                   
                 <ul class="list-group dropdown-menu">
-                       <li class="list-group-item">No New Notifications</li>
+                  <li class="list-group-item"><a href='/products/12' style="display:inline;">PHANINDHRA has commented on your <b>uybyu</b> at <small>Apr  2, 11:12 PM</small></a></li>
+                    <div id="notificationFooter"><a href='https://buynsell-phani8996.c9users.io/user#noti' align="center">Show more</a></div>
                   </ul>
 <style>
     #notificationContainer {
@@ -226,6 +228,10 @@ margin-bottom:-2em;
 .navbar-brand {
     color:white !important;
 }
+.input {
+    width:16em !important;
+}
+
 .navbar-nav > li > a:focus {
     color: white !important;
     background-color: transparent;
@@ -325,9 +331,12 @@ margin-bottom:-2em;
 }
 .ui-state-focus {
 background: none !important;
-background-color: #f2f2f2 !important;
+background-color: #2980B9 !important;/*#f2f2f2 !important;*/
 border: none !important;
-  
+width:100% !important;
+}
+#head{
+    font-weight:bold;
 }
 
 </style>
@@ -341,7 +350,7 @@ border: none !important;
 <h3>New Product</h3>
 </div>
 
-<form class=" form-horizontal center" id="new_product" enctype="multipart/form-data" action="/products" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="voVetcCXVij+QWo++pAeHQsptg9wEdaBZYYNeBq0Z697KzVKTEyUTIoWXzk895NQnVoORtz8yE/hmBYJlzACFA==" />
+<form class=" form-horizontal center" id="new_product" enctype="multipart/form-data" action="/products" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Vjoqokglba7EijdmHJEGjOZaDhRvEkWjgc9nG6rcJBgltU63ppMasXhlxG3oIi7KF2HIsDyVrOSHkH+n0XKBeA==" />
 <div class="modal-body">
   <div class="field">
     <label class="control-label" for="product_name">Name</label>

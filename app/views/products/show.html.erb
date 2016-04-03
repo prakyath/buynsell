@@ -78,6 +78,13 @@ $(window).load(function() {
     slideshow: false,
     sync: "#carousel"
   });
+    $(".zoom_01").elevateZoom({
+        //scrollZoom : true,
+        zoomWindowWidth : 500,
+        zoomWindoHeight : 500,
+        zoomType: $(window).width() < 765?"inner":"window"
+        //cursor: "crosshair"
+    });
 });
 
 
@@ -100,10 +107,6 @@ document.onkeydown = function(evt) {
             break;
     }
 };
-var zooms=$(".zoom_01").elevateZoom({
-    //scrollZoom : true,
-    zoomWindowWidth : 400,
-    zoomWindoHeight : 400
-});
-setTimeout(zooms, 2000);
+
+
 </script>
