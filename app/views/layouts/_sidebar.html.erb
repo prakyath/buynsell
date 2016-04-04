@@ -5,7 +5,19 @@ function category(some)
 console.log(some);	
 window.location.href="products?category_id="+some;
 }	
+$(window).resize(function() {
 
+  if ($(this).width() < 800) {
+
+    $('.affix').hide();
+
+  } else {
+
+    $('.affix').show();
+
+    }
+
+});
 </script>
  <% if @flag %>
 <div class="hidden-xs col-sm-3  col-lg-2 col-md-3 pull-left affix" style="height:100%;background-color:rgba(0,0,0,0.1); box-shadow:0px 0px 3px rgba(0.5);">
@@ -27,4 +39,6 @@ window.location.href="products?category_id="+some;
  a {
     color: #fff !important;
     background-color: transparent;
-}</style>
+}
+
+</style>

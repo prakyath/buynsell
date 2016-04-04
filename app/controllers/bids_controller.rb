@@ -29,11 +29,11 @@ class BidsController < ApplicationController
     @bid.user_id=current_user.id
     respond_to do |format|
       if @bid.save
-          @notification_offer = NotificationOffer.new
+          @notification_offer = Notification.new
           @notification_offer.notifier = current_user
           @notification_offer.notifiee = @product.user
-          @notification_offer.content = @bid.content
-          @notification_offer.price = @bid.price
+          @notification_offer.product=@product
+          @notification_offer.Type="bid"
           @notification_offer.save
         format.html { redirect_to :back, notice: 'Bid was successfully created.' }
         format.json { render :show, status: :created, location: @bid }
@@ -80,6 +80,6 @@ class BidsController < ApplicationController
     end
 
     def set_product
-      @product = Product.find(5);
+      @product = Product.find(bid_params[:product_id]);
     end
 end

@@ -1,10 +1,10 @@
-<div class="row" style="padding-top:20px;border-top:1px solid grey;">
+<div class="row col-sm-offset-1" style="padding-top:20px;border-top:1px solid grey;">
     <% if  @products.where(status: "available").count==0%>
         <p>There are No Products available for sale in this Category<%= @category1%>.Be the First person to add <i class="fa fa-smile-o"></i></p>
     <% end %>
     <% @products.each do |product| %>
         <% if product.status=="available" %>
-        <div class="col-sm-6  col-lg-4 col-md-4">
+        <div class="col-sm-6  col-lg-4 col-md-4 col-xs-4">
         <div class="thumbnail">
             <%= image_tag(product.pictures.first.image.url(:small) , :class =>"zoom img-responsive")%>
             <div class="caption">

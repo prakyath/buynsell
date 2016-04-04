@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require fancybox
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require jquery-ui
@@ -24,3 +23,5 @@
 //= require jquery.elevatezoom.js
 //= require jquery.slideme2.js
 //= require jquery.flexslider.js
+//= require jquery.fancybox.js
+//=jquery.fancybox.pack.js
