@@ -1,0 +1,15 @@
+               <ul class="list-group">
+                  <li class="list-group-item text-muted">Notifications</li>
+                  <% @user.notifications_as_notifiee.reverse.each do |notification| %>
+                  <% @p=Product.find( notification.product_id )%>
+                  <li class="list-group-item text-left"><a href='<%= url_for @p %>' style="display:inline;"><%=notification.notifier.fullname %> has <%=notification.Type%> on your <b><%=notification.product.name %></b> at <small><%= notification.created_at.strftime("%b %e, %l:%M %p") %></small></a></li>
+                  
+
+                  <% end %>
+                  </ul>
+<style>
+    li.list-group-item>a:hover{
+        background-color:transparent;
+        text-decoration:none;
+    }
+</style>

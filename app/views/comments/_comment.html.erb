@@ -18,7 +18,9 @@
 &nbsp;<%= comment.message %></p>
  
    <% if !comment.message.blank? %>
-   <p><%= link_to "Remove", [comment.product,comment],{ method: :delete, data: { confirm: "Are you sure?" }} %></p> 
+       <% if current_user==comment.user or current_user==@product.user%>
+           <p><%= link_to "Remove", [comment.product,comment],{ method: :delete, data: { confirm: "Are you sure?" }} %></p> 
+       <% end %>
    <% end %>
 </div>
 <% end %>

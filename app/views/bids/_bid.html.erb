@@ -17,9 +17,9 @@
 <p><%= link_to bid.user.fullname,profile_path(:user_id => bid.user_id),{class:"commentor"} %>
     
 &nbsp;<br><span style="color:blue">Price: </span><%= bid.price %>,&nbsp;<span style="color:blue">Message:</span><%= bid.content %></p>
- 
-   <% if !bid.content.blank? %>
-   <p><%= link_to "Remove", [bid.product,bid],{ method: :delete, data: { confirm: "Are you sure?" }} %></p> 
-   <% end %>
+ <!--
+   <# if !bid.content.blank? %>
+   <p><# link_to "Remove", [bid.product,bid],{ method: :delete, data: { confirm: "Are you sure?" }} %></p> 
+   <# end %>
 <div>
 <% end %>

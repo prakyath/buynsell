@@ -6,9 +6,9 @@
                   <% current_user.notifications_as_notifiee.reverse[0..10].each do |notification| %>
                   <% @p=Product.find( notification.product_id )%>
                   <%#= current_user%>
-                  <li class="list-group-item"><a href='<%= url_for @p %>' style="display:inline;"><%=notification.notifier.fullname %> has commented on your <b><%=notification.product.name %></b> at <small><%= notification.created_at.strftime("%b %e, %l:%M %p") %></small></a></li>
+                  <li class="list-group-item" id="notis"><a href='<%= url_for @p %>' style="display:inline;"><%=notification.notifier.fullname %> has commented on your <b><%=notification.product.name %></b> at <small><%= notification.created_at.strftime("%b %e, %l:%M %p") %></small></a></li>
                   <% end %>
-                    <div id="notificationFooter"><a href='<%= user_url%>#noti' align="center">Show more</a></div>
+                    <div id="notificationFooter"><a href='<%= user_url%>/noti' align="center">Show more</a></div>
                   <% end %>
                   </ul>
 <style>
@@ -16,6 +16,9 @@
 
         border-radius:5px;
     }
+li#notis:hover{
+    background-color:#2980b9;
+}
 #notificationsBody
 {
 min-height:50px;
@@ -30,6 +33,10 @@ padding: 8px;
 font-size: 12px;
 border-top: 1px solid #dddddd;
 margin-bottom:-2em;
+}
+#notificationFooter>a:hover{
+    background-color: transparent;
+    text-decoration:none;
 }
  a:focus {
     color: #111 !important;

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :pictures
 get 'my_products/index'
 get 'products/toggles'
+get 'user/noti'
 
 resources :products do
   get :autocomplete_product_name, on: :collection

@@ -51,7 +51,6 @@
           
           <ul class="nav nav-tabs" id="myTab">
             <li class="active"><a href="#home" data-toggle="tab">Uploaded Products</a></li>
-            <li id="noti"><a href="#messages" data-toggle="tab">Notifications</a></li>
             <li><a href="#settings" data-toggle="tab">Profile Settings</a></li>
           </ul>
               
@@ -61,22 +60,21 @@
                     <% @product.each do |product| %>
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                        `            <%= image_tag product.pictures.first.image.url(:small),{class:"img-responsive images"} %>
+                                    <%= image_tag product.pictures.first.image.url(:small),{class:"img-responsive images"} %>
                             <div class="caption">
                              <%= link_to 'Edit', edit_product_path(product),{class:"btn btn-primary"} %>
+                             <%#= link_to @product.status, {:controller =>'products', :action => :toggles, :id=>@product.id},:class=> ( @product.status=="available"  ? "btn btn-success" : "btn btn-danger") %>
                               <%#= link_to 'offers', edit_product_path(product),{class:"btn btn-success"} %>
                                 <%= link_to 'Destroy', product,{ method: :delete, data: { confirm: 'Are you sure?'},class:"btn btn-danger pull-right"} %>
-                                
-                                <h4><%= link_to 'Show', product %>
+                                <h4><%= link_to 'Show', product ,:id=>"img_show"%>
                                 </h4>
-                                
                                 <% if !product.description.blank? %>
+                <p><strong>Name:</strong> <%= product.name %></span></p>
                                     <p><strong>Description:</strong> <%= product.description %></p>
                                 <% end %>
                                 <% if !product.reason.blank? %>
                                     <p><strong>Reason:</strong><%= product.reason %></p>
                                 <% end %>
-
                             
                             </div>
                             
@@ -176,27 +174,6 @@
           
               <hr>
               
-             </div><!--/tab-pane-->
-             <div class="tab-pane" id="messages">
-               
-               <h2></h2>
-               <ul class="list-group">
-                  <li class="list-group-item text-muted">Inbox</li>
-                  <% @user.notifications_as_notifiee.reverse.each do |notification| %>
-                  <% @p=Product.find( notification.product_id )%>
-                  <li class="list-group-item text-left"><a href='<%= url_for @p %>' style="display:inline;"><%=notification.notifier.fullname %> has <%=notification.Type%> on your <b><%=notification.product.name %></b> at <small><%= notification.created_at.strftime("%b %e, %l:%M %p") %></small></a></li>
-                  
-
-                  <% end %>
-          <!--       <li class="list-group-item text-right"><a href="#" class="pull-left">Hi Joe, There has been a request on your account since that was..</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Nullam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Thllam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Wesm sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is assaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                      -->       
-                </ul> 
              </div><!--/tab-pane-->
              <div class="tab-pane" id="settings">
             	
@@ -327,7 +304,28 @@
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 -->	                        
+<style>
+   #img_show:focus {
+    color: #2980B9 !important;
+    background-color: transparent;
+    text-decoration:none !important;
+    border:none !important;
 
+}
+ #img_show:hover {
+    color: #2980B9 !important;
+    background-color: transparent;
+    text-decoration:none !important;
+    font-weight:bold;
+}
+ #img_show {
+    color: #2980B9 !important;
+    background-color: transparent;
+}
+.img>image:hover {
+      background-color: transparent;
+}
+</style>
 </body>
 </html>
 
