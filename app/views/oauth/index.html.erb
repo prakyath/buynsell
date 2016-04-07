@@ -1,20 +1,48 @@
 <%@flag=true%>
 <div id="myCarousel" class="carousel slide col-sm-offset-2 col-md-offset-1" data-ride="carousel">
   <ol class="carousel-indicators">
+    <%@p=0%>
+    <% @images.each do |image| %>
+      <% if image!=@images.first %>
+          <li data-target="#myCarousel" data-slide-to=@p></li>
+      <% else %>
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <% end %>
+	<%@p+=1%>
+      <% end %>
+
+    <!--
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
+    -->
   </ol>
 
   <div class="carousel-inner" role="listbox" align="center">
+<!--        <div class="item">
+          <img src="carousel/slide1.jpeg">
+        </div>
+        <div class="item">
+          <img src="carousel/slide2.jpeg">
+        </div>
+        <div class="item">
+          <img src="carousel/slide3.jpeg">
+        </div>
+        <div class="item">
+          <img src="carousel/slide4.jpeg">
+        </div>
+        <div class="item active">
+          <img src="carousel/slide1.jpeg">
+        </div>
+-->
     <% @images.each do |image| %>
       <% if image!=@images.first %>
         <div class="item">
-          <%= image_tag("carousel/#{image.split('/').last}") %>
+          <%= image_tag "carousel/#{image.split('/').last}" %>
         </div>
       <% else %>
         <div class="item active">
-          <%= image_tag("carousel/#{image.split('/').last}") %>
+          <%= image_tag "carousel/#{image.split('/').last}" %>
         </div>      
       <% end %>
       <% end %>

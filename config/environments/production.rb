@@ -5,7 +5,7 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.assets.precompile =  ['*.jpg','*.js','*.js.erb','*.css','*.css.scss','*.scss','*.css.erb','*.jpeg','*.png','*.gif'] 
+#  config.assets.precompile =  ['*.jpg','*.js','*.js.erb','*.css','*.css.scss','*.scss','*.css.erb','*.jpeg','*.png','*.gif'] 
   config.serve_static_files = false
   config.assets.version = '1.0'
 #  config.assets.precompile += %w( login_form.css )
@@ -13,7 +13,7 @@ Rails.application.configure do
 #  config.assets.precompile += %w( fancybox.css )
 #  config.assets.precompile += %w( '*')
 
-#  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif ]
+  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif ]
 #  config.assets.paths << "#{Rails.root}/app/assets/images"
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
