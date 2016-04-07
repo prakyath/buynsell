@@ -10,11 +10,11 @@
     <% @images.each do |image| %>
       <% if image!=@images.first %>
         <div class="item">
-          <%= image_tag "carousel/#{image.split('/').last}" %>
+          <%= image_tag("carousel/#{image.split('/').last}") %>
         </div>
       <% else %>
         <div class="item active">
-          <%= image_tag "carousel/#{image.split('/').last}" %>
+          <%= image_tag("carousel/#{image.split('/').last}") %>
         </div>      
       <% end %>
       <% end %>

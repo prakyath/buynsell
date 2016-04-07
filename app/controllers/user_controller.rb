@@ -8,8 +8,6 @@ def show
 end	
 def noti
   @user=current_user
-   @product = Product.where(user_id: current_user.id).paginate(:page => params[:page], :per_page => 3)
-   flash.now[:error] = "No products" if @product.blank? 
 end	
 
 def profile

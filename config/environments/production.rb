@@ -1,9 +1,20 @@
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+
   # Code is not reloaded between requests.
   config.cache_classes = true
+  config.assets.precompile =  ['*.jpg','*.js','*.js.erb','*.css','*.css.scss','*.scss','*.css.erb','*.jpeg','*.png','*.gif'] 
+  config.serve_static_files = false
+  config.assets.version = '1.0'
+#  config.assets.precompile += %w( login_form.css )
+#  config.assets.precompile += %w( jquery.flexslider.js )
+#  config.assets.precompile += %w( fancybox.css )
+#  config.assets.precompile += %w( '*')
 
+#  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif ]
+#  config.assets.paths << "#{Rails.root}/app/assets/images"
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -11,7 +22,9 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
+  config.assets.raise_runtime_errors = true
+
   config.action_controller.perform_caching = true
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
@@ -29,7 +42,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.

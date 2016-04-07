@@ -61,7 +61,9 @@ class BidsController < ApplicationController
   # DELETE /bids/1
   # DELETE /bids/1.json
   def destroy
+	@bid = @product.bids.find(params[:id])
     @bid.destroy
+
     respond_to do |format|
       format.html { redirect_to :back, notice: 'Bid was successfully destroyed.' }
       format.json { head :no_content }
@@ -72,6 +74,9 @@ class BidsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_bid
       @bid = Bid.find(params[:id])
+    end
+def set_product
+      @product = Product.find(params[:product_id]);
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

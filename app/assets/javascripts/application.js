@@ -23,5 +23,5 @@
 //= require jquery.elevatezoom.js
 //= require jquery.slideme2.js
 //= require jquery.flexslider.js
-//= require jquery.fancybox.js
-//=jquery.fancybox.pack.js
+//= require fancybox.js
+//= require fancybox.pack.js
