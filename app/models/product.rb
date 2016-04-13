@@ -16,5 +16,4 @@ def toggle(attribute)
       self
     end
 
-
 end

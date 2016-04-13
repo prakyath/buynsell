@@ -7,7 +7,7 @@
   		<div class="col-sm-10"><h1><%= @user.fullname.titleize %></h1></div>
     	<div class="col-sm-2">
       <a href="/user" class="pull-right">
-        <%= image_tag(current_user.avatar.url(:small),{class:"img-circle img-responsive"}) %>
+        <%= image_tag(current_user.avatar.url(:medium),{class:"img-circle img-responsive"}) %>
       </a></div>
     </div>
     <div class="row">

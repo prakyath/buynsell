@@ -8,6 +8,7 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to "BUY AND SELL" , root_url , :style=> "font-size:2rem;", :class=> "navbar-brand",:id=> "head" %>
+	<%#= root_url%>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
         
@@ -23,7 +24,7 @@
             <% end%>
                 </ul>
         </ul>
-    <form id="search-form" class="navbar-form navbar-left col-md-6" action="/products" accept-charset="UTF-8" method="get">	<input name="utf8" type="hidden" value="✓">
+    <form id="search-form" class="navbar-form navbar-left col-md-6" action="/buynsell/products" accept-charset="UTF-8" method="get">	<input name="utf8" type="hidden" value="✓">
       <div class="form-group">
           <input type="search" name="search" id="search" placeholder="Search" class="form-control input" style="padding-left:8px;" data-autocomplete="/products/autocomplete_product_name">
       </div>

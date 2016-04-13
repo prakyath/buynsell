@@ -1,8 +1,8 @@
-
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
-
+config.relative_url_root="/buynsell"
+config.serve_static_assets = true
+#config.action_controller.default_url_options = { host: 'students.iitm.ac.in/' }
   # Code is not reloaded between requests.
   config.cache_classes = true
 #  config.assets.precompile =  ['*.jpg','*.js','*.js.erb','*.css','*.css.scss','*.scss','*.css.erb','*.jpeg','*.png','*.gif'] 

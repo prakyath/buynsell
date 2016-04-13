@@ -6,8 +6,11 @@
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+Rails.application.config.assets.precompile +=  ['*.js', '*.css.erb','*.scss'] 
 # Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += %w( fancybox.css )
-Rails.application.config.assets.precompile += %w( fancybox.js )
-Rails.application.config.assets.precompile += %w( fancybox.pack.js )
+Rails.application.config.assets.precompile += %w( jquery.fancybox.css )
+#Rails.application.config.assets.precompile += %w( jquery.fancybox.js )
+#Rails.application.config.assets.precompile += %w( jquery.fancybox.pack.js )
 Rails.application.config.assets.precompile += %w( '*' )
+Rails.application.config.assets.precompile +=  ['*.jpg','*.jpeg','*.png']
+Rails.application.config.assets.precompile += %w( *.svg *.eot *.woff *.ttf )

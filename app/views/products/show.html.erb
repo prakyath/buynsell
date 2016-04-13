@@ -1,10 +1,15 @@
-<!--	<script src='jquery.fancybox.js'></script>
-	<script src='jquery.fancybox.pack.js'></script>
--->
 <div class="container" style="margin-top:5em;">
 <div class="row">
+<%= link_to "Show mah Fancybox!", "#hello", class: "fancybox" %>
+
+<div style="display:none;">
+  <div id="hello">
+  Hello world!
+  </div>
+</div>
+
     <div class="col-sm-6 col-md-6">
-        <%= image_tag @pictures.first.image.url(:medium),:id => "zoom_03",data:{zoom_image:@pictures.first.image.url}%>    
+        <%= image_tag @pictures.first.image.url(:medium),:id => "zoom_03",data:{zoom_image:@pictures.first.image.url(:large)}%>    
         <div id="gallery_01">
             <% @pictures.each do |pic| %>
                 <%= link_to image_tag(pic.image.url(:thumb),:id=> "zoom_03"),'#',data:{zoom_image:pic.image.url,image:pic.image.url(:medium)} %>
@@ -54,6 +59,9 @@
 <% end %>
 
 <script>
+$(document).ready(function() {
+  $("a.fancybox").fancybox();
+});
 
 $("#zoom_03").elevateZoom({
     gallery:'gallery_01',

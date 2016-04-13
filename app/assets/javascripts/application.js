@@ -15,13 +15,10 @@
 //= require jquery.turbolinks
 //= require jquery-ui
 //= require jquery-ui/autocomplete
-//= require bootstrap
-//= require_tree
 //= require autocomplete-rails
+//= require bootstrap
+//= require_tree .
 //= require image_zoomer_main   
-//= require easyzoom.js
 //= require jquery.elevatezoom.js
-//= require jquery.slideme2.js
-//= require jquery.flexslider.js
-//= require fancybox.js
-//= require fancybox.pack.js
+//= require jquery.fancybox.js
+//= require jquery.fancybox.pack.js
